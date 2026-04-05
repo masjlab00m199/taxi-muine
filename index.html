@@ -1,88 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mui Ne Taxi Tour</title>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Mui Ne Taxi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<style>
+.card:hover{
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+</style>
+
 </head>
-<body class="bg-gray-100 p-6">
 
-<div id="root"></div>
+<body class="bg-gray-100 p-4">
 
-<script type="text/babel">
-const { useState } = React;
+<!-- HEADER -->
+<div class="bg-black text-white p-4 rounded-xl mb-4 flex justify-between items-center sticky top-0 z-50 shadow">
+  <div class="font-bold text-lg">🚗 Mui Ne Taxi</div>
+  <div class="text-sm">📞 0362772956</div>
+</div>
 
-function TourTaxiWebsite() {
-  const tours = [
-    { name: "Mui Ne → Da Lat", price: "1,700,000 VND", time: "3.5 - 4 hours" },
-    { name: "Mui Ne → Nha Trang", price: "2,200,000 VND", time: "4.5 - 5 hours" },
-    { name: "Mui Ne → Cam Ranh", price: "1,700,000 VND", time: "5 hours" },
-    { name: "Mui Ne → Ho Chi Minh City", price: "1,700,000 VND", time: "3 - 3.5 hours" }
-  ];
+<!-- TRUST -->
+<div class="text-center text-red-500 font-bold mb-4 animate-pulse">
+🔥 3 people are booking right now
+</div>
 
-  const phone = "0362772956";
-  const whatsappLink = `https://wa.me/84${phone.substring(1)}`;
+<!-- BANNER -->
+<div class="grid md:grid-cols-3 gap-3 mb-6">
+  <img src="https://images.unsplash.com/photo-1528127269322-539801943592" class="w-full h-40 object-cover rounded-xl">
+  <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="w-full h-40 object-cover rounded-xl">
+  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="w-full h-40 object-cover rounded-xl">
+</div>
 
-  const [form, setForm] = useState({ name: "", phone: "", trip: "", date: "" });
+<h1 class="text-2xl md:text-3xl font-bold text-center mb-2">
+🚗 Mui Ne Private Car & Taxi Service
+</h1>
 
-  const handleSend = () => {
-    const message = `Booking request:%0A- Name: ${form.name}%0A- Phone: ${form.phone}%0A- Route: ${form.trip}%0A- Date: ${form.date}`;
-    window.open(`https://wa.me/84${phone.substring(1)}?text=${message}`);
-  };
+<p class="text-center text-gray-600 mb-6">
+Safe • Private • Professional Driver • Best Price
+</p>
 
-  return (
-    <div>
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Mui Ne Taxi Tour - 24/7 Booking Service
-      </h1>
+<!-- WHY -->
+<div class="bg-white p-5 rounded-xl shadow mb-6 text-center">
+  <h2 class="text-lg font-bold mb-2">Why Choose Us?</h2>
+  <p>✅ Clean Car • ✅ On Time • ✅ Friendly Driver</p>
+</div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {tours.map((tour, index) => (
-          <div key={index} className="bg-white rounded-2xl shadow p-5">
-            <h2 className="text-xl font-semibold mb-2">{tour.name}</h2>
-            <p>Price: <strong>{tour.price}</strong></p>
-            <p>Duration: {tour.time}</p>
+<!-- TOURS -->
+<div class="grid md:grid-cols-2 gap-5">
 
-            <div className="flex gap-2 mt-4">
-              <a href={`tel:${phone}`} className="bg-black text-white px-4 py-2 rounded-xl">Call</a>
-              <a href={whatsappLink} target="_blank" className="bg-green-500 text-white px-4 py-2 rounded-xl">WhatsApp</a>
-            </div>
-          </div>
-        ))}
-      </div>
+  <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Mui Ne → Da Lat</h2>
+    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-sm text-red-500">🔥 Most booked</p>
+  </div>
 
-      <div className="mt-10 bg-white p-6 rounded-2xl shadow max-w-xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4 text-center">Quick Booking</h2>
+  <div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Mui Ne → Nha Trang</h2>
+    <p class="text-green-600 font-bold">2,200,000 VND</p>
+  </div>
 
-        <input type="text" placeholder="Your name" className="w-full p-3 border rounded mb-3" onChange={e => setForm({ ...form, name: e.target.value })} />
+  <div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Mui Ne → Cam Ranh</h2>
+    <p class="text-green-600 font-bold">1,700,000 VND</p>
+  </div>
 
-        <input type="text" placeholder="Phone number" className="w-full p-3 border rounded mb-3" onChange={e => setForm({ ...form, phone: e.target.value })} />
+  <div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Mui Ne → Ho Chi Minh City</h2>
+    <p class="text-green-600 font-bold">1,700,000 VND</p>
+  </div>
 
-        <select className="w-full p-3 border rounded mb-3" onChange={e => setForm({ ...form, trip: e.target.value })}>
-          <option>Select route</option>
-          {tours.map((t, i) => <option key={i}>{t.name}</option>)}
-        </select>
+  <!-- NEW -->
+  <div onclick="selectRoute('Mui Ne → Ta Cu')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
+    <h2 class="font-bold">📍 Mui Ne → Ta Cu</h2>
+    <p class="text-green-600 font-bold">1,000,000 VND</p>
+    <p class="text-sm text-yellow-600">⭐ Best choice</p>
+  </div>
 
-        <input type="date" className="w-full p-3 border rounded mb-4" onChange={e => setForm({ ...form, date: e.target.value })} />
+  <div onclick="selectRoute('Mui Ne → Bau Trang')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
+    <h2 class="font-bold">📍 Mui Ne → Bau Trang</h2>
+    <p class="text-green-600 font-bold">1,000,000 VND</p>
+    <p class="text-sm text-yellow-600">⭐ Best choice</p>
+  </div>
 
-        <button onClick={handleSend} className="w-full bg-green-600 text-white p-3 rounded-xl">Send via WhatsApp</button>
-      </div>
+</div>
 
-      <a href={whatsappLink} target="_blank" className="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
-        Chat WhatsApp
-      </a>
+<!-- BOOKING -->
+<div class="mt-10 bg-white p-6 rounded-xl shadow max-w-xl mx-auto">
+  <h2 class="text-xl font-bold mb-4 text-center">Quick Booking</h2>
 
-      <div className="mt-10 text-center">
-        <p>Hotline: {phone} (24/7)</p>
-      </div>
-    </div>
-  );
+  <input id="name" placeholder="Your name" class="w-full p-3 border mb-3 rounded">
+  <input id="phone" placeholder="Phone number" class="w-full p-3 border mb-3 rounded">
+
+  <select id="route" class="w-full p-3 border mb-3 rounded">
+    <option value="">Select route</option>
+    <option>Mui Ne → Da Lat</option>
+    <option>Mui Ne → Nha Trang</option>
+    <option>Mui Ne → Cam Ranh</option>
+    <option>Mui Ne → Ho Chi Minh City</option>
+    <option>Mui Ne → Ta Cu</option>
+    <option>Mui Ne → Bau Trang</option>
+  </select>
+
+  <input type="date" id="date" class="w-full p-3 border mb-3 rounded">
+  <input type="time" id="time" class="w-full p-3 border mb-3 rounded">
+
+  <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
+    🚀 Book via WhatsApp
+  </button>
+</div>
+
+<!-- REVIEW -->
+<div class="mt-8 bg-white p-5 rounded-xl shadow text-center">
+⭐⭐⭐⭐⭐  
+<p>Trusted by 100+ international travelers</p>
+</div>
+
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/84362772956"
+class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-600">
+WhatsApp
+</a>
+
+<a href="tel:+84362772956"
+class="fixed bottom-20 right-5 bg-blue-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-600">
+📞 Call Now
+</a>
+
+<script>
+function selectRoute(route){
+  document.getElementById("route").value = route;
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<TourTaxiWebsite />);
+function sendWhatsApp(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var route = document.getElementById("route").value;
+  var date = document.getElementById("date").value;
+  var time = document.getElementById("time").value;
+
+  var message = encodeURIComponent(
+    "🚗 Taxi Booking\n"
+    + "Name: " + name + "\n"
+    + "Phone: " + phone + "\n"
+    + "Route: " + route + "\n"
+    + "Date: " + date + "\n"
+    + "Time: " + time
+  );
+
+  window.open("https://wa.me/84362772956?text=" + message);
+}
 </script>
 
 </body>
