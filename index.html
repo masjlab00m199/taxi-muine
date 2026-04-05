@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mui Ne Taxi Tour</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+function TourTaxiWebsite() {
+  const tours = [
+    { name: "Mui Ne → Da Lat", price: "1,700,000 VND", time: "3.5 - 4 hours" },
+    { name: "Mui Ne → Nha Trang", price: "2,200,000 VND", time: "4.5 - 5 hours" },
+    { name: "Mui Ne → Cam Ranh", price: "1,700,000 VND", time: "5 hours" },
+    { name: "Mui Ne → Ho Chi Minh City", price: "1,700,000 VND", time: "3 - 3.5 hours" }
+  ];
+
+  const phone = "0362772956";
+  const whatsappLink = `https://wa.me/84${phone.substring(1)}`;
+
+  const [form, setForm] = useState({ name: "", phone: "", trip: "", date: "" });
+
+  const handleSend = () => {
+    const message = `Booking request:%0A- Name: ${form.name}%0A- Phone: ${form.phone}%0A- Route: ${form.trip}%0A- Date: ${form.date}`;
+    window.open(`https://wa.me/84${phone.substring(1)}?text=${message}`);
+  };
+
+  return (
+    <div>
+      <h1 className="text-3xl font-bold text-center mb-6">
+        Mui Ne Taxi Tour - 24/7 Booking Service
+      </h1>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        {tours.map((tour, index) => (
+          <div key={index} className="bg-white rounded-2xl shadow p-5">
+            <h2 className="text-xl font-semibold mb-2">{tour.name}</h2>
+            <p>Price: <strong>{tour.price}</strong></p>
+            <p>Duration: {tour.time}</p>
+
+            <div className="flex gap-2 mt-4">
+              <a href={`tel:${phone}`} className="bg-black text-white px-4 py-2 rounded-xl">Call</a>
+              <a href={whatsappLink} target="_blank" className="bg-green-500 text-white px-4 py-2 rounded-xl">WhatsApp</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 bg-white p-6 rounded-2xl shadow max-w-xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-center">Quick Booking</h2>
+
+        <input type="text" placeholder="Your name" className="w-full p-3 border rounded mb-3" onChange={e => setForm({ ...form, name: e.target.value })} />
+
+        <input type="text" placeholder="Phone number" className="w-full p-3 border rounded mb-3" onChange={e => setForm({ ...form, phone: e.target.value })} />
+
+        <select className="w-full p-3 border rounded mb-3" onChange={e => setForm({ ...form, trip: e.target.value })}>
+          <option>Select route</option>
+          {tours.map((t, i) => <option key={i}>{t.name}</option>)}
+        </select>
+
+        <input type="date" className="w-full p-3 border rounded mb-4" onChange={e => setForm({ ...form, date: e.target.value })} />
+
+        <button onClick={handleSend} className="w-full bg-green-600 text-white p-3 rounded-xl">Send via WhatsApp</button>
+      </div>
+
+      <a href={whatsappLink} target="_blank" className="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
+        Chat WhatsApp
+      </a>
+
+      <div className="mt-10 text-center">
+        <p>Hotline: {phone} (24/7)</p>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<TourTaxiWebsite />);
+</script>
+
+</body>
+</html>
