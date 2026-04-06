@@ -27,7 +27,7 @@
 
 <!-- TRUST -->
 <div class="text-center text-red-500 font-bold mb-4 animate-pulse">
-🔥 3 people are booking right now
+🔥 Only 1 car left today
 </div>
 
 <!-- BANNER -->
@@ -35,7 +35,6 @@
   <img src="https://images.unsplash.com/photo-1528127269322-539801943592" class="w-full h-40 object-cover rounded-xl">
   <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="w-full h-40 object-cover rounded-xl">
   <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="w-full h-40 object-cover rounded-xl">
-</div>
 </div>
 
 <h1 class="text-2xl md:text-3xl font-bold text-center mb-2">
@@ -55,6 +54,7 @@ Safe • Private • Professional Driver • Best Price
 <!-- TOURS -->
 <div class="grid md:grid-cols-2 gap-5">
 
+  <!-- ĐI -->
   <div onclick="selectRoute('Mui Ne → Da Lat',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Da Lat</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
@@ -75,6 +75,7 @@ Safe • Private • Professional Driver • Best Price
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
+  <!-- TOUR -->
   <div onclick="selectRoute('Mui Ne → Ta Cu',1000000)" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
     <h2 class="font-bold">📍 Mui Ne → Ta Cu</h2>
     <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
@@ -85,26 +86,26 @@ Safe • Private • Professional Driver • Best Price
     <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
-  <!-- VỀ (RETURN ROUTES - RESTORED) -->
-  <div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <!-- VỀ -->
+  <div onclick="selectRoute('Da Lat → Mui Ne',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Da Lat → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
-  <div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Nha Trang → Mui Ne',2200000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Nha Trang → Mui Ne</h2>
     <p class="text-green-600 font-bold">2,200,000 VND (~90 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
-  <div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Cam Ranh → Mui Ne',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Cam Ranh → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
-  <div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Ho Chi Minh City → Mui Ne',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Ho Chi Minh City → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
@@ -116,26 +117,23 @@ Safe • Private • Professional Driver • Best Price
 <div class="mt-10 bg-white p-6 rounded-xl shadow max-w-xl mx-auto">
   <h2 class="text-xl font-bold mb-4 text-center">Quick Booking</h2>
 
-  <input id="name" placeholder="Your name" class="w-full p-3 border mb-3 rounded">
-  <input id="phone" placeholder="Phone number" class="w-full p-3 border mb-3 rounded">
+  <input id="name" placeholder="Your name *" class="w-full p-3 border mb-3 rounded">
+  <input id="phone" placeholder="Phone / WhatsApp *" class="w-full p-3 border mb-3 rounded">
 
   <select id="route" class="w-full p-3 border mb-3 rounded">
-    <option value="">Select route</option>
-
+    <option value="">Select route *</option>
     <option>Mui Ne → Da Lat</option>
     <option>Mui Ne → Nha Trang</option>
     <option>Mui Ne → Cam Ranh</option>
     <option>Mui Ne → Ho Chi Minh City</option>
     <option>Mui Ne → Ta Cu</option>
     <option>Mui Ne → White Sand Dunes</option>
-
     <option>Da Lat → Mui Ne</option>
     <option>Nha Trang → Mui Ne</option>
     <option>Cam Ranh → Mui Ne</option>
     <option>Ho Chi Minh City → Mui Ne</option>
   </select>
 
-  <!-- ADD NEW -->
   <select id="car" class="w-full p-3 border mb-3 rounded">
     <option value="">Car type</option>
     <option>4 Seats</option>
@@ -145,7 +143,6 @@ Safe • Private • Professional Driver • Best Price
   <input id="passengers" placeholder="Passengers" class="w-full p-3 border mb-3 rounded">
 
   <div id="price" class="text-center font-bold text-green-600 mb-3"></div>
-  <!-- END ADD -->
 
   <input type="date" id="date" class="w-full p-3 border mb-3 rounded">
   <input type="time" id="time" class="w-full p-3 border mb-3 rounded">
@@ -161,33 +158,22 @@ class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 text-sm rounded-
 WhatsApp
 </a>
 
-
-
-<!-- CALL BUTTON -->
+<!-- CALL -->
 <a href="tel:+84362772956"
 class="fixed bottom-16 right-5 bg-blue-600 text-white px-4 py-2 text-sm rounded-full shadow-lg">
 📞 Call Now
 </a>
 
-
-
 <script>
 let selectedPrice = 0;
 
-function selectRoute(route){
+function selectRoute(route, price){
   document.getElementById("route").value = route;
+  selectedPrice = price || 0;
 
-  // ADD PRICE AUTO (không phá code cũ)
-  if(route.includes("Da Lat")) selectedPrice = 1700000;
-  else if(route.includes("Nha Trang")) selectedPrice = 2200000;
-  else if(route.includes("Cam Ranh")) selectedPrice = 1700000;
-  else if(route.includes("Ho Chi Minh")) selectedPrice = 1700000;
-  else if(route.includes("Ta Cu")) selectedPrice = 1000000;
-  else if(route.includes("White Sand")) selectedPrice = 1000000;
-
-  
-
-  document.getElementById("price").innerText = "Price: " + selectedPrice.toLocaleString() + " VND (~" + Math.round(selectedPrice/25000) + " USD)";
+  document.getElementById("price").innerText =
+    "Price: " + selectedPrice.toLocaleString() +
+    " VND (~" + Math.round(selectedPrice/25000) + " USD)";
 
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
@@ -196,32 +182,31 @@ function sendWhatsApp(){
   var name = document.getElementById("name").value;
   var phone = document.getElementById("phone").value;
   var route = document.getElementById("route").value;
+
+  if(!name || !phone || !route){
+    alert("Please fill required fields");
+    return;
+  }
+
   var car = document.getElementById("car").value;
   var passengers = document.getElementById("passengers").value;
   var date = document.getElementById("date").value;
   var time = document.getElementById("time").value;
 
-  var message = encodeURIComponent(
-    "🚗 Taxi Booking
-"
-    + "Name: " + name + "
-"
-    + "Phone: " + phone + "
-"
-    + "Route: " + route + "
-"
-    + "Car: " + car + "
-"
-    + "Passengers: " + passengers + "
-"
-    + "Price: " + selectedPrice + " VND
-"
-    + "Date: " + date + "
-"
-    + "Time: " + time
-  );
+  var message =
+    "🚗 Taxi Booking\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "Route: " + route + "\n" +
+    "Car: " + car + "\n" +
+    "Passengers: " + passengers + "\n" +
+    "Price: " + selectedPrice.toLocaleString() + " VND\n" +
+    "Date: " + date + "\n" +
+    "Time: " + time;
 
-  window.open("https://wa.me/84362772956?text=" + message);
+  var url = "https://wa.me/84362772956?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
 }
 </script>
 
