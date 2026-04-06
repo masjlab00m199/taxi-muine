@@ -54,6 +54,7 @@ Safe • Private • Professional Driver • Best Price
 <!-- TOURS -->
 <div class="grid md:grid-cols-2 gap-5">
 
+  <!-- ĐI -->
   <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Da Lat</h2>
     <p class="text-green-600 font-bold">1,700,000 VND</p>
@@ -75,17 +76,39 @@ Safe • Private • Professional Driver • Best Price
     <p class="text-green-600 font-bold">1,700,000 VND</p>
   </div>
 
-  <!-- NEW -->
   <div onclick="selectRoute('Mui Ne → Ta Cu')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
     <h2 class="font-bold">📍 Mui Ne → Ta Cu</h2>
     <p class="text-green-600 font-bold">1,000,000 VND</p>
-    <p class="text-sm text-yellow-600">⭐ Best choice</p>
   </div>
 
   <div onclick="selectRoute('Mui Ne → Bau Trang')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
     <h2 class="font-bold">📍 Mui Ne → Bau Trang</h2>
     <p class="text-green-600 font-bold">1,000,000 VND</p>
-    <p class="text-sm text-yellow-600">⭐ Best choice</p>
+  </div>
+
+  <!-- VỀ -->
+  <div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Da Lat → Mui Ne</h2>
+    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-sm text-blue-500">🔄 Return trip</p>
+  </div>
+
+  <div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Nha Trang → Mui Ne</h2>
+    <p class="text-green-600 font-bold">2,200,000 VND</p>
+    <p class="text-sm text-blue-500">🔄 Return trip</p>
+  </div>
+
+  <div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Cam Ranh → Mui Ne</h2>
+    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-sm text-blue-500">🔄 Return trip</p>
+  </div>
+
+  <div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+    <h2 class="font-bold">📍 Ho Chi Minh City → Mui Ne</h2>
+    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
 </div>
@@ -99,12 +122,18 @@ Safe • Private • Professional Driver • Best Price
 
   <select id="route" class="w-full p-3 border mb-3 rounded">
     <option value="">Select route</option>
+
     <option>Mui Ne → Da Lat</option>
     <option>Mui Ne → Nha Trang</option>
     <option>Mui Ne → Cam Ranh</option>
     <option>Mui Ne → Ho Chi Minh City</option>
     <option>Mui Ne → Ta Cu</option>
     <option>Mui Ne → Bau Trang</option>
+
+    <option>Da Lat → Mui Ne</option>
+    <option>Nha Trang → Mui Ne</option>
+    <option>Cam Ranh → Mui Ne</option>
+    <option>Ho Chi Minh City → Mui Ne</option>
   </select>
 
   <input type="date" id="date" class="w-full p-3 border mb-3 rounded">
@@ -115,20 +144,14 @@ Safe • Private • Professional Driver • Best Price
   </button>
 </div>
 
-<!-- REVIEW -->
-<div class="mt-8 bg-white p-5 rounded-xl shadow text-center">
-⭐⭐⭐⭐⭐  
-<p>Trusted by 100+ international travelers</p>
-</div>
-
-<!-- FLOAT BUTTON -->
+<!-- FLOAT -->
 <a href="https://wa.me/84362772956"
-class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-600">
+class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
 WhatsApp
 </a>
 
 <a href="tel:+84362772956"
-class="fixed bottom-20 right-5 bg-blue-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-600">
+class="fixed bottom-20 right-5 bg-blue-500 text-white px-4 py-3 rounded-full shadow-lg">
 📞 Call Now
 </a>
 
