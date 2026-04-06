@@ -161,15 +161,11 @@ class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 text-sm rounded-
 WhatsApp
 </a>
 
-<!-- ZALO -->
-<a href="https://zalo.me/84362772956"
-class="fixed bottom-20 right-5 bg-blue-500 text-white px-4 py-2 text-sm rounded-full shadow-lg">
-Zalo
-</a>
+
 
 <!-- CALL BUTTON -->
 <a href="tel:+84362772956"
-class="fixed bottom-36 right-5 bg-blue-600 text-white px-4 py-2 text-sm rounded-full shadow-lg">
+class="fixed bottom-16 right-5 bg-blue-600 text-white px-4 py-2 text-sm rounded-full shadow-lg">
 📞 Call Now
 </a>
 
@@ -188,6 +184,8 @@ function selectRoute(route){
   else if(route.includes("Ho Chi Minh")) selectedPrice = 1700000;
   else if(route.includes("Ta Cu")) selectedPrice = 1000000;
   else if(route.includes("White Sand")) selectedPrice = 1000000;
+
+  
 
   document.getElementById("price").innerText = "Price: " + selectedPrice.toLocaleString() + " VND (~" + Math.round(selectedPrice/25000) + " USD)";
 
