@@ -54,60 +54,58 @@ Safe • Private • Professional Driver • Best Price
 <!-- TOURS -->
 <div class="grid md:grid-cols-2 gap-5">
 
-  <!-- ĐI -->
-  <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Da Lat',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Da Lat</h2>
-    <p class="text-green-600 font-bold">1,700,000 VND</p>
-    <p class="text-sm text-red-500">🔥 Most booked</p>
+    <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Nha Trang',2200000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Nha Trang</h2>
-    <p class="text-green-600 font-bold">2,200,000 VND</p>
+    <p class="text-green-600 font-bold">2,200,000 VND (~90 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Cam Ranh',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Cam Ranh</h2>
-    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Ho Chi Minh City',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Ho Chi Minh City</h2>
-    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Ta Cu')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
+  <div onclick="selectRoute('Mui Ne → Ta Cu',1000000)" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
     <h2 class="font-bold">📍 Mui Ne → Ta Cu</h2>
-    <p class="text-green-600 font-bold">1,000,000 VND</p>
+    <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → White Sand Dunes')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
+  <div onclick="selectRoute('Mui Ne → White Sand Dunes',1000000)" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
     <h2 class="font-bold">📍 Mui Ne → White Sand Dunes</h2>
-    <p class="text-green-600 font-bold">1,000,000 VND</p>
+    <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
-  <!-- VỀ -->
+  <!-- VỀ (RETURN ROUTES - RESTORED) -->
   <div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Da Lat → Mui Ne</h2>
-    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
   <div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Nha Trang → Mui Ne</h2>
-    <p class="text-green-600 font-bold">2,200,000 VND</p>
+    <p class="text-green-600 font-bold">2,200,000 VND (~90 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
   <div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Cam Ranh → Mui Ne</h2>
-    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
   <div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Ho Chi Minh City → Mui Ne</h2>
-    <p class="text-green-600 font-bold">1,700,000 VND</p>
+    <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
     <p class="text-sm text-blue-500">🔄 Return trip</p>
   </div>
 
@@ -136,6 +134,18 @@ Safe • Private • Professional Driver • Best Price
     <option>Ho Chi Minh City → Mui Ne</option>
   </select>
 
+  <!-- ADD NEW -->
+  <select id="car" class="w-full p-3 border mb-3 rounded">
+    <option value="">Car type</option>
+    <option>4 Seats</option>
+    <option>7 Seats</option>
+  </select>
+
+  <input id="passengers" placeholder="Passengers" class="w-full p-3 border mb-3 rounded">
+
+  <div id="price" class="text-center font-bold text-green-600 mb-3"></div>
+  <!-- END ADD -->
+
   <input type="date" id="date" class="w-full p-3 border mb-3 rounded">
   <input type="time" id="time" class="w-full p-3 border mb-3 rounded">
 
@@ -144,20 +154,22 @@ Safe • Private • Professional Driver • Best Price
   </button>
 </div>
 
-<!-- FLOAT -->
-<a href="https://wa.me/84362772956"
-class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
-WhatsApp
-</a>
-
-<a href="tel:+84362772956"
-class="fixed bottom-20 right-5 bg-blue-500 text-white px-4 py-3 rounded-full shadow-lg">
-📞 Call Now
-</a>
-
 <script>
+let selectedPrice = 0;
+
 function selectRoute(route){
   document.getElementById("route").value = route;
+
+  // ADD PRICE AUTO (không phá code cũ)
+  if(route.includes("Da Lat")) selectedPrice = 1700000;
+  else if(route.includes("Nha Trang")) selectedPrice = 2200000;
+  else if(route.includes("Cam Ranh")) selectedPrice = 1700000;
+  else if(route.includes("Ho Chi Minh")) selectedPrice = 1700000;
+  else if(route.includes("Ta Cu")) selectedPrice = 1000000;
+  else if(route.includes("White Sand")) selectedPrice = 1000000;
+
+  document.getElementById("price").innerText = "Price: " + selectedPrice.toLocaleString() + " VND (~" + Math.round(selectedPrice/25000) + " USD)";
+
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
@@ -165,6 +177,49 @@ function sendWhatsApp(){
   var name = document.getElementById("name").value;
   var phone = document.getElementById("phone").value;
   var route = document.getElementById("route").value;
+  var car = document.getElementById("car").value;
+  var passengers = document.getElementById("passengers").value;
+  var date = document.getElementById("date").value;
+  var time = document.getElementById("time").value;
+
+  var message = encodeURIComponent(
+    "🚗 Taxi Booking
+"
+    + "Name: " + name + "
+"
+    + "Phone: " + phone + "
+"
+    + "Route: " + route + "
+"
+    + "Car: " + car + "
+"
+    + "Passengers: " + passengers + "
+"
+    + "Price: " + selectedPrice + " VND
+"
+    + "Date: " + date + "
+"
+    + "Time: " + time
+  );
+
+  window.open("https://wa.me/84362772956?text=" + message);
+}
+</script>
+let selectedPrice = 0;
+
+function selectRoute(route, price){
+  document.getElementById("route").value = route;
+  selectedPrice = price;
+  document.getElementById("price").innerText = "Price: " + price.toLocaleString() + " VND";
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
+function sendWhatsApp(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var route = document.getElementById("route").value;
+  var car = document.getElementById("car").value;
+  var passengers = document.getElementById("passengers").value;
   var date = document.getElementById("date").value;
   var time = document.getElementById("time").value;
 
@@ -173,6 +228,9 @@ function sendWhatsApp(){
     + "Name: " + name + "\n"
     + "Phone: " + phone + "\n"
     + "Route: " + route + "\n"
+    + "Car: " + car + "\n"
+    + "Passengers: " + passengers + "\n"
+    + "Price: " + selectedPrice + " VND (~" + Math.round(selectedPrice/25000) + " USD)\\n"
     + "Date: " + date + "\n"
     + "Time: " + time
   );
