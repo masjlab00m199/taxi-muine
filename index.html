@@ -181,8 +181,8 @@ function sendWhatsApp(){
 }
 </script>
 
-<!-- LIVE BOOKING -->
-<div id="liveBooking" style="position:fixed; bottom:90px; left:15px; background:white; padding:10px 15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); font-size:13px; z-index:9999;">
+<!-- LIVE BOOKING (ĐÃ TẮT) -->
+<div id="liveBooking" style="display:none; position:fixed; bottom:90px; left:15px; background:white; padding:10px 15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); font-size:13px; z-index:9999;">
   Recent booking confirmed 🚕
 </div>
 
@@ -200,22 +200,14 @@ function sendWhatsApp(){
 })();
 </script>
 
-<!-- ✅ ADD FIX (KHÔNG XÓA CODE CŨ) -->
+<!-- FIX TẮT HOÀN TOÀN -->
 <script>
 (function(){
   const live = document.getElementById("liveBooking");
+  live.style.display = "none";
 
   window.addEventListener("scroll", function(){
-    const bookingSection = document.querySelector(".max-w-xl");
-    if(!bookingSection) return;
-
-    const rect = bookingSection.getBoundingClientRect();
-
-    if(rect.top < window.innerHeight - 100){
-      live.style.display = "none";
-    } else {
-      live.style.display = "block";
-    }
+    live.style.display = "none";
   });
 })();
 </script>
