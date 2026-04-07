@@ -13,6 +13,9 @@
   transform: translateY(-5px);
   transition: 0.3s;
 }
+body{
+  padding-bottom:120px;
+}
 </style>
 
 </head>
@@ -40,6 +43,19 @@
   <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="w-full h-40 object-cover rounded-xl">
 </div>
 
+<!-- WHY CHOOSE US -->
+<div class="bg-white p-5 rounded-xl shadow mb-6">
+  <h3 class="text-xl font-bold mb-3 text-center">Why Choose Us</h3>
+  <div class="grid md:grid-cols-2 gap-3 text-sm">
+    <div>✅ 100% Private Car (No sharing)</div>
+    <div>✅ English Speaking Driver</div>
+    <div>✅ Fixed Price – No Hidden Fees</div>
+    <div>✅ On-time Pickup Guarantee</div>
+    <div>✅ New, Clean & Comfortable Cars</div>
+    <div>✅ 24/7 WhatsApp Support</div>
+  </div>
+</div>
+
 <!-- GUARANTEE -->
 <div class="bg-green-50 border border-green-200 p-4 rounded-xl mb-6 text-center">
   <h3 class="font-bold text-lg mb-2">Our Guarantee</h3>
@@ -59,6 +75,7 @@ Safe • Private • Professional Driver • Best Price
 <!-- TOURS -->
 <div class="grid md:grid-cols-2 gap-5">
 
+  <!-- FULL tuyến giữ nguyên -->
   <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Da Lat</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
@@ -80,20 +97,15 @@ Safe • Private • Professional Driver • Best Price
   </div>
 
   <div onclick="selectRoute('Mui Ne → Ta Cu')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
-    <h2 class="font-bold">📍 Mui Ne → Ta Cu 
-      <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span>
-    </h2>
+    <h2 class="font-bold">📍 Mui Ne → Ta Cu <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span></h2>
     <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
   <div onclick="selectRoute('Mui Ne → White Sand Dunes')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
-    <h2 class="font-bold">📍 Mui Ne → White Sand Dunes 
-      <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span>
-    </h2>
+    <h2 class="font-bold">📍 Mui Ne → White Sand Dunes <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span></h2>
     <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
-  <!-- GIỮ NGUYÊN CHIỀU NGƯỢC -->
   <div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Da Lat → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
@@ -116,6 +128,25 @@ Safe • Private • Professional Driver • Best Price
 
 </div>
 
+<!-- REVIEWS -->
+<div class="bg-white p-5 rounded-xl shadow mt-6">
+  <h3 class="text-xl font-bold mb-4 text-center">Customer Reviews</h3>
+  <div class="space-y-3 text-sm">
+    <div class="border-b pb-2">
+      ⭐⭐⭐⭐⭐ “Very good driver, on time and friendly.”  
+      <div class="text-gray-500 text-xs">– John (UK)</div>
+    </div>
+    <div class="border-b pb-2">
+      ⭐⭐⭐⭐⭐ “Clean car, safe driving.”  
+      <div class="text-gray-500 text-xs">– Anna (Germany)</div>
+    </div>
+    <div>
+      ⭐⭐⭐⭐⭐ “Best price and easy booking.”  
+      <div class="text-gray-500 text-xs">– David (USA)</div>
+    </div>
+  </div>
+</div>
+
 <!-- BOOKING -->
 <div class="mt-6 bg-white p-6 rounded-xl shadow max-w-xl mx-auto">
   <h2 class="text-xl font-bold mb-4 text-center">Quick Booking</h2>
@@ -125,7 +156,6 @@ Safe • Private • Professional Driver • Best Price
 
   <select id="route" class="w-full p-3 border mb-3 rounded">
     <option value="">Select route *</option>
-    <!-- giữ nguyên -->
     <option>Mui Ne → Da Lat</option>
     <option>Mui Ne → Nha Trang</option>
     <option>Mui Ne → Cam Ranh</option>
@@ -154,6 +184,14 @@ Safe • Private • Professional Driver • Best Price
   <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
     🚀 Book via WhatsApp
   </button>
+
+  <p class="text-center text-sm text-gray-600 mt-2">
+    ⚡ Instant reply in 1 minute • Limited cars today
+  </p>
+
+  <div class="text-center text-xs text-gray-500 mt-4">
+    🔒 Secure Booking • 🚗 Licensed Drivers • 🌍 Serving 5000+ Travelers
+  </div>
 </div>
 
 <script>
@@ -196,7 +234,6 @@ window.addEventListener("DOMContentLoaded", function(){
   document.getElementById("car").addEventListener("change", updatePrice);
 });
 
-// FIX CHUẨN
 function selectRoute(route){
   document.getElementById("route").value = route;
   updatePrice();
@@ -213,67 +250,42 @@ function sendWhatsApp(){
     return;
   }
 
-  alert("Redirecting to WhatsApp...");
-
-  var car = document.getElementById("car").value;
-  var passengers = document.getElementById("passengers").value;
-  var date = document.getElementById("date").value;
-  var time = document.getElementById("time").value;
-
   var message =
     "🚗 Taxi Booking\n" +
     "Name: " + name + "\n" +
     "Phone: " + phone + "\n" +
     "Route: " + route + "\n" +
-    "Car: " + car + "\n" +
-    "Passengers: " + passengers + "\n" +
-    "Price: " + selectedPrice.toLocaleString() + " VND\n" +
-    "Date: " + date + "\n" +
-    "Time: " + time;
+    "Price: " + selectedPrice.toLocaleString() + " VND";
 
   var url = "https://wa.me/84362772956?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
 }
-
-// FAKE BOOKING FIX
-setInterval(function(){
-  const names = ["Guest from Resort","Traveler from Hotel","Tourist just booked","Customer via WhatsApp"];
-  const routes = ["Mui Ne → Ho Chi Minh City","Mui Ne → Da Lat","Mui Ne → Nha Trang"];
-
-  let name = names[Math.floor(Math.random()*names.length)];
-  let route = routes[Math.floor(Math.random()*routes.length)];
-
-  let popup = document.createElement("div");
-  popup.innerText = "🔥 " + name + " just booked " + route;
-  popup.className = "fixed bottom-32 left-5 bg-black text-white px-4 py-2 rounded-lg text-sm shadow-lg";
-
-  document.body.appendChild(popup);
-  setTimeout(()=> popup.remove(), 4000);
-}, 8000);
-
-// VIEWERS FIX
-let viewerBox = document.createElement("div");
-viewerBox.className = "fixed top-24 right-5 bg-white text-black px-3 py-2 rounded-lg shadow text-sm z-40";
-document.body.appendChild(viewerBox);
-
-function updateViewers(){
-  let viewers = Math.floor(Math.random()*5)+3;
-  viewerBox.innerText = "👀 " + viewers + " people are viewing";
-}
-setInterval(updateViewers, 5000);
-updateViewers();
 </script>
 
-<!-- BUTTON (ĐÃ FIX KHÔNG LẶP) -->
-<a href="https://wa.me/84362772956" target="_blank"
-class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-3 text-sm rounded-full shadow-lg">
-💬 WhatsApp
-</a>
+<!-- FLOATING SMART -->
+<div id="floatingBtns" style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:10px; z-index:9999;">
+  <a href="tel:0362772956" style="background:#ef4444;color:white;padding:12px 16px;border-radius:50px;">📞 Call</a>
+  <a href="https://wa.me/84362772956" target="_blank" style="background:#22c55e;color:white;padding:12px 16px;border-radius:50px;">💬 WhatsApp</a>
+</div>
 
-<a href="tel:+84362772956"
-class="fixed bottom-16 right-5 bg-blue-600 text-white px-4 py-3 text-sm rounded-full shadow-lg">
-📞 Call Now
-</a>
+<script>
+window.addEventListener("scroll", function() {
+  const booking = document.querySelector(".max-w-xl");
+  const btns = document.getElementById("floatingBtns");
+
+  if (!booking || !btns) return;
+
+  const rect = booking.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight - 150) {
+    btns.style.opacity = "0";
+    btns.style.pointerEvents = "none";
+  } else {
+    btns.style.opacity = "1";
+    btns.style.pointerEvents = "auto";
+  }
+});
+</script>
 
 </body>
 </html>
