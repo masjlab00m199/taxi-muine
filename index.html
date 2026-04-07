@@ -73,16 +73,32 @@ body{
 <!-- ROUTES -->
 <div class="grid md:grid-cols-2 gap-5">
 
+<!-- MUI NE -->
 <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Da Lat<br><b class="text-green-600">1,700,000 VND</b></div>
 <div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Nha Trang<br><b class="text-green-600">2,200,000 VND</b></div>
 <div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Cam Ranh<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → HCM<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → Ta Cu')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Ta Cu (Round Trip)<br><b class="text-green-600">1,000,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → White Sand Dunes')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → White Sand Dunes (Round Trip)<br><b class="text-green-600">1,000,000 VND</b></div>
+<div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Ho Chi Minh City<br><b class="text-green-600">1,700,000 VND</b></div>
+
+<!-- DA LAT -->
 <div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
+<div onclick="selectRoute('Da Lat → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Nha Trang<br><b class="text-green-600">1,300,000 VND</b></div>
+<div onclick="selectRoute('Da Lat → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Ho Chi Minh City<br><b class="text-green-600">3,000,000 VND</b></div>
+
+<!-- NHA TRANG -->
 <div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Mui Ne<br><b class="text-green-600">2,200,000 VND</b></div>
+<div onclick="selectRoute('Nha Trang → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Da Lat<br><b class="text-green-600">1,300,000 VND</b></div>
+<div onclick="selectRoute('Nha Trang → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Ho Chi Minh City<br><b class="text-green-600">3,000,000 VND</b></div>
+
+<!-- CAM RANH -->
 <div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 HCM → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
+<div onclick="selectRoute('Cam Ranh → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Da Lat<br><b class="text-green-600">1,300,000 VND</b></div>
+<div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Ho Chi Minh City<br><b class="text-green-600">3,000,000 VND</b></div>
+
+<!-- HO CHI MINH -->
+<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><b class="text-green-600">3,000,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><b class="text-green-600">3,000,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><b class="text-green-600">3,000,000 VND</b></div>
 
 </div>
 
@@ -99,12 +115,19 @@ body{
     <option>Mui Ne → Nha Trang</option>
     <option>Mui Ne → Cam Ranh</option>
     <option>Mui Ne → Ho Chi Minh City</option>
-    <option>Mui Ne → Ta Cu</option>
-    <option>Mui Ne → White Sand Dunes</option>
     <option>Da Lat → Mui Ne</option>
+    <option>Da Lat → Nha Trang</option>
+    <option>Da Lat → Ho Chi Minh City</option>
     <option>Nha Trang → Mui Ne</option>
+    <option>Nha Trang → Da Lat</option>
+    <option>Nha Trang → Ho Chi Minh City</option>
     <option>Cam Ranh → Mui Ne</option>
+    <option>Cam Ranh → Da Lat</option>
+    <option>Cam Ranh → Ho Chi Minh City</option>
     <option>Ho Chi Minh City → Mui Ne</option>
+    <option>Ho Chi Minh City → Nha Trang</option>
+    <option>Ho Chi Minh City → Da Lat</option>
+    <option>Ho Chi Minh City → Cam Ranh</option>
   </select>
 
   <select id="car" class="w-full p-3 border mb-3 rounded">
@@ -113,7 +136,8 @@ body{
     <option>7 Seats</option>
   </select>
 
-  <input id="passengers" placeholder="Passengers" class="w-full p-3 border mb-3 rounded">
+  <input id="pickup" placeholder="Pickup location" class="w-full p-3 border mb-3 rounded">
+  <input id="dropoff" type="hidden">
 
   <div id="price" class="text-center font-bold text-green-600 mb-3"></div>
 
@@ -137,12 +161,19 @@ function updatePrice(){
     "Mui Ne → Nha Trang":2200000,
     "Mui Ne → Cam Ranh":1700000,
     "Mui Ne → Ho Chi Minh City":1700000,
-    "Mui Ne → Ta Cu":1000000,
-    "Mui Ne → White Sand Dunes":1000000,
     "Da Lat → Mui Ne":1700000,
+    "Da Lat → Nha Trang":1300000,
+    "Da Lat → Ho Chi Minh City":3000000,
     "Nha Trang → Mui Ne":2200000,
+    "Nha Trang → Da Lat":1300000,
+    "Nha Trang → Ho Chi Minh City":3000000,
     "Cam Ranh → Mui Ne":1700000,
-    "Ho Chi Minh City → Mui Ne":1700000
+    "Cam Ranh → Da Lat":1300000,
+    "Cam Ranh → Ho Chi Minh City":3000000,
+    "Ho Chi Minh City → Mui Ne":1700000,
+    "Ho Chi Minh City → Nha Trang":3000000,
+    "Ho Chi Minh City → Da Lat":3000000,
+    "Ho Chi Minh City → Cam Ranh":3000000
   };
 
   if(!route) return;
@@ -172,7 +203,7 @@ function sendWhatsApp(){
 "Phone: "+phone.value+"\n"+
 "Route: "+route.value+"\n"+
 "Car: "+car.value+"\n"+
-"Passengers: "+passengers.value+"\n"+
+"Pickup: "+pickup.value+"\n"+
 "Date: "+date.value+"\n"+
 "Time: "+time.value+"\n"+
 "Price: "+selectedPrice.toLocaleString()+" VND";
@@ -181,48 +212,14 @@ function sendWhatsApp(){
 }
 </script>
 
-<!-- LIVE BOOKING (ĐÃ TẮT) -->
-<div id="liveBooking" style="display:none; position:fixed; bottom:90px; left:15px; background:white; padding:10px 15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); font-size:13px; z-index:9999;">
-  Recent booking confirmed 🚕
-</div>
-
-<script>
-(function(){
-  const names = ["John","Anna","David","Mike","Sophie"];
-  const routes = ["Da Lat","Nha Trang","Ho Chi Minh City"];
-
-  setInterval(function(){
-    const n = names[Math.floor(Math.random()*names.length)];
-    const r = routes[Math.floor(Math.random()*routes.length)];
-    document.getElementById("liveBooking").innerText =
-      n + " booked to " + r + " 🚕";
-  }, 5000);
-})();
-</script>
-
-<!-- FIX TẮT HOÀN TOÀN -->
-<script>
-(function(){
-  const live = document.getElementById("liveBooking");
-  live.style.display = "none";
-
-  window.addEventListener("scroll", function(){
-    live.style.display = "none";
-  });
-})();
-</script>
-
-<!-- FLOATING -->
-<div style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:10px; z-index:9999;">
-  <a href="tel:0362772956" style="background:#ef4444;color:white;padding:12px 16px;border-radius:50px;">📞 Call</a>
-  <a href="https://wa.me/84362772956" target="_blank" style="background:#22c55e;color:white;padding:12px 16px;border-radius:50px;">💬 WhatsApp</a>
-</div>
-
-<!-- FOOTER -->
-<div class="mt-10 text-center text-sm text-gray-500">
-  <div>© 2026 Mui Ne Private Taxi</div>
-  <div>📞 Hotline: 0362772956</div>
-  <div>📍 Mui Ne, Vietnam</div>
+<!-- FLOATING BUTTONS -->
+<div style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:10px; z-index:99999;">
+  <a href="tel:0362772956" style="background:#ef4444;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;">
+    📞 Call
+  </a>
+  <a href="https://wa.me/84362772956" target="_blank" style="background:#22c55e;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;">
+    💬 WhatsApp
+  </a>
 </div>
 
 </body>
