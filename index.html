@@ -13,9 +13,6 @@
   transform: translateY(-5px);
   transition: 0.3s;
 }
-body{
-  padding-bottom:120px;
-}
 </style>
 
 </head>
@@ -43,19 +40,6 @@ body{
   <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="w-full h-40 object-cover rounded-xl">
 </div>
 
-<!-- WHY CHOOSE US -->
-<div class="bg-white p-5 rounded-xl shadow mb-6">
-  <h3 class="text-xl font-bold mb-3 text-center">Why Choose Us</h3>
-  <div class="grid md:grid-cols-2 gap-3 text-sm">
-    <div>✅ 100% Private Car (No sharing)</div>
-    <div>✅ English Speaking Driver</div>
-    <div>✅ Fixed Price – No Hidden Fees</div>
-    <div>✅ On-time Pickup Guarantee</div>
-    <div>✅ New, Clean & Comfortable Cars</div>
-    <div>✅ 24/7 WhatsApp Support</div>
-  </div>
-</div>
-
 <!-- GUARANTEE -->
 <div class="bg-green-50 border border-green-200 p-4 rounded-xl mb-6 text-center">
   <h3 class="font-bold text-lg mb-2">Our Guarantee</h3>
@@ -72,79 +56,78 @@ body{
 Safe • Private • Professional Driver • Best Price
 </p>
 
+<!-- WHY -->
+<div class="bg-white p-5 rounded-xl shadow mb-6 text-center">
+  <h2 class="text-lg font-bold mb-2">Why Choose Us?</h2>
+  <p>
+    ✅ Private Car • ✅ Fixed Price • ✅ English Driver <br>
+    ✅ Always On Time • ✅ Clean & Comfortable • ✅ 24/7 Support
+  </p>
+</div>
+
 <!-- TOURS -->
 <div class="grid md:grid-cols-2 gap-5">
 
-  <!-- FULL tuyến giữ nguyên -->
-  <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Da Lat',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Da Lat</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Nha Trang',2200000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Nha Trang</h2>
     <p class="text-green-600 font-bold">2,200,000 VND (~90 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Cam Ranh',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Cam Ranh</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Mui Ne → Ho Chi Minh City',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Mui Ne → Ho Chi Minh City</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → Ta Cu')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
-    <h2 class="font-bold">📍 Mui Ne → Ta Cu <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span></h2>
+  <div onclick="selectRoute('Mui Ne → Ta Cu',1000000)" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
+    <h2 class="font-bold">📍 Mui Ne → Ta Cu 
+      <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span>
+    </h2>
     <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Mui Ne → White Sand Dunes')" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
-    <h2 class="font-bold">📍 Mui Ne → White Sand Dunes <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span></h2>
+  <div onclick="selectRoute('Mui Ne → White Sand Dunes',1000000)" class="card bg-yellow-50 p-5 rounded-xl shadow cursor-pointer border-2 border-yellow-400">
+    <h2 class="font-bold">📍 Mui Ne → White Sand Dunes 
+      <span class="text-sm text-blue-500 ml-2">🔄 Round Trip</span>
+    </h2>
     <p class="text-green-600 font-bold">1,000,000 VND (~40 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Da Lat → Mui Ne',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Da Lat → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Nha Trang → Mui Ne',2200000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Nha Trang → Mui Ne</h2>
     <p class="text-green-600 font-bold">2,200,000 VND (~90 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Cam Ranh → Mui Ne',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Cam Ranh → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
-  <div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
+  <div onclick="selectRoute('Ho Chi Minh City → Mui Ne',1700000)" class="card bg-white p-5 rounded-xl shadow cursor-pointer">
     <h2 class="font-bold">📍 Ho Chi Minh City → Mui Ne</h2>
     <p class="text-green-600 font-bold">1,700,000 VND (~70 USD)</p>
   </div>
 
 </div>
 
-<!-- REVIEWS -->
-<div class="bg-white p-5 rounded-xl shadow mt-6">
-  <h3 class="text-xl font-bold mb-4 text-center">Customer Reviews</h3>
-  <div class="space-y-3 text-sm">
-    <div class="border-b pb-2">
-      ⭐⭐⭐⭐⭐ “Very good driver, on time and friendly.”  
-      <div class="text-gray-500 text-xs">– John (UK)</div>
-    </div>
-    <div class="border-b pb-2">
-      ⭐⭐⭐⭐⭐ “Clean car, safe driving.”  
-      <div class="text-gray-500 text-xs">– Anna (Germany)</div>
-    </div>
-    <div>
-      ⭐⭐⭐⭐⭐ “Best price and easy booking.”  
-      <div class="text-gray-500 text-xs">– David (USA)</div>
-    </div>
-  </div>
+<!-- TRUST PROOF -->
+<div class="text-center mt-8 mb-2">
+  <p class="text-green-600 font-semibold">⭐ Rated 5.0 by international travelers</p>
+  <p class="text-sm text-gray-500">🔥 100+ happy customers every month</p>
 </div>
 
 <!-- BOOKING -->
@@ -184,59 +167,31 @@ Safe • Private • Professional Driver • Best Price
   <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
     🚀 Book via WhatsApp
   </button>
-
-  <p class="text-center text-sm text-gray-600 mt-2">
-    ⚡ Instant reply in 1 minute • Limited cars today
-  </p>
-
-  <div class="text-center text-xs text-gray-500 mt-4">
-    🔒 Secure Booking • 🚗 Licensed Drivers • 🌍 Serving 5000+ Travelers
-  </div>
 </div>
+
+<!-- FLOAT -->
+<a href="https://wa.me/84362772956"
+class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 text-sm rounded-full shadow-lg">
+WhatsApp
+</a>
+
+<!-- CALL -->
+<a href="tel:+84362772956"
+class="fixed bottom-16 right-5 bg-blue-600 text-white px-4 py-2 text-sm rounded-full shadow-lg">
+📞 Call Now
+</a>
 
 <script>
 let selectedPrice = 0;
 
-function updatePrice(){
-  var route = document.getElementById("route").value;
-  var car = document.getElementById("car").value;
-
-  var prices = {
-    "Mui Ne → Da Lat":1700000,
-    "Mui Ne → Nha Trang":2200000,
-    "Mui Ne → Cam Ranh":1700000,
-    "Mui Ne → Ho Chi Minh City":1700000,
-    "Mui Ne → Ta Cu":1000000,
-    "Mui Ne → White Sand Dunes":1000000,
-    "Da Lat → Mui Ne":1700000,
-    "Nha Trang → Mui Ne":2200000,
-    "Cam Ranh → Mui Ne":1700000,
-    "Ho Chi Minh City → Mui Ne":1700000
-  };
-
-  if(!route || !prices[route]) return;
-
-  var price = prices[route];
-
-  if(car === "4 Seats"){
-    price -= 100000;
-  }
-
-  selectedPrice = price;
+function selectRoute(route, price){
+  document.getElementById("route").value = route;
+  selectedPrice = price || 0;
 
   document.getElementById("price").innerText =
-    "💰 Price: " + price.toLocaleString() +
-    " VND (~" + Math.round(price/25000) + " USD)";
-}
+    "Price: " + selectedPrice.toLocaleString() +
+    " VND (~" + Math.round(selectedPrice/25000) + " USD)";
 
-window.addEventListener("DOMContentLoaded", function(){
-  document.getElementById("route").addEventListener("change", updatePrice);
-  document.getElementById("car").addEventListener("change", updatePrice);
-});
-
-function selectRoute(route){
-  document.getElementById("route").value = route;
-  updatePrice();
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
@@ -250,41 +205,26 @@ function sendWhatsApp(){
     return;
   }
 
+  var car = document.getElementById("car").value;
+  var passengers = document.getElementById("passengers").value;
+  var date = document.getElementById("date").value;
+  var time = document.getElementById("time").value;
+
   var message =
     "🚗 Taxi Booking\n" +
     "Name: " + name + "\n" +
     "Phone: " + phone + "\n" +
     "Route: " + route + "\n" +
-    "Price: " + selectedPrice.toLocaleString() + " VND";
+    "Car: " + car + "\n" +
+    "Passengers: " + passengers + "\n" +
+    "Price: " + selectedPrice.toLocaleString() + " VND\n" +
+    "Date: " + date + "\n" +
+    "Time: " + time;
 
   var url = "https://wa.me/84362772956?text=" + encodeURIComponent(message);
+
   window.open(url, "_blank");
 }
-</script>
-
-<!-- FLOATING SMART -->
-<div id="floatingBtns" style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:10px; z-index:9999;">
-  <a href="tel:0362772956" style="background:#ef4444;color:white;padding:12px 16px;border-radius:50px;">📞 Call</a>
-  <a href="https://wa.me/84362772956" target="_blank" style="background:#22c55e;color:white;padding:12px 16px;border-radius:50px;">💬 WhatsApp</a>
-</div>
-
-<script>
-window.addEventListener("scroll", function() {
-  const booking = document.querySelector(".max-w-xl");
-  const btns = document.getElementById("floatingBtns");
-
-  if (!booking || !btns) return;
-
-  const rect = booking.getBoundingClientRect();
-
-  if (rect.top < window.innerHeight - 150) {
-    btns.style.opacity = "0";
-    btns.style.pointerEvents = "none";
-  } else {
-    btns.style.opacity = "1";
-    btns.style.pointerEvents = "auto";
-  }
-});
 </script>
 
 </body>
