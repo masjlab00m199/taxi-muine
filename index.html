@@ -3,19 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Vietnam Travel</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
 <style>
-.card:hover{
-  transform: translateY(-5px);
-  transition: 0.3s;
-}
-body{
-  padding-bottom:120px;
-}
+.card:hover{transform: translateY(-5px);transition: 0.3s;}
+body{padding-bottom:120px;}
 </style>
 </head>
 
@@ -30,57 +22,73 @@ body{
   <div class="text-sm">📞 0362772956</div>
 </div>
 
+<!-- BANNER TEXT -->
 <div class="text-center text-red-500 font-bold mb-4 animate-pulse">
-🔥 Only 1 car left today
+🔥 Discount 200,000 VND on all routes today
 </div>
 
+<!-- IMAGE BANNER -->
 <div class="mb-6">
-  <img 
-    src="https://i.postimg.cc/T3SBpNTk/Chat-GPT-Image-09-27-02-8-thg-4-2026.png"
-    class="w-full h-56 md:h-72 object-contain rounded-xl shadow bg-white"
-  >
+  <img src="https://i.postimg.cc/T3SBpNTk/Chat-GPT-Image-09-27-02-8-thg-4-2026.png"
+  class="w-full h-56 md:h-72 object-contain rounded-xl shadow bg-white">
 </div>
 
-<h1 class="text-2xl md:text-3xl font-bold text-center mb-2">
-🚗 Vietnam Travel
-</h1>
+<!-- TRUST SECTION -->
+<div class="bg-white p-4 rounded-xl shadow mb-4 text-center">
+  <div class="font-bold text-lg mb-2">⭐ Trusted by Travelers</div>
+  <div class="text-sm text-gray-600">✔ 500+ happy customers<br>✔ Instant WhatsApp confirmation<br>✔ Professional drivers<br>✔ No hidden fees</div>
+</div>
+
+<h1 class="text-2xl md:text-3xl font-bold text-center mb-2">🚗 Vietnam Travel</h1>
+
+<!-- SOCIAL PROOF -->
+<div class="bg-yellow-100 text-center p-3 rounded-xl mb-4 font-semibold text-yellow-800">
+🔥 7 bookings today • Only few cars left
+</div>
 
 <!-- ROUTES -->
 <div class="grid md:grid-cols-2 gap-5">
 
-<div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Da Lat<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Nha Trang<br><b class="text-green-600">2,200,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Cam Ranh<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Ho Chi Minh City<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Mui Ne → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Vung Tau<br><b class="text-green-600">1,700,000 VND</b></div>
+<div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Da Lat<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Nha Trang<br><b class="text-green-600">2,000,000 VND</b></div>
+<div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Cam Ranh<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Ho Chi Minh City<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Mui Ne → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Vung Tau<br><b class="text-green-600">1,500,000 VND</b></div>
 
-<div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Da Lat → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Nha Trang<br><b class="text-green-600">1,300,000 VND</b></div>
-<div onclick="selectRoute('Da Lat → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Ho Chi Minh City<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Da Lat → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Vung Tau<br><b class="text-green-600">3,000,000 VND</b></div>
+<div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Mui Ne<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Da Lat → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Nha Trang<br><b class="text-green-600">1,100,000 VND</b></div>
+<div onclick="selectRoute('Da Lat → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Ho Chi Minh City<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Da Lat → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Vung Tau<br><b class="text-green-600">2,800,000 VND</b></div>
 
-<div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Mui Ne<br><b class="text-green-600">2,200,000 VND</b></div>
-<div onclick="selectRoute('Nha Trang → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Da Lat<br><b class="text-green-600">1,300,000 VND</b></div>
-<div onclick="selectRoute('Nha Trang → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Ho Chi Minh City<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Nha Trang → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Vung Tau<br><b class="text-green-600">3,300,000 VND</b></div>
+<div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Mui Ne<br><b class="text-green-600">2,000,000 VND</b></div>
+<div onclick="selectRoute('Nha Trang → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Da Lat<br><b class="text-green-600">1,100,000 VND</b></div>
+<div onclick="selectRoute('Nha Trang → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Ho Chi Minh City<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Nha Trang → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Vung Tau<br><b class="text-green-600">2,800,000 VND</b></div>
 
-<div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Cam Ranh → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Da Lat<br><b class="text-green-600">1,300,000 VND</b></div>
-<div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Ho Chi Minh City<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Cam Ranh → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Vung Tau<br><b class="text-green-600">3,000,000 VND</b></div>
+<div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Mui Ne<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Cam Ranh → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Da Lat<br><b class="text-green-600">1,100,000 VND</b></div>
+<div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Ho Chi Minh City<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Cam Ranh → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Vung Tau<br><b class="text-green-600">2,800,000 VND</b></div>
 
-<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Vung Tau<br><b class="text-green-600">1,000,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Vung Tau<br><b class="text-green-600">1,200,000 VND</b></div>
 
-<div onclick="selectRoute('Vung Tau → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Da Lat<br><b class="text-green-600">3,000,000 VND</b></div>
-<div onclick="selectRoute('Vung Tau → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Ho Chi Minh City<br><b class="text-green-600">1,000,000 VND</b></div>
-<div onclick="selectRoute('Vung Tau → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Mui Ne<br><b class="text-green-600">1,700,000 VND</b></div>
-<div onclick="selectRoute('Vung Tau → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Nha Trang<br><b class="text-green-600">3,300,000 VND</b></div>
-<div onclick="selectRoute('Vung Tau → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Cam Ranh<br><b class="text-green-600">3,000,000 VND</b></div>
+<div onclick="selectRoute('Vung Tau → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Da Lat<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Vung Tau → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Ho Chi Minh City<br><b class="text-green-600">1,200,000 VND</b></div>
+<div onclick="selectRoute('Vung Tau → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Mui Ne<br><b class="text-green-600">1,500,000 VND</b></div>
+<div onclick="selectRoute('Vung Tau → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Nha Trang<br><b class="text-green-600">2,800,000 VND</b></div>
+<div onclick="selectRoute('Vung Tau → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Cam Ranh<br><b class="text-green-600">2,800,000 VND</b></div>
 
+</div>
+
+<!-- REVIEW -->
+<div class="bg-white p-4 rounded-xl shadow mb-4">
+  <div class="font-bold mb-2">💬 Customer Reviews</div>
+  <div class="text-sm text-gray-600">“Very good service, driver on time!” ⭐⭐⭐⭐⭐</div>
+  <div class="text-sm text-gray-600">“Best price in Mui Ne, highly recommend!” ⭐⭐⭐⭐⭐</div>
 </div>
 
 <!-- BOOKING -->
@@ -92,33 +100,6 @@ body{
 
   <select id="route" class="w-full p-3 border mb-3 rounded">
     <option value="">Select route *</option>
-    <option>Mui Ne → Da Lat</option>
-    <option>Mui Ne → Nha Trang</option>
-    <option>Mui Ne → Cam Ranh</option>
-    <option>Mui Ne → Ho Chi Minh City</option>
-    <option>Mui Ne → Vung Tau</option>
-    <option>Da Lat → Mui Ne</option>
-    <option>Da Lat → Nha Trang</option>
-    <option>Da Lat → Ho Chi Minh City</option>
-    <option>Da Lat → Vung Tau</option>
-    <option>Nha Trang → Mui Ne</option>
-    <option>Nha Trang → Da Lat</option>
-    <option>Nha Trang → Ho Chi Minh City</option>
-    <option>Nha Trang → Vung Tau</option>
-    <option>Cam Ranh → Mui Ne</option>
-    <option>Cam Ranh → Da Lat</option>
-    <option>Cam Ranh → Ho Chi Minh City</option>
-    <option>Cam Ranh → Vung Tau</option>
-    <option>Ho Chi Minh City → Mui Ne</option>
-    <option>Ho Chi Minh City → Nha Trang</option>
-    <option>Ho Chi Minh City → Da Lat</option>
-    <option>Ho Chi Minh City → Cam Ranh</option>
-    <option>Ho Chi Minh City → Vung Tau</option>
-    <option>Vung Tau → Da Lat</option>
-    <option>Vung Tau → Ho Chi Minh City</option>
-    <option>Vung Tau → Mui Ne</option>
-    <option>Vung Tau → Nha Trang</option>
-    <option>Vung Tau → Cam Ranh</option>
   </select>
 
   <select id="car" class="w-full p-3 border mb-3 rounded">
@@ -141,8 +122,18 @@ body{
 
 <script>
 let selectedPrice = 0;
+const routes = document.querySelectorAll('.card');
+const routeSelect = document.getElementById('route');
+
+routes.forEach(r=>{
+  let text = r.innerText.split('\n')[0].replace('📍 ','');
+  let option = document.createElement('option');
+  option.textContent = text;
+  routeSelect.appendChild(option);
+});
+
 function updatePrice(){
-let route = document.getElementById("route").value;
+let route = routeSelect.value;
 let car = document.getElementById("car").value;
 let prices = {
 "Mui Ne → Da Lat":1700000,"Mui Ne → Nha Trang":2200000,"Mui Ne → Cam Ranh":1700000,"Mui Ne → Ho Chi Minh City":1700000,"Mui Ne → Vung Tau":1700000,
@@ -154,26 +145,28 @@ let prices = {
 };
 if(!route) return;
 let price = prices[route];
+price -= 200000;
 if(car==="4 Seats"){price-=100000;}
 selectedPrice=price;
-document.getElementById("price").innerText="💰 "+price.toLocaleString()+" VND (~"+Math.round(price/25000)+" USD)";
+document.getElementById("price").innerText="💰 "+price.toLocaleString()+" VND";
 }
-route.onchange=updatePrice;
-car.onchange=updatePrice;
+
+routeSelect.onchange=updatePrice;
+document.getElementById("car").onchange=updatePrice;
 
 function selectRoute(r){
-route.value=r;
+routeSelect.value=r;
 updatePrice();
 window.scrollTo({ top: document.body.scrollHeight, behavior:'smooth'});
 }
 
 function sendWhatsApp(){
-let msg="🚗 Taxi Booking\nName:"+name.value+"\nPhone:"+phone.value+"\nRoute:"+route.value+"\nCar:"+car.value+"\nPickup:"+pickup.value+"\nDate:"+date.value+"\nTime:"+time.value+"\nPrice:"+selectedPrice.toLocaleString()+" VND";
+let msg="🚗 Taxi Booking\nName:"+name.value+"\nPhone:"+phone.value+"\nRoute:"+routeSelect.value+"\nCar:"+car.value+"\nPickup:"+pickup.value+"\nDate:"+date.value+"\nTime:"+time.value+"\nPrice:"+selectedPrice.toLocaleString()+" VND";
 window.open("https://wa.me/84362772956?text="+encodeURIComponent(msg));
 }
 </script>
 
-<!-- FLOAT -->
+<!-- FLOAT BUTTON -->
 <div style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:10px; z-index:99999;">
 <a href="tel:0362772956" style="background:#ef4444;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;">📞 Call</a>
 <a href="https://wa.me/84362772956" target="_blank" style="background:#22c55e;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;">💬 WhatsApp</a>
