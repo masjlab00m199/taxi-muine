@@ -17,7 +17,11 @@ body{padding-bottom:120px;}
 <div class="bg-black text-white p-4 rounded-xl mb-4 flex justify-between items-center sticky top-0 z-50 shadow">
   <div>
     <div class="font-bold text-lg">🚕 Vietnam Travel</div>
-    <div class="text-xs text-gray-300">Safe • Private • Best Price</div>
+    <div class="text-xs text-gray-300">
+Safe • Private • Best Price <br>
+⚡ Instant WhatsApp Reply (1 min) <br>
+💵 Pay after trip • No deposit
+</div>
   </div>
   <div class="text-sm">📞 0362772956</div>
 </div>
@@ -92,7 +96,9 @@ body{padding-bottom:120px;}
 
 <!-- BOOKING -->
 <div class="mt-6 bg-white p-6 rounded-xl shadow max-w-xl mx-auto">
-  <h2 class="text-xl font-bold mb-4 text-center">Quick Booking</h2>
+  <div class="text-center text-green-600 font-semibold mb-3">
+✔ No hidden fees • ✔ English speaking driver • ✔ Confirm in 1 minute
+</div>
 
   <input id="name" placeholder="Your name *" class="w-full p-3 border mb-3 rounded">
   <input id="phone" placeholder="Phone / WhatsApp *" class="w-full p-3 border mb-3 rounded">
@@ -115,7 +121,7 @@ body{padding-bottom:120px;}
   <input type="time" id="time" class="w-full p-3 border mb-3 rounded">
 
   <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white p-3 rounded-xl">
-    🚀 Book via WhatsApp
+    🚀 Book via WhatsApp (Instant Reply)
   </button>
 </div>
 
@@ -160,7 +166,7 @@ window.scrollTo({ top: document.body.scrollHeight, behavior:'smooth'});
 }
 
 function sendWhatsApp(){
-let msg="🚗 Taxi Booking\nName:"+name.value+"\nPhone:"+phone.value+"\nRoute:"+routeSelect.value+"\nCar:"+car.value+"\nPickup:"+pickup.value+"\nDate:"+date.value+"\nTime:"+time.value+"\nPrice:"+selectedPrice.toLocaleString()+" VND";
+let msg="🚗 PRIVATE CAR BOOKING - VIETNAM\nName:"+name.value+"\nPhone:"+phone.value+"\nRoute:"+routeSelect.value+"\nCar:"+car.value+"\nPickup:"+pickup.value+"\nDate:"+date.value+"\nTime:"+time.value+"\nPrice:"+selectedPrice.toLocaleString()+" VND";
 window.open("https://wa.me/84362772956?text="+encodeURIComponent(msg));
 }
 </script>
