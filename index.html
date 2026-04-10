@@ -153,7 +153,8 @@ let price = prices[route];
 price -= 200000;
 if(car==="4 Seats"){price-=100000;}
 selectedPrice=price;
-document.getElementById("price").innerText="💰 "+price.toLocaleString()+" VND";
+let usd = Math.round(price / 25000); // tỉ giá 1$ ≈ 25k VND
+document.getElementById("price").innerText="💰 $"+usd+" (~"+price.toLocaleString()+" VND)";
 }
 
 routeSelect.onchange=updatePrice;
