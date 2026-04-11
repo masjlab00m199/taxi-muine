@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Vietnam Travel</title>
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFSYM1GLHG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PFSYM1GLHG');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <style>
@@ -118,43 +127,34 @@ Safe • Private • Best Price <br>
 </div>
 
 <!-- ROUTES -->
-<div class="grid md:grid-cols-2 gap-5">
+<!-- INTERCITY TRANSFERS -->
 
-<div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<head>
+<meta charset="UTF-8">
+<title>Vietnam Travel</title><h2 class="text-xl font-bold mt-4 mb-2">🚗 Private Car Between Cities</h2>
 
-<div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Da Lat → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Da Lat → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Da Lat → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div class="grid md:grid-cols-3 gap-4 mb-4">
 
-<div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Nha Trang → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Nha Trang → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Nha Trang → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="window.open('https://wa.me/84362772956?text=Hi%20I%20want%20transfer%20Mui%20Ne%20and%20Ho%20Chi%20Minh%20City')" 
+class="bg-white p-4 rounded-xl shadow text-center cursor-pointer hover:shadow-lg">
+🚗 Mui Ne ⇄ Ho Chi Minh City<br>
+<span class="text-sm text-gray-500">💬 Both directions available</span>
+</div>
 
-<div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Cam Ranh → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Cam Ranh → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="window.open('https://wa.me/84362772956?text=Hi%20I%20want%20transfer%20Mui%20Ne%20and%20Da%20Lat')" 
+class="bg-white p-4 rounded-xl shadow text-center cursor-pointer hover:shadow-lg">
+🚗 Mui Ne ⇄ Da Lat<br>
+<span class="text-sm text-gray-500">💬 Both directions available</span>
+</div>
 
-<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-
-<div onclick="selectRoute('Vung Tau → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="window.open('https://wa.me/84362772956?text=Hi%20I%20want%20transfer%20Mui%20Ne%20and%20Nha%20Trang')" 
+class="bg-white p-4 rounded-xl shadow text-center cursor-pointer hover:shadow-lg">
+🚗 Mui Ne ⇄ Nha Trang<br>
+<span class="text-sm text-gray-500">💬 Both directions available</span>
+</div>
 
 </div>
-<!-- REVIEW -->
+</div><!-- REVIEW -->
 <div class="bg-white p-4 rounded-xl shadow mb-4">
   <div class="font-bold mb-2">💬 Customer Reviews</div>
   <div class="text-sm text-gray-600">“Very good service, driver on time!” ⭐⭐⭐⭐⭐</div>
