@@ -195,8 +195,14 @@ Safe • Private • Best Price <br>
 </div>
 
   <input id="name" placeholder="Your name *" class="w-full p-3 border mb-3 rounded">
-  <input id="phone" placeholder="Phone / WhatsApp *" class="w-full p-3 border mb-3 rounded">
-
+  
+<select id="passengers" class="w-full p-3 border mb-3 rounded">
+  <option value="">Passengers</option>
+  <option value="1-3">1 - 3 people</option>
+  <option value="4-6">4 - 6 people</option>
+  <option value="7-10">7 - 10 people</option>
+  <option value="10+">10+ people</option>
+</select>
   <select id="route" class="w-full p-3 border mb-3 rounded">
     <option value="">Select route *</option>
   </select>
@@ -281,7 +287,25 @@ document.getElementById("price").innerText =
 
 routeSelect.onchange=updatePrice;
 document.getElementById("car").onchange=updatePrice;
+document.getElementById("passengers").onchange = function(){
+  let p = this.value;
+  let carSelect = document.getElementById("car");
 
+  if(p === "1-3"){
+    carSelect.value = "4 Seats";
+  }
+  else if(p === "4-6"){
+    carSelect.value = "7 Seats";
+  }
+  else if(p === "7-10"){
+    carSelect.value = "9 Seats Limousine";
+  }
+  else if(p === "10+"){
+    carSelect.value = "16 Seats";
+  }
+
+  updatePrice();
+};
 function selectRoute(r){
 routeSelect.value=r;
 updatePrice();
@@ -289,7 +313,18 @@ window.scrollTo({ top: document.body.scrollHeight, behavior:'smooth'});
 }
 
 function sendWhatsApp(){
-let msg="🚗 PRIVATE CAR BOOKING - VIETNAM\nName:"+name.value+"\nPhone:"+phone.value+"\nRoute:"+routeSelect.value+"\nCar:"+car.value+"\nPickup:"+pickup.value+"\nDate:"+date.value+"\nTime:"+time.value+"\nPrice:"+selectedPrice.toLocaleString()+" VND";
+let passengers = document.getElementById("passengers")?.value || "";
+
+let msg="🚗 PRIVATE CAR BOOKING - VIETNAM\n"
++"Name:"+name.value
++"\nRoute:"+routeSelect.value
++"\nPassengers:"+passengers
++"\nCar:"+car.value
++"\nPickup:"+pickup.value
++"\nDate:"+date.value
++"\nTime:"+time.value
++"\nPrice:"+selectedPrice.toLocaleString()+" VND";
+
 window.open("https://wa.me/84362772956?text="+encodeURIComponent(msg));
 }
 </script>
