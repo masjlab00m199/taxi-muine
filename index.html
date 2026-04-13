@@ -18,7 +18,7 @@
 <style>
 .card:hover{transform: translateY(-5px);transition: 0.3s;}
 body{padding-bottom:120px;}
-</style>
+</style>  
 </head>
 
 <body class="bg-gray-100 p-4">
@@ -146,6 +146,11 @@ Safe • Private • Best Price <br>
 <!-- ROUTES -->
 <div class="grid md:grid-cols-2 gap-5">
 
+<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+<div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
 <div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
 <div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
 <div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
@@ -167,11 +172,7 @@ Safe • Private • Best Price <br>
 <div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
 <div onclick="selectRoute('Cam Ranh → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
 
-<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+
 
 <div onclick="selectRoute('Vung Tau → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
 <div onclick="selectRoute('Vung Tau → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
@@ -200,11 +201,13 @@ Safe • Private • Best Price <br>
     <option value="">Select route *</option>
   </select>
 
-  <select id="car" class="w-full p-3 border mb-3 rounded">
-    <option value="">Car type</option>
-    <option>4 Seats</option>
-    <option>7 Seats</option>
-  </select>
+ <select id="car" class="w-full p-3 border mb-3 rounded">
+  <option value="">Car type</option>
+  <option>4 Seats</option>
+  <option>7 Seats</option>
+  <option>9 Seats Limousine</option>
+  <option>16 Seats</option>
+</select>
 
   <input id="pickup" placeholder="Pickup location" class="w-full p-3 border mb-3 rounded">
 
@@ -233,6 +236,7 @@ routes.forEach(r=>{
 function updatePrice(){
 let route = routeSelect.value;
 let car = document.getElementById("car").value;
+
 let prices = {
 "Mui Ne → Da Lat":1700000,"Mui Ne → Nha Trang":2200000,"Mui Ne → Cam Ranh":1700000,"Mui Ne → Ho Chi Minh City":1700000,"Mui Ne → Vung Tau":1700000,
 "Da Lat → Mui Ne":1700000,"Da Lat → Nha Trang":1300000,"Da Lat → Ho Chi Minh City":3000000,"Da Lat → Vung Tau":3000000,
@@ -241,13 +245,38 @@ let prices = {
 "Ho Chi Minh City → Mui Ne":1700000,"Ho Chi Minh City → Nha Trang":3000000,"Ho Chi Minh City → Da Lat":3000000,"Ho Chi Minh City → Cam Ranh":3000000,"Ho Chi Minh City → Vung Tau":1200000,
 "Vung Tau → Da Lat":3000000,"Vung Tau → Ho Chi Minh City":1200000,"Vung Tau → Mui Ne":1700000,"Vung Tau → Nha Trang":3300000,"Vung Tau → Cam Ranh":3000000
 };
+
 if(!route) return;
-let price = prices[route];
-price -= 200000;
-if(car==="4 Seats"){price-=100000;}
-selectedPrice=price;
-let usd = Math.round(price / 25000); // tỉ giá 1$ ≈ 25k VND
-document.getElementById("price").innerText="💰 $"+usd+" (~"+price.toLocaleString()+" VND)";
+
+// 👉 giá gốc (4 chỗ)
+let basePrice = prices[route];
+
+// giảm 200k chung
+basePrice -= 200000;
+
+// 👉 tính theo loại xe
+let finalPrice = basePrice;
+
+if(car === "4 Seats"){
+  finalPrice -= 100000;
+}
+else if(car === "7 Seats"){
+  finalPrice = basePrice;
+}
+else if(car === "9 Seats Limousine"){
+  finalPrice = basePrice * 2.5;
+}
+else if(car === "16 Seats"){
+  finalPrice = basePrice * 2;
+}
+
+selectedPrice = finalPrice;
+
+// đổi sang USD
+let usd = Math.round(finalPrice / 25000);
+
+document.getElementById("price").innerText =
+"💰 $" + usd + " (~" + finalPrice.toLocaleString() + " VND)";
 }
 
 routeSelect.onchange=updatePrice;
@@ -278,6 +307,35 @@ window.open("https://wa.me/84362772956?text="+encodeURIComponent(msg));
     ✔ Fixed price – no hidden fees<br>
     ✔ Flexible departure time
   </p>
+</div>
+<div style="text-align:center; margin-top:20px;">
+
+  <!-- Map nhỏ -->
+  <iframe 
+    src="https://www.google.com/maps?q=MUINETAXI-VN&output=embed"
+    width="100%" 
+    height="250" 
+    style="border:0; border-radius:10px;" 
+    loading="lazy">
+  </iframe>
+
+  <!-- Nút -->
+  <div style="margin-top:10px;">
+    
+    <!-- Google Maps -->
+    <a href="https://maps.app.goo.gl/c4yar1pN4uaotVSv5" target="_blank" 
+       style="display:inline-block; padding:10px 15px; background:#4285F4; color:#fff; border-radius:8px; text-decoration:none; margin:5px;">
+       📍 Open in Google Maps
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/84362772956" target="_blank" 
+       style="display:inline-block; padding:10px 15px; background:#25D366; color:#fff; border-radius:8px; text-decoration:none; margin:5px;">
+       💬 Book via WhatsApp
+    </a>
+
+  </div>
+
 </div>
 <!-- FLOAT BUTTON -->
 <div style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:8px; z-index:99999;">
