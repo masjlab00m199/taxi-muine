@@ -1,374 +1,756 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Private Car Service</title>
+  <meta charset="UTF-8" />
+  <title>Mui Ne Private Car Service | Transfer to Ho Chi Minh, Da Lat, Nha Trang</title>
+  <meta name="description" content="Book private car service from Mui Ne to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh and more. Instant WhatsApp booking, fixed price, private transfer, no deposit." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-60EKW8LP8D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta property="og:title" content="Mui Ne Private Car Service" />
+  <meta property="og:description" content="Private car transfers in Vietnam. Fast WhatsApp booking, fixed price, no deposit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.postimg.cc/T3SBpNTk/Chat-GPT-Image-09-27-02-8-thg-4-2026.png" />
 
-  gtag('config', 'G-60EKW8LP8D');
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<style>
-.card:hover{transform: translateY(-5px);transition: 0.3s;}
-body{padding-bottom:120px;}
-</style>  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-60EKW8LP8D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-60EKW8LP8D');
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding-bottom: 110px;
+      background: linear-gradient(to bottom, #f8fafc, #eef2ff 30%, #f3f4f6 100%);
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .card-hover {
+      transition: all 0.25s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+
+    .route-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(229,231,235,1);
+    }
+
+    .route-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(34,197,94,0.05), rgba(59,130,246,0.03));
+      pointer-events: none;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(135deg, rgba(2,6,23,0.88), rgba(15,23,42,0.78)),
+        url('https://i.postimg.cc/T3SBpNTk/Chat-GPT-Image-09-27-02-8-thg-4-2026.png') center/cover no-repeat;
+    }
+
+    .badge-pulse {
+      animation: pulseSoft 2s infinite;
+    }
+
+    @keyframes pulseSoft {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.28); }
+      70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 p-4">
+<body class="text-gray-800 p-4">
 
-<!-- HEADER -->
-<div class="bg-black text-white p-4 rounded-xl mb-4 flex justify-between items-center sticky top-0 z-50 shadow">
-  <div>
-    <div class="font-bold text-lg">🚕 Private Car Service</div>
-    <div class="text-xs text-gray-300">
-Safe • Private • Best Price <br>
-⚡ Instant WhatsApp Reply (1 min) <br>
-💵 Pay after trip • No deposit
-</div>
-  </div>
-  <div class="text-sm">📞 0362772956</div>
-</div>
+  <!-- TOP BAR -->
+  <div class="max-w-6xl mx-auto mb-4">
+    <div class="glass rounded-2xl shadow-lg px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between border border-white/60">
+      <div>
+        <div class="font-bold text-xl text-gray-900">🚕 Mui Ne Private Car Service</div>
+        <div class="text-sm text-gray-600 mt-1">
+          Safe • Private • English Support • Fixed Price
+        </div>
+      </div>
 
-<!-- BANNER TEXT -->
-<div class="text-center text-red-500 font-bold mb-4 animate-pulse">
-🔥 Discount 200,000 VND on all routes today
-</div>
-
-<!-- IMAGE BANNER -->
-<div class="mb-6">
-  <img src="https://i.postimg.cc/T3SBpNTk/Chat-GPT-Image-09-27-02-8-thg-4-2026.png"
-  class="w-full h-56 md:h-72 object-contain rounded-xl shadow bg-white">
-</div>
-
-<!-- TRUST SECTION -->
-<div class="bg-white p-4 rounded-xl shadow mb-4 text-center">
-  <div class="font-bold text-lg mb-2">⭐ Trusted by Travelers</div>
-  <div class="text-sm text-gray-600">✔ 500+ happy customers<br>✔ Instant WhatsApp confirmation<br>✔ Professional drivers<br>✔ No hidden fees</div>
-</div>
-<div class="grid md:grid-cols-2 gap-4 mb-4">
-
-  <!-- Jeep Tour -->
-  <div class="bg-white p-5 rounded-2xl shadow text-center border">
-    <div class="text-xl font-bold mb-2">🏝 Jeep Tour</div>
-
-   <div class="grid grid-cols-3 gap-1 mb-2">
-  <img src="https://i.postimg.cc/47t9dpSm/jeep.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/1n6qtDjV/jeep2.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/FdcLR0BY/jeep3.jpg" class="w-full h-20 object-cover rounded">
-
-  <img src="https://i.postimg.cc/FdcLR0Bd/jeep4.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/k68b4WpS/jeep5.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/mzMHD75h/jeep6.jpg" class="w-full h-20 object-cover rounded">
-</div>
-
-    <div class="text-sm text-gray-600 mb-3">
-      ✔ White Sand Dunes<br>
-      ✔ Red Sand Dunes<br>
-      ✔ Fairy Stream<br>
-      ✔ Fishing Village
+      <div class="flex gap-2 mt-3 md:mt-0">
+        <a href="tel:0362772956"
+           onclick="trackCallClick()"
+           class="px-4 py-2 rounded-full bg-red-500 text-white font-semibold shadow hover:bg-red-600">
+          📞 Call
+        </a>
+        <a href="https://wa.me/84362772956"
+           target="_blank"
+           onclick="trackWhatsAppTop()"
+           class="px-4 py-2 rounded-full bg-green-600 text-white font-semibold shadow hover:bg-green-700 badge-pulse">
+          💬 WhatsApp
+        </a>
+      </div>
     </div>
-
-    <div class="text-green-600 font-semibold">⭐ Most popular tour</div>
   </div>
 
-  <!-- Ta Cu -->
-  <div class="bg-white p-5 rounded-2xl shadow text-center border">
-    <div class="text-xl font-bold mb-2">🏔 Ta Cu Mountain</div>
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto mb-6">
+    <div class="hero-bg rounded-3xl shadow-2xl overflow-hidden">
+      <div class="px-6 py-10 md:px-10 md:py-16 text-white">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-sm mb-5">
+          ⭐ Trusted by foreign travelers in Mui Ne
+        </div>
 
-    <div class="grid grid-cols-3 gap-1 mb-2">
-  <img src="https://i.postimg.cc/Wdnqq285/tacu1.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/cKLgQVkp/tacu2.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/Y4CG1JD6/tacu3.jpg" class="w-full h-20 object-cover rounded">
+        <div class="max-w-3xl">
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+            Premium Private Car Service in Mui Ne
+          </h1>
 
-  <img src="https://i.postimg.cc/QBd9pRYP/tacu4.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/Nyj91WCW/tacu5.jpg" class="w-full h-20 object-cover rounded">
-  <img src="https://i.postimg.cc/B878NMRR/tacu6.jpg" class="w-full h-20 object-cover rounded">
-</div>
+          <p class="mt-4 text-base md:text-lg text-gray-200 leading-relaxed">
+            Book comfortable private transfers to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh and more.
+            Fast WhatsApp reply, clean cars, professional drivers, and no deposit required.
+          </p>
 
-    <div class="text-sm text-gray-600 mb-3">
-      ✔ Reclining Buddha<br>
-      ✔ Cable car<br>
-      ✔ Mountain view<br>
-      ✔ Private car
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+            <div class="bg-white/10 rounded-2xl p-3 text-center border border-white/10">
+              <div class="text-xl font-bold">500+</div>
+              <div class="text-xs text-gray-200">Happy Travelers</div>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-3 text-center border border-white/10">
+              <div class="text-xl font-bold">24/7</div>
+              <div class="text-xs text-gray-200">WhatsApp Support</div>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-3 text-center border border-white/10">
+              <div class="text-xl font-bold">100%</div>
+              <div class="text-xs text-gray-200">Private Transfer</div>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-3 text-center border border-white/10">
+              <div class="text-xl font-bold">0</div>
+              <div class="text-xs text-gray-200">No Deposit</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 mt-7">
+            <a href="#booking"
+               class="bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-2xl font-bold text-center shadow-lg">
+              🚀 Check Price & Book Now
+            </a>
+            <a href="https://wa.me/84362772956"
+               target="_blank"
+               onclick="trackWhatsAppTop()"
+               class="bg-white text-gray-900 px-6 py-4 rounded-2xl font-bold text-center shadow-lg hover:bg-gray-100">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+
+          <div class="mt-4 text-sm text-gray-200">
+            Special discount available today • Flexible departure time • Door-to-door service
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK TRUST -->
+  <section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 mb-6">
+    <div class="glass rounded-2xl p-5 shadow border border-white/60">
+      <div class="text-lg font-bold mb-2">✅ Easy Booking</div>
+      <div class="text-sm text-gray-600">Choose route, check price, and confirm in WhatsApp within minutes.</div>
+    </div>
+    <div class="glass rounded-2xl p-5 shadow border border-white/60">
+      <div class="text-lg font-bold mb-2">🚘 Comfortable Cars</div>
+      <div class="text-sm text-gray-600">4-seat, 7-seat, limousine and van options for every travel group.</div>
+    </div>
+    <div class="glass rounded-2xl p-5 shadow border border-white/60">
+      <div class="text-lg font-bold mb-2">💵 Clear Pricing</div>
+      <div class="text-sm text-gray-600">Fixed rates, no hidden fees, and payment after the trip.</div>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="max-w-6xl mx-auto mb-6">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-2xl font-extrabold text-gray-900">Popular Experiences</h2>
+      <div class="text-sm text-gray-500">Private car & local attractions</div>
     </div>
 
-    <div class="text-green-600 font-semibold">🙏 Spiritual place</div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <div class="text-2xl font-bold">🏝 Jeep Tour</div>
+          <div class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">Popular</div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 mb-3">
+          <img src="https://i.postimg.cc/47t9dpSm/jeep.jpg" alt="Jeep tour Mui Ne 1" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/1n6qtDjV/jeep2.jpg" alt="Jeep tour Mui Ne 2" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/FdcLR0BY/jeep3.jpg" alt="Jeep tour Mui Ne 3" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/FdcLR0Bd/jeep4.jpg" alt="Jeep tour Mui Ne 4" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/k68b4WpS/jeep5.jpg" alt="Jeep tour Mui Ne 5" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/mzMHD75h/jeep6.jpg" alt="Jeep tour Mui Ne 6" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+          <div>✔ White Sand Dunes</div>
+          <div>✔ Red Sand Dunes</div>
+          <div>✔ Fairy Stream</div>
+          <div>✔ Fishing Village</div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <div class="text-2xl font-bold">🏔 Ta Cu Mountain</div>
+          <div class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Recommended</div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 mb-3">
+          <img src="https://i.postimg.cc/Wdnqq285/tacu1.jpg" alt="Ta Cu Mountain 1" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/cKLgQVkp/tacu2.jpg" alt="Ta Cu Mountain 2" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/Y4CG1JD6/tacu3.jpg" alt="Ta Cu Mountain 3" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/QBd9pRYP/tacu4.jpg" alt="Ta Cu Mountain 4" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/Nyj91WCW/tacu5.jpg" alt="Ta Cu Mountain 5" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+          <img src="https://i.postimg.cc/B878NMRR/tacu6.jpg" alt="Ta Cu Mountain 6" loading="lazy" class="w-full h-24 object-cover rounded-xl">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+          <div>✔ Reclining Buddha</div>
+          <div>✔ Cable Car</div>
+          <div>✔ Mountain View</div>
+          <div>✔ Private Transfer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEHICLES -->
+  <section class="max-w-6xl mx-auto mb-6">
+    <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="text-2xl font-extrabold text-gray-900">Our Vehicles</h2>
+        <div class="text-sm text-gray-500">Clean • Comfortable • Professional</div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-gray-50 rounded-2xl p-3 shadow-sm border">
+          <img src="https://i.postimg.cc/WFd9yp2k/1600.jpg" alt="4 seat private car" loading="lazy" class="w-full h-40 object-contain">
+          <div class="text-center mt-2 font-semibold">4 Seats</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-3 shadow-sm border">
+          <img src="https://i.postimg.cc/MMnsLZWR/1601.jpg" alt="7 seat private car" loading="lazy" class="w-full h-40 object-contain">
+          <div class="text-center mt-2 font-semibold">7 Seats</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-3 shadow-sm border">
+          <img src="https://i.postimg.cc/JGx2t2dr/1624.jpg" alt="9 seat limousine" loading="lazy" class="w-full h-40 object-contain">
+          <div class="text-center mt-2 font-semibold">9 Seats Limousine</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-3 shadow-sm border">
+          <img src="https://i.postimg.cc/wy1Wrx6T/655.jpg" alt="16 seat van" loading="lazy" class="w-full h-40 object-contain">
+          <div class="text-center mt-2 font-semibold">16 Seats</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUTES + FORM -->
+  <section class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-6 mb-6">
+    <!-- ROUTES -->
+    <div class="lg:col-span-3">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-extrabold text-gray-900">Popular Routes</h2>
+        <div class="text-sm text-gray-500">Tap a route to fill booking form</div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Ho Chi Minh City → Mui Ne</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Ho Chi Minh City → Nha Trang</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Ho Chi Minh City → Da Lat</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Ho Chi Minh City → Cam Ranh</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Ho Chi Minh City → Vung Tau</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Mui Ne → Da Lat')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Mui Ne → Da Lat</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Mui Ne → Nha Trang')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Mui Ne → Nha Trang</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Mui Ne → Cam Ranh')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Mui Ne → Cam Ranh</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Mui Ne → Ho Chi Minh City</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Mui Ne → Vung Tau')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Mui Ne → Vung Tau</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Da Lat → Mui Ne')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Da Lat → Mui Ne</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Da Lat → Nha Trang')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Da Lat → Nha Trang</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Da Lat → Ho Chi Minh City')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Da Lat → Ho Chi Minh City</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Da Lat → Vung Tau')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Da Lat → Vung Tau</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Nha Trang → Mui Ne')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Nha Trang → Mui Ne</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Nha Trang → Da Lat')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Nha Trang → Da Lat</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Nha Trang → Ho Chi Minh City')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Nha Trang → Ho Chi Minh City</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Nha Trang → Vung Tau')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Nha Trang → Vung Tau</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Cam Ranh → Mui Ne')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Cam Ranh → Mui Ne</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Cam Ranh → Da Lat')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Cam Ranh → Da Lat</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Cam Ranh → Ho Chi Minh City</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Cam Ranh → Vung Tau')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Cam Ranh → Vung Tau</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Vung Tau → Da Lat')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Vung Tau → Da Lat</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Vung Tau → Ho Chi Minh City')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Vung Tau → Ho Chi Minh City</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Vung Tau → Mui Ne')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Vung Tau → Mui Ne</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Vung Tau → Nha Trang')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Vung Tau → Nha Trang</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+
+        <div onclick="selectRoute('Vung Tau → Cam Ranh')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Vung Tau → Cam Ranh</div>
+          <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOKING FORM -->
+    <div class="lg:col-span-2">
+      <div id="booking" class="sticky top-4 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6">
+        <div class="text-center mb-5">
+          <div class="inline-block bg-green-100 text-green-700 font-semibold px-4 py-1 rounded-full text-sm">
+            Instant Booking
+          </div>
+          <h2 class="text-2xl font-extrabold mt-3 text-gray-900">Check Price & Reserve</h2>
+          <p class="text-sm text-gray-500 mt-1">Fast reply on WhatsApp • No hidden fees</p>
+        </div>
+
+        <div class="space-y-3">
+          <input id="name" placeholder="Your name *" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+
+          <select id="passengers" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+            <option value="">Passengers</option>
+            <option value="1-3">1 - 3 people</option>
+            <option value="4-6">4 - 6 people</option>
+            <option value="7-10">7 - 10 people</option>
+            <option value="10+">10+ people</option>
+          </select>
+
+          <select id="route" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+            <option value="">Select route *</option>
+          </select>
+
+          <select id="car" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+            <option value="">Car type *</option>
+            <option>4 Seats</option>
+            <option>7 Seats</option>
+            <option>9 Seats Limousine</option>
+            <option>16 Seats</option>
+          </select>
+
+          <input id="pickup" placeholder="Pickup location *" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+
+          <div id="priceBox" class="bg-green-50 border border-green-100 rounded-2xl p-4 text-center">
+            <div class="text-sm text-green-700 font-semibold">Estimated Price</div>
+            <div id="price" class="text-2xl font-extrabold text-green-600 mt-1">Select route and car</div>
+            <div class="text-xs text-gray-500 mt-1">Final confirmation on WhatsApp</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <input type="date" id="date" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+            <input type="time" id="time" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+          </div>
+
+          <button onclick="sendWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white p-4 rounded-2xl font-extrabold text-lg shadow-lg">
+            🚀 Book via WhatsApp
+          </button>
+
+          <div class="grid grid-cols-3 gap-2 text-center text-xs text-gray-500 pt-1">
+            <div>✔ Fast Reply</div>
+            <div>✔ No Deposit</div>
+            <div>✔ Private Only</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="max-w-6xl mx-auto mb-6">
+    <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="text-2xl font-extrabold text-gray-900">What Travelers Say</h2>
+        <div class="text-sm text-gray-500">Real customer feedback</div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-gray-50 rounded-2xl p-5 border">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <div class="text-sm text-gray-700">“Very good service, driver on time and car was clean. Easy booking on WhatsApp.”</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-5 border">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <div class="text-sm text-gray-700">“Best price in Mui Ne and very smooth trip. Highly recommend for foreign travelers.”</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-5 border">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <div class="text-sm text-gray-700">“Quick response, professional driver and safe transfer. Will book again next time.”</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="max-w-6xl mx-auto mb-6">
+    <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h2 class="text-2xl font-extrabold text-gray-900 mb-3">Why Choose Us</h2>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div>✔ Reliable private transfer service in Mui Ne</div>
+            <div>✔ English support via WhatsApp</div>
+            <div>✔ Door-to-door pickup and drop-off</div>
+            <div>✔ Flexible departure time</div>
+            <div>✔ Fixed price with no hidden fees</div>
+            <div>✔ Pay after the trip</div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-extrabold text-gray-900 mb-3">How It Works</h2>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div><strong>1.</strong> Select your route</div>
+            <div><strong>2.</strong> Choose passengers and car type</div>
+            <div><strong>3.</strong> Check estimated price</div>
+            <div><strong>4.</strong> Send booking via WhatsApp</div>
+            <div><strong>5.</strong> Get fast confirmation from our team</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING BUTTONS -->
+  <div style="position:fixed; bottom:18px; right:14px; display:flex; flex-direction:column; gap:10px; z-index:99999;">
+    <a href="tel:0362772956"
+       onclick="trackCallClick()"
+       style="background:#ef4444;color:white;padding:12px 16px;border-radius:999px;font-weight:bold;font-size:14px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+      📞 Call
+    </a>
+
+    <a href="https://wa.me/84362772956"
+       target="_blank"
+       onclick="trackWhatsAppFloat()"
+       style="background:#16a34a;color:white;padding:12px 16px;border-radius:999px;font-weight:bold;font-size:14px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+      💬 WhatsApp
+    </a>
+
+    <a href="https://t.me/vietnamtravel96"
+       target="_blank"
+       onclick="trackTelegramClick()"
+       style="background:#0284c7;color:white;padding:12px 16px;border-radius:999px;font-weight:bold;font-size:14px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+      ✈️ Telegram
+    </a>
   </div>
 
-</div>
-</div>
-<!-- VEHICLES -->
-<div class="bg-white p-4 rounded-xl shadow mb-4 text-center">
-  <div class="font-bold text-lg mb-4">🚗 Our Vehicles</div>
+  <script>
+    let selectedPrice = 0;
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    const routeSelect = document.getElementById('route');
+    const carSelect = document.getElementById('car');
+    const passengersSelect = document.getElementById('passengers');
+    const priceBox = document.getElementById('price');
+    const routeCards = document.querySelectorAll('.route-card');
 
-    <div class="overflow-hidden rounded-xl shadow bg-gray-100">
-      <img src="https://i.postimg.cc/WFd9yp2k/1600.jpg" 
-           class="w-full h-40 object-contain">
-    </div>
+    routeCards.forEach(r => {
+      let text = r.querySelector('.font-bold').innerText.replace('📍 ', '').trim();
+      let option = document.createElement('option');
+      option.value = text;
+      option.textContent = text;
+      routeSelect.appendChild(option);
+    });
 
-    <div class="overflow-hidden rounded-xl shadow bg-gray-100">
-      <img src="https://i.postimg.cc/MMnsLZWR/1601.jpg" 
-           class="w-full h-40 object-contain">
-    </div>
+    const prices = {
+      "Mui Ne → Da Lat": 1700000,
+      "Mui Ne → Nha Trang": 2200000,
+      "Mui Ne → Cam Ranh": 1700000,
+      "Mui Ne → Ho Chi Minh City": 1700000,
+      "Mui Ne → Vung Tau": 1700000,
 
-    <div class="overflow-hidden rounded-xl shadow bg-gray-100">
-      <img src="https://i.postimg.cc/JGx2t2dr/1624.jpg" 
-           class="w-full h-40 object-contain">
-    </div>
+      "Da Lat → Mui Ne": 1700000,
+      "Da Lat → Nha Trang": 1300000,
+      "Da Lat → Ho Chi Minh City": 3000000,
+      "Da Lat → Vung Tau": 3000000,
 
-    <div class="overflow-hidden rounded-xl shadow bg-gray-100">
-      <img src="https://i.postimg.cc/wy1Wrx6T/655.jpg" 
-           class="w-full h-40 object-contain">
-    </div>
+      "Nha Trang → Mui Ne": 2200000,
+      "Nha Trang → Da Lat": 1300000,
+      "Nha Trang → Ho Chi Minh City": 3000000,
+      "Nha Trang → Vung Tau": 3300000,
 
-  </div>
+      "Cam Ranh → Mui Ne": 1700000,
+      "Cam Ranh → Da Lat": 1300000,
+      "Cam Ranh → Ho Chi Minh City": 3000000,
+      "Cam Ranh → Vung Tau": 3000000,
 
-  <div class="mt-4 text-sm text-gray-600">
-    ✔ Clean cars • ✔ Professional drivers • ✔ Comfortable trip
-  </div>
-</div>
-<h1 class="text-2xl md:text-3xl font-bold text-center mb-2">🚗 Private Car Service</h1>
+      "Ho Chi Minh City → Mui Ne": 1700000,
+      "Ho Chi Minh City → Nha Trang": 3000000,
+      "Ho Chi Minh City → Da Lat": 3000000,
+      "Ho Chi Minh City → Cam Ranh": 3000000,
+      "Ho Chi Minh City → Vung Tau": 1200000,
 
-<!-- SOCIAL PROOF -->
-<div class="bg-yellow-100 text-center p-3 rounded-xl mb-4 font-semibold text-yellow-800">
-🔥 7 bookings today • Only few cars left
-</div>
+      "Vung Tau → Da Lat": 3000000,
+      "Vung Tau → Ho Chi Minh City": 1200000,
+      "Vung Tau → Mui Ne": 1700000,
+      "Vung Tau → Nha Trang": 3300000,
+      "Vung Tau → Cam Ranh": 3000000
+    };
 
-<!-- ROUTES -->
-<div class="grid md:grid-cols-2 gap-5">
+    function updatePrice() {
+      const route = routeSelect.value;
+      const car = carSelect.value;
 
-<div onclick="selectRoute('Ho Chi Minh City → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Ho Chi Minh City → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Ho Chi Minh City → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Mui Ne → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Mui Ne → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+      if (!route || !car) {
+        selectedPrice = 0;
+        priceBox.innerText = "Select route and car";
+        return;
+      }
 
-<div onclick="selectRoute('Da Lat → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Da Lat → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Da Lat → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Da Lat → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Da Lat → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+      if (prices[route] == null) {
+        selectedPrice = 0;
+        priceBox.innerText = "Ask on WhatsApp";
+        return;
+      }
 
-<div onclick="selectRoute('Nha Trang → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Nha Trang → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Nha Trang → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Nha Trang → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Nha Trang → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+      let basePrice = prices[route] - 200000;
+      let finalPrice = basePrice;
 
-<div onclick="selectRoute('Cam Ranh → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Cam Ranh → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Cam Ranh → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Cam Ranh → Vung Tau')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Cam Ranh → Vung Tau<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+      if (car === "4 Seats") {
+        finalPrice -= 100000;
+      } else if (car === "7 Seats") {
+        finalPrice = basePrice;
+      } else if (car === "9 Seats Limousine") {
+        finalPrice = Math.round(basePrice * 2.5);
+      } else if (car === "16 Seats") {
+        finalPrice = Math.round(basePrice * 2);
+      }
 
+      selectedPrice = finalPrice;
+      const usd = Math.round(finalPrice / 25000);
 
+      priceBox.innerText = "$" + usd + " (~" + finalPrice.toLocaleString() + " VND)";
+    }
 
-<div onclick="selectRoute('Vung Tau → Da Lat')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Da Lat<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Ho Chi Minh City')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Ho Chi Minh City<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Mui Ne')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Mui Ne<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Nha Trang')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Nha Trang<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
-<div onclick="selectRoute('Vung Tau → Cam Ranh')" class="card bg-white p-5 rounded-xl shadow cursor-pointer">📍 Vung Tau → Cam Ranh<br><span class="text-sm text-gray-500">💬 Ask price on WhatsApp</span></div>
+    function selectRoute(route) {
+      routeSelect.value = route;
+      updatePrice();
 
-</div>
-<!-- REVIEW -->
-<div class="bg-white p-4 rounded-xl shadow mb-4">
-  <div class="font-bold mb-2">💬 Customer Reviews</div>
-  <div class="text-sm text-gray-600">“Very good service, driver on time!” ⭐⭐⭐⭐⭐</div>
-  <div class="text-sm text-gray-600">“Best price in Mui Ne, highly recommend!” ⭐⭐⭐⭐⭐</div>
-</div>
+      if (typeof gtag === 'function') {
+        gtag('event', 'route_select', {
+          route_name: route
+        });
+      }
 
-<!-- BOOKING -->
-<div id="booking" class="mt-6 bg-white p-6 rounded-xl shadow max-w-xl mx-auto">
-  <div class="text-center text-green-600 font-semibold mb-3">
-✔ No hidden fees • ✔ English speaking driver • ✔ Confirm in 1 minute
-</div>
+      document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+    }
 
-  <input id="name" placeholder="Your name *" class="w-full p-3 border mb-3 rounded">
-  
-<select id="passengers" class="w-full p-3 border mb-3 rounded">
-  <option value="">Passengers</option>
-  <option value="1-3">1 - 3 people</option>
-  <option value="4-6">4 - 6 people</option>
-  <option value="7-10">7 - 10 people</option>
-  <option value="10+">10+ people</option>
-</select>
-  <select id="route" class="w-full p-3 border mb-3 rounded">
-    <option value="">Select route *</option>
-  </select>
+    routeSelect.onchange = updatePrice;
+    carSelect.onchange = updatePrice;
 
- <select id="car" class="w-full p-3 border mb-3 rounded">
-  <option value="">Car type</option>
-  <option>4 Seats</option>
-  <option>7 Seats</option>
-  <option>9 Seats Limousine</option>
-  <option>16 Seats</option>
-</select>
+    passengersSelect.onchange = function () {
+      const p = this.value;
 
-  <input id="pickup" placeholder="Pickup location" class="w-full p-3 border mb-3 rounded">
+      if (p === "1-3") {
+        carSelect.value = "4 Seats";
+      } else if (p === "4-6") {
+        carSelect.value = "7 Seats";
+      } else if (p === "7-10") {
+        carSelect.value = "9 Seats Limousine";
+      } else if (p === "10+") {
+        carSelect.value = "16 Seats";
+      }
 
-  <div id="price" class="text-center font-bold text-green-600 mb-3"></div>
+      updatePrice();
+    };
 
-  <input type="date" id="date" class="w-full p-3 border mb-3 rounded">
-  <input type="time" id="time" class="w-full p-3 border mb-3 rounded">
+    function sendWhatsApp() {
+      const nameInput = document.getElementById("name").value.trim();
+      const passengersInput = document.getElementById("passengers").value;
+      const routeInput = routeSelect.value;
+      const carInput = document.getElementById("car").value;
+      const pickupInput = document.getElementById("pickup").value.trim();
+      const dateInput = document.getElementById("date").value;
+      const timeInput = document.getElementById("time").value;
 
-  <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white p-3 rounded-xl">
-    🚀 Book via WhatsApp (Instant Reply)
-  </button>
-</div>
+      if (!nameInput) {
+        alert("Please enter your name");
+        return;
+      }
+      if (!routeInput) {
+        alert("Please select route");
+        return;
+      }
+      if (!carInput) {
+        alert("Please select car type");
+        return;
+      }
+      if (!pickupInput) {
+        alert("Please enter pickup location");
+        return;
+      }
+      if (!dateInput) {
+        alert("Please select date");
+        return;
+      }
+      if (!timeInput) {
+        alert("Please select time");
+        return;
+      }
 
-<script>
-let selectedPrice = 0;
-const routes = document.querySelectorAll('.card');
-const routeSelect = document.getElementById('route');
+      const displayPrice = selectedPrice > 0 ? selectedPrice.toLocaleString() + " VND" : "Please confirm";
+      let msg =
+        "🚗 PRIVATE CAR BOOKING - VIETNAM\n" +
+        "Name: " + nameInput +
+        "\nRoute: " + routeInput +
+        "\nPassengers: " + passengersInput +
+        "\nCar: " + carInput +
+        "\nPickup: " + pickupInput +
+        "\nDate: " + dateInput +
+        "\nTime: " + timeInput +
+        "\nPrice: " + displayPrice;
 
-routes.forEach(r=>{
-  let text = r.innerText.split('\n')[0].replace('📍 ','');
-  let option = document.createElement('option');
-  option.textContent = text;
-  routeSelect.appendChild(option);
-});
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_click', {
+          route_name: routeInput,
+          car_type: carInput,
+          passengers: passengersInput
+        });
+      }
 
-function updatePrice(){
-let route = routeSelect.value;
-let car = document.getElementById("car").value;
+      window.open("https://wa.me/84362772956?text=" + encodeURIComponent(msg), "_blank");
+    }
 
-let prices = {
-"Mui Ne → Da Lat":1700000,"Mui Ne → Nha Trang":2200000,"Mui Ne → Cam Ranh":1700000,"Mui Ne → Ho Chi Minh City":1700000,"Mui Ne → Vung Tau":1700000,
-"Da Lat → Mui Ne":1700000,"Da Lat → Nha Trang":1300000,"Da Lat → Ho Chi Minh City":3000000,"Da Lat → Vung Tau":3000000,
-"Nha Trang → Mui Ne":2200000,"Nha Trang → Da Lat":1300000,"Nha Trang → Ho Chi Minh City":3000000,"Nha Trang → Vung Tau":3300000,
-"Cam Ranh → Mui Ne":1700000,"Cam Ranh → Da Lat":1300000,"Cam Ranh → Ho Chi Minh City":3000000,"Cam Ranh → Vung Tau":3000000,
-"Ho Chi Minh City → Mui Ne":1700000,"Ho Chi Minh City → Nha Trang":3000000,"Ho Chi Minh City → Da Lat":3000000,"Ho Chi Minh City → Cam Ranh":3000000,"Ho Chi Minh City → Vung Tau":1200000,
-"Vung Tau → Da Lat":3000000,"Vung Tau → Ho Chi Minh City":1200000,"Vung Tau → Mui Ne":1700000,"Vung Tau → Nha Trang":3300000,"Vung Tau → Cam Ranh":3000000
-};
+    function trackWhatsAppTop() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_top_click', { location: 'top_cta' });
+      }
+    }
 
-if(!route) return;
+    function trackWhatsAppFloat() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_float_click', { location: 'floating_button' });
+      }
+    }
 
-// 👉 giá gốc (4 chỗ)
-let basePrice = prices[route];
+    function trackCallClick() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'call_click', { location: 'call_button' });
+      }
+    }
 
-// giảm 200k chung
-basePrice -= 200000;
-
-// 👉 tính theo loại xe
-let finalPrice = basePrice;
-
-if(car === "4 Seats"){
-  finalPrice -= 100000;
-}
-else if(car === "7 Seats"){
-  finalPrice = basePrice;
-}
-else if(car === "9 Seats Limousine"){
-  finalPrice = basePrice * 2.5;
-}
-else if(car === "16 Seats"){
-  finalPrice = basePrice * 2;
-}
-
-selectedPrice = finalPrice;
-
-// đổi sang USD
-let usd = Math.round(finalPrice / 25000);
-
-document.getElementById("price").innerText =
-"💰 $" + usd + " (~" + finalPrice.toLocaleString() + " VND)";
-}
-
-routeSelect.onchange=updatePrice;
-document.getElementById("car").onchange=updatePrice;
-document.getElementById("passengers").onchange = function(){
-  let p = this.value;
-  let carSelect = document.getElementById("car");
-
-  if(p === "1-3"){
-    carSelect.value = "4 Seats";
-  }
-  else if(p === "4-6"){
-    carSelect.value = "7 Seats";
-  }
-  else if(p === "7-10"){
-    carSelect.value = "9 Seats Limousine";
-  }
-  else if(p === "10+"){
-    carSelect.value = "16 Seats";
-  }
-
-  updatePrice();
-};
-function selectRoute(r){
-routeSelect.value = r;
-updatePrice();
-
-document.getElementById("booking").scrollIntoView({
-  behavior: "smooth"
-});
-}
-
-function sendWhatsApp(){
-let passengers = document.getElementById("passengers")?.value || "";
-
-let msg="🚗 PRIVATE CAR BOOKING - VIETNAM\n"
-+"Name:"+name.value
-+"\nRoute:"+routeSelect.value
-+"\nPassengers:"+passengers
-+"\nCar:"+car.value
-+"\nPickup:"+pickup.value
-+"\nDate:"+date.value
-+"\nTime:"+time.value
-+"\nPrice:"+selectedPrice.toLocaleString()+" VND";
-
-window.open("https://wa.me/84362772956?text="+encodeURIComponent(msg));
-}
-</script>
-<!-- INTRO -->
-<div class="bg-white p-5 rounded-xl shadow mt-6 mb-4 max-w-3xl mx-auto">
-  <h2 class="font-bold text-lg mb-2 text-center">Mui Ne Private Car Service</h2>
-  <p class="text-sm text-gray-700 leading-relaxed text-center">
-    <strong>Best Private Car Service in Mui Ne for Foreign Travelers.</strong><br><br>
-    Looking for a reliable and comfortable way to travel in Vietnam? Our private car service offers safe, flexible, and hassle-free transportation.
-    <br><br>
-    We provide private transfers from Ho Chi Minh City to Mui Ne, Nha Trang, Da Lat, Vung Tau, and more. 100% private — no sharing, no waiting.
-    <br><br>
-    ✔ Door-to-door service<br>
-    ✔ Instant WhatsApp support<br>
-    ✔ Fixed price – no hidden fees<br>
-    ✔ Flexible departure time
-  </p>
-</div>
-<div style="text-align:center; margin-top:20px;">
-
- 
-
-<!-- FLOAT BUTTON -->
-<div style="position:fixed; bottom:20px; right:15px; display:flex; flex-direction:column; gap:8px; z-index:99999;">
-
-<a href="tel:0362772956" 
-style="background:#ef4444;color:white;padding:10px 14px;border-radius:40px;font-weight:bold;font-size:13px;">
-📞 Call
-</a>
-
-<a href="https://wa.me/84362772956" target="_blank"
-style="background:#22c55e;color:white;padding:10px 14px;border-radius:40px;font-weight:bold;font-size:13px;">
-💬 WhatsApp
-</a>
-
-<a href="https://t.me/vietnamtravel96" target="_blank"
-style="background:#0088cc;color:white;padding:10px 14px;border-radius:40px;font-weight:bold;font-size:13px;">
-✈️ Telegram
-</a>
-
-</div>
-
+    function trackTelegramClick() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'telegram_click', { location: 'telegram_button' });
+      }
+    }
+  </script>
 </body>
 </html>
