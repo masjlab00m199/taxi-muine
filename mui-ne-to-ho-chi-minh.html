@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mui Ne to Ho Chi Minh Private Car | Best Price & Fast Booking</title>
+<meta name="description" content="Private car from Mui Ne to Ho Chi Minh City. Fixed price, no hidden fees, fast WhatsApp booking, English support.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60EKW8LP8D"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-60EKW8LP8D');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- HERO -->
+<div class="bg-black text-white p-6 text-center">
+  <h1 class="text-3xl md:text-4xl font-bold">
+    Mui Ne → Ho Chi Minh Private Car
+  </h1>
+  <p class="mt-2 text-gray-300">
+    Safe • Private • No Deposit • Fast WhatsApp Booking
+  </p>
+
+  <a href="https://wa.me/84362772956"
+     target="_blank"
+     onclick="trackWhatsApp()"
+     class="mt-5 inline-block bg-green-600 text-white px-6 py-3 rounded-xl text-lg font-bold">
+    💬 Book Now on WhatsApp
+  </a>
+
+  <div class="mt-2 text-sm text-gray-400">
+    ⚡ Driver available today • Instant reply
+  </div>
+</div>
+
+<!-- IMAGE -->
+<div class="p-4 max-w-3xl mx-auto">
+  <img src="https://i.postimg.cc/T3SBpNTk/Chat-GPT-Image-09-27-02-8-thg-4-2026.png"
+       class="w-full rounded-xl shadow">
+</div>
+
+<!-- PRICE -->
+<div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow text-center mb-4">
+  <div class="text-lg font-bold mb-2">💰 Price (Estimated)</div>
+  <div class="text-3xl font-extrabold text-green-600">$68 (~1,700,000 VND)</div>
+  <div class="text-sm text-gray-500 mt-1">
+    Final price confirmed via WhatsApp
+  </div>
+</div>
+
+<!-- WHY -->
+<div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow mb-4">
+  <div class="font-bold text-lg mb-3">Why choose us?</div>
+
+  <div class="text-sm space-y-2 text-gray-600">
+    <div>✔ Private car (no sharing)</div>
+    <div>✔ Door-to-door service</div>
+    <div>✔ English speaking driver</div>
+    <div>✔ Clean and comfortable vehicles</div>
+    <div>✔ Pay after trip</div>
+  </div>
+</div>
+
+<!-- BOOK FORM -->
+<div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow mb-6">
+
+  <input id="name" placeholder="Your name *" class="w-full p-3 border mb-3 rounded">
+
+  <select id="car" class="w-full p-3 border mb-3 rounded">
+    <option>4 Seats</option>
+    <option>7 Seats</option>
+    <option>9 Seats Limousine</option>
+    <option>16 Seats</option>
+  </select>
+
+  <input id="pickup" placeholder="Pickup location *" class="w-full p-3 border mb-3 rounded">
+
+  <input type="date" id="date" class="w-full p-3 border mb-3 rounded">
+  <input type="time" id="time" class="w-full p-3 border mb-3 rounded">
+
+  <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white p-3 rounded-xl font-bold">
+    🚀 Book via WhatsApp
+  </button>
+</div>
+
+<!-- REVIEW -->
+<div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow mb-6">
+  <div class="font-bold mb-2">Customer Reviews</div>
+  <div class="text-sm text-gray-600">“Driver was on time and very friendly” ⭐⭐⭐⭐⭐</div>
+  <div class="text-sm text-gray-600">“Best way to travel from Mui Ne to Saigon” ⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- FLOAT BUTTON -->
+<div style="position:fixed; bottom:20px; right:15px;">
+  <a href="https://wa.me/84362772956"
+     onclick="trackWhatsApp()"
+     class="bg-green-600 text-white px-4 py-3 rounded-full font-bold shadow">
+    💬 WhatsApp
+  </a>
+</div>
+
+<script>
+function sendWhatsApp(){
+let name = document.getElementById("name").value;
+let car = document.getElementById("car").value;
+let pickup = document.getElementById("pickup").value;
+let date = document.getElementById("date").value;
+let time = document.getElementById("time").value;
+
+if(!name || !pickup || !date || !time){
+  alert("Please fill all required fields");
+  return;
+}
+
+let msg =
+"🚗 BOOKING - Mui Ne → Ho Chi Minh\n"
++"Name: "+name
++"\nCar: "+car
++"\nPickup: "+pickup
++"\nDate: "+date
++"\nTime: "+time;
+
+gtag('event', 'whatsapp_click', {route: 'mui ne to hcm'});
+
+window.open("https://wa.me/84362772956?text="+encodeURIComponent(msg));
+}
+
+function trackWhatsApp(){
+gtag('event', 'whatsapp_click', {route: 'mui ne to hcm'});
+}
+</script>
+
+</body>
+</html>
