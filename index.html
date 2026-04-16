@@ -22,7 +22,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-60EKW8LP8D');
+    gtag('config', 'AW-18066486095');
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18066486095"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -248,6 +250,7 @@
 
       <a href="https://wa.me/84362772956?text=Hello, I want to check Jeep Tour"
          target="_blank"
+         onclick="trackWhatsAppTour('jeep_tour')"
          class="inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
          Check Availability
       </a>
@@ -283,6 +286,7 @@
 
       <a href="https://wa.me/84362772956?text=Hello, I want to check Ta Cu Mountain"
          target="_blank"
+         onclick="trackWhatsAppTour('ta_cu_mountain')"
          class="inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
          Check Availability
       </a>
@@ -318,6 +322,7 @@
 
       <a href="https://wa.me/84362772956?text=Hello, I want to check Fishing Experience"
          target="_blank"
+         onclick="trackWhatsAppTour('fishing_experience')"
          class="inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
          Check Availability
       </a>
@@ -889,6 +894,9 @@
         "\nPrice: " + displayPrice;
 
       if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18066486095/pqIFCmZssZ0CEM_m4qZD'
+        });
         gtag('event', 'whatsapp_click', {
           route_name: routeInput,
           car_type: carInput,
@@ -901,13 +909,28 @@
 
     function trackWhatsAppTop() {
       if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18066486095/pqIFCmZssZ0CEM_m4qZD'
+        });
         gtag('event', 'whatsapp_top_click', { location: 'top_cta' });
       }
     }
 
     function trackWhatsAppFloat() {
       if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18066486095/pqIFCmZssZ0CEM_m4qZD'
+        });
         gtag('event', 'whatsapp_float_click', { location: 'floating_button' });
+      }
+    }
+
+    function trackWhatsAppTour(source) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18066486095/pqIFCmZssZ0CEM_m4qZD'
+        });
+        gtag('event', 'whatsapp_tour_click', { source: source });
       }
     }
 
