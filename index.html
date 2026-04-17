@@ -778,13 +778,13 @@
       let finalPrice = basePrice;
 
       if (car === "4 Seats") {
-        finalPrice -= 100000;
+        finalPrice = basePrice - 100000;
       } else if (car === "7 Seats") {
         finalPrice = basePrice;
       } else if (car === "9 Seats Limousine") {
-        finalPrice = Math.round(basePrice * 2.5);
+        finalPrice = Math.round(basePrice * 2.5) - 200000;
       } else if (car === "16 Seats") {
-        finalPrice = Math.round(basePrice * 2);
+        finalPrice = Math.round(basePrice * 2) - 200000;
       }
 
       selectedPrice = finalPrice;
@@ -1230,13 +1230,13 @@ const textMaps = {
       let finalPrice = basePrice;
 
       if (car === "4 Seats") {
-        finalPrice -= 100000;
+        finalPrice = basePrice - 100000;
       } else if (car === "7 Seats") {
         finalPrice = basePrice;
       } else if (car === "9 Seats Limousine") {
-        finalPrice = Math.round(basePrice * 2.5);
+        finalPrice = Math.round(basePrice * 2.5) - 200000;
       } else if (car === "16 Seats") {
-        finalPrice = Math.round(basePrice * 2);
+        finalPrice = Math.round(basePrice * 2) - 200000;
       }
 
       selectedPrice = finalPrice;
