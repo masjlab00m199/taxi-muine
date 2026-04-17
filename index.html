@@ -102,28 +102,6 @@
       70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
       100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
     }
-
-    .lux-btn {
-      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-    }
-
-    .lux-btn:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.24);
-      filter: brightness(1.03);
-    }
-
-    .lux-whatsapp {
-      animation: luxPulse 2.5s infinite;
-    }
-
-    @keyframes luxPulse {
-      0% { box-shadow: 0 0 0 0 rgba(22,163,74,0.24); }
-      70% { box-shadow: 0 0 0 10px rgba(22,163,74,0); }
-      100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
-    }
-
   </style>
 </head>
 
@@ -139,18 +117,32 @@
         </div>
       </div>
 
-    <div class="flex gap-2 mt-3 md:mt-0">
+    <div class="flex gap-2 mt-3 md:mt-0 items-center">
+
+  <div class="relative" id="langWrap">
+    <button type="button" id="langToggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-gray-800 font-semibold text-sm shadow hover:bg-gray-50 border border-gray-200">
+      <span id="currentFlag">🇬🇧</span>
+      <span id="currentLang">English</span>
+      <span class="text-xs">▾</span>
+    </button>
+    <div id="langMenu" class="hidden absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden z-50">
+      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="en">🇬🇧 English</button>
+      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="vi">🇻🇳 Tiếng Việt</button>
+      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+  </div>
+
 
   <a href="tel:0362772956"
-     onclick="trackCallClick()"
-     class="lux-btn px-3 py-1.5 rounded-full bg-red-500 text-white font-semibold text-sm shadow hover:bg-red-600">
+     onclick="trackCallClick()" id="topCallBtn"
+     class="px-3 py-1.5 rounded-full bg-red-500 text-white font-semibold text-sm shadow hover:bg-red-600">
     📞 Call
   </a>
 
   <a href="https://wa.me/84362772956"
      target="_blank"
-     onclick="trackWhatsAppTop()"
-     class="lux-btn lux-whatsapp px-3 py-1.5 rounded-full bg-green-600 text-white font-semibold text-sm shadow hover:bg-green-700">
+     onclick="trackWhatsAppTop()" id="topWhatsAppBtn"
+     class="px-3 py-1.5 rounded-full bg-green-600 text-white font-semibold text-sm shadow hover:bg-green-700">
     💬 WhatsApp
   </a>
 
@@ -687,7 +679,6 @@
 
   <a href="tel:0362772956"
      onclick="trackCallClick()"
-     class="lux-btn"
      style="background:#ef4444;color:white;padding:8px 12px;border-radius:999px;font-weight:bold;font-size:12px;box-shadow:0 6px 18px rgba(0,0,0,0.18);">
     📞 Call
   </a>
@@ -695,7 +686,6 @@
   <a href="https://wa.me/84362772956"
      target="_blank"
      onclick="trackWhatsAppFloat()"
-     class="lux-btn lux-whatsapp"
      style="background:#16a34a;color:white;padding:8px 12px;border-radius:999px;font-weight:bold;font-size:12px;box-shadow:0 6px 18px rgba(0,0,0,0.18);">
     💬 WhatsApp
   </a>
@@ -704,7 +694,6 @@
   <a href="https://t.me/vietnamtravel96"
      target="_blank"
      onclick="trackTelegramClick()"
-     class="lux-btn"
      style="background:#0284c7;color:white;padding:8px 12px;border-radius:999px;font-weight:bold;font-size:12px;box-shadow:0 6px 18px rgba(0,0,0,0.18);">
     ✈️ Telegram
   </a>
@@ -930,6 +919,398 @@
       if (typeof gtag === 'function') {
         gtag('event', 'telegram_click', { location: 'telegram_button' });
       }
+    }
+
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    const uiText = {
+      en: {
+        currentFlag:'🇬🇧', currentLang:'English',
+        menuEn:'🇬🇧 English', menuVi:'🇻🇳 Tiếng Việt', menuRu:'🇷🇺 Русский',
+        title:'Mui Ne Private Car Service | Transfer to Ho Chi Minh, Da Lat, Nha Trang',
+        meta:'Book private car service from Mui Ne to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh and more. Instant WhatsApp booking, fixed price, private transfer, no deposit.',
+        alerts: {
+          name:'Please enter your name',
+          route:'Please select route',
+          car:'Please select car type',
+          pickup:'Please enter pickup location',
+          date:'Please select date',
+          time:'Please select time'
+        },
+        msg: {
+          title:'🚗 PRIVATE CAR BOOKING - VIETNAM',
+          name:'Name', route:'Route', passengers:'Passengers', car:'Car', pickup:'Pickup', date:'Date', time:'Time', price:'Price',
+          confirm:'Please confirm'
+        }
+      },
+      vi: {
+        currentFlag:'🇻🇳', currentLang:'Tiếng Việt',
+        menuEn:'🇬🇧 English', menuVi:'🇻🇳 Tiếng Việt', menuRu:'🇷🇺 Русский',
+        title:'Dịch vụ xe riêng Mũi Né | Đi TP.HCM, Đà Lạt, Nha Trang',
+        meta:'Đặt xe riêng từ Mũi Né đi TP.HCM, Đà Lạt, Nha Trang, Cam Ranh và nhiều nơi khác. Đặt nhanh qua WhatsApp, giá cố định, xe riêng, không cần cọc.',
+        alerts: {
+          name:'Vui lòng nhập tên',
+          route:'Vui lòng chọn tuyến',
+          car:'Vui lòng chọn loại xe',
+          pickup:'Vui lòng nhập điểm đón',
+          date:'Vui lòng chọn ngày',
+          time:'Vui lòng chọn giờ'
+        },
+        msg: {
+          title:'🚗 ĐẶT XE RIÊNG - VIỆT NAM',
+          name:'Tên', route:'Tuyến', passengers:'Số khách', car:'Loại xe', pickup:'Điểm đón', date:'Ngày', time:'Giờ', price:'Giá',
+          confirm:'Vui lòng xác nhận'
+        }
+      },
+      ru: {
+        currentFlag:'🇷🇺', currentLang:'Русский',
+        menuEn:'🇬🇧 English', menuVi:'🇻🇳 Tiếng Việt', menuRu:'🇷🇺 Русский',
+        title:'Частный трансфер в Муйне | Поездки в Хошимин, Далат, Нячанг',
+        meta:'Закажите частный трансфер из Муйне в Хошимин, Далат, Нячанг, Камрань и другие направления. Быстрое бронирование через WhatsApp, фиксированная цена, без предоплаты.',
+        alerts: {
+          name:'Пожалуйста, введите имя',
+          route:'Пожалуйста, выберите маршрут',
+          car:'Пожалуйста, выберите тип автомобиля',
+          pickup:'Пожалуйста, укажите место подачи',
+          date:'Пожалуйста, выберите дату',
+          time:'Пожалуйста, выберите время'
+        },
+        msg: {
+          title:'🚗 БРОНИРОВАНИЕ ЧАСТНОГО ТРАНСФЕРА - ВЬЕТНАМ',
+          name:'Имя', route:'Маршрут', passengers:'Пассажиры', car:'Автомобиль', pickup:'Подача', date:'Дата', time:'Время', price:'Цена',
+          confirm:'Пожалуйста, подтвердите'
+        }
+      }
+    };
+
+    const textMaps = {
+      vi: {"English": "Tiếng Việt", "🚕 Mui Ne Private Car Service": "🚕 Dịch vụ xe riêng Mũi Né", "Safe • Private • English Support • Fixed Price": "An toàn • Riêng tư • Hỗ trợ tiếng Anh • Giá cố định", "📞 Call": "📞 Gọi", "💬 WhatsApp": "💬 WhatsApp", "⭐ Trusted by foreign travelers in Mui Ne": "⭐ Được nhiều du khách tại Mũi Né tin chọn", "Premium Private Car Service in Mui Ne": "Dịch vụ xe riêng cao cấp tại Mũi Né", "Book comfortable private transfers to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh, Can Tho and more.\n            Fast WhatsApp reply, clean cars, professional drivers, and no deposit required.": "Đặt xe riêng thoải mái đi TP.HCM, Đà Lạt, Nha Trang, Cam Ranh, Cần Thơ và nhiều nơi khác.\n            Phản hồi nhanh qua WhatsApp, xe sạch, tài xế chuyên nghiệp và không cần cọc.", "Happy Travelers": "Khách hài lòng", "WhatsApp Support": "Hỗ trợ WhatsApp", "Private Transfer": "Chuyến riêng", "No Deposit": "Không cọc", "🚀 Check Price & Book Now": "🚀 Xem giá & Đặt xe ngay", "💬 Chat on WhatsApp": "💬 Chat trên WhatsApp", "Special discount available today • Flexible departure time • Door-to-door service": "Ưu đãi hôm nay • Giờ đi linh hoạt • Đưa đón tận nơi", "✅ Easy Booking": "✅ Đặt xe dễ dàng", "Choose route, check price, and confirm in WhatsApp within minutes.": "Chọn tuyến, xem giá và xác nhận trên WhatsApp chỉ trong vài phút.", "🚘 Comfortable Cars": "🚘 Xe thoải mái", "4-seat, 7-seat, limousine and van options for every travel group.": "Có xe 4 chỗ, 7 chỗ, limousine và van cho mọi nhóm khách.", "💵 Clear Pricing": "💵 Giá rõ ràng", "Fixed rates, no hidden fees, and payment after the trip.": "Giá cố định, không phí ẩn, thanh toán sau chuyến đi.", "Top Experiences in Mui Ne": "Trải nghiệm nổi bật ở Mũi Né", "Private booking • Fast confirmation • English support": "Đặt riêng • Xác nhận nhanh • Hỗ trợ tiếng Anh", "🏝 Jeep Tour": "🏝 Tour Jeep", "Private experience in Mui Ne": "Trải nghiệm riêng tại Mũi Né", "Most Booked": "Đặt nhiều nhất", "✔ White Sand Dunes": "✔ Đồi cát trắng", "✔ Red Sand Dunes": "✔ Đồi cát đỏ", "✔ Fairy Stream": "✔ Suối Tiên", "✔ Fishing Village": "✔ Làng chài", "Check Availability": "Kiểm tra chỗ trống", "🏔 Ta Cu Mountain": "🏔 Núi Tà Cú", "Private trip": "Chuyến đi riêng", "Recommended": "Đề xuất", "✔ Reclining Buddha": "✔ Tượng Phật nằm", "✔ Cable Car": "✔ Cáp treo", "✔ Mountain View": "✔ View núi đẹp", "🎣 Fishing Experience": "🎣 Trải nghiệm câu cá", "Relax & catch your own fish": "Thư giãn và tự tay câu cá", "Unique": "Độc đáo", "✔ Freshwater fishing": "✔ Câu cá nước ngọt", "✔ Equipment included": "✔ Có sẵn dụng cụ", "✔ Relaxing nature": "✔ Không gian thiên nhiên", "✔ Catch & cook": "✔ Câu xong có thể nấu", "Popular Routes": "Các tuyến phổ biến", "Tap a route to fill booking form": "Bấm chọn tuyến để điền form đặt xe", "Fast WhatsApp booking": "Đặt nhanh qua WhatsApp", "📍 Ho Chi Minh City → Mui Ne": "📍 TP.HCM → Mũi Né", "📍 Ho Chi Minh City → Nha Trang": "📍 TP.HCM → Nha Trang", "📍 Ho Chi Minh City → Da Lat": "📍 TP.HCM → Đà Lạt", "📍 Ho Chi Minh City → Cam Ranh": "📍 TP.HCM → Cam Ranh", "📍 Ho Chi Minh City → Vung Tau": "📍 TP.HCM → Vũng Tàu", "📍 Ho Chi Minh City → Can Tho": "📍 TP.HCM → Cần Thơ", "📍 Can Tho → Ho Chi Minh City": "📍 Cần Thơ → TP.HCM", "📍 Mui Ne → Da Lat": "📍 Mũi Né → Đà Lạt", "📍 Mui Ne → Nha Trang": "📍 Mũi Né → Nha Trang", "📍 Mui Ne → Cam Ranh": "📍 Mũi Né → Cam Ranh", "📍 Mui Ne → Ho Chi Minh City": "📍 Mũi Né → TP.HCM", "📍 Mui Ne → Vung Tau": "📍 Mũi Né → Vũng Tàu", "📍 Da Lat → Mui Ne": "📍 Đà Lạt → Mũi Né", "📍 Da Lat → Nha Trang": "📍 Đà Lạt → Nha Trang", "📍 Da Lat → Ho Chi Minh City": "📍 Đà Lạt → TP.HCM", "📍 Da Lat → Vung Tau": "📍 Đà Lạt → Vũng Tàu", "📍 Nha Trang → Mui Ne": "📍 Nha Trang → Mũi Né", "📍 Nha Trang → Da Lat": "📍 Nha Trang → Đà Lạt", "📍 Nha Trang → Ho Chi Minh City": "📍 Nha Trang → TP.HCM", "📍 Nha Trang → Vung Tau": "📍 Nha Trang → Vũng Tàu", "📍 Cam Ranh → Mui Ne": "📍 Cam Ranh → Mũi Né", "📍 Cam Ranh → Da Lat": "📍 Cam Ranh → Đà Lạt", "📍 Cam Ranh → Ho Chi Minh City": "📍 Cam Ranh → TP.HCM", "📍 Cam Ranh → Vung Tau": "📍 Cam Ranh → Vũng Tàu", "📍 Vung Tau → Da Lat": "📍 Vũng Tàu → Đà Lạt", "📍 Vung Tau → Ho Chi Minh City": "📍 Vũng Tàu → TP.HCM", "📍 Vung Tau → Mui Ne": "📍 Vũng Tàu → Mũi Né", "📍 Vung Tau → Nha Trang": "📍 Vũng Tàu → Nha Trang", "📍 Vung Tau → Cam Ranh": "📍 Vũng Tàu → Cam Ranh", "Instant Booking": "Đặt xe ngay", "Check Price & Reserve": "Xem giá & Giữ chỗ", "Fast reply on WhatsApp • No hidden fees": "Phản hồi nhanh trên WhatsApp • Không phí ẩn", "Passengers": "Số khách", "1 - 3 people": "1 - 3 người", "4 - 6 people": "4 - 6 người", "7 - 10 people": "7 - 10 người", "10+ people": "Trên 10 người", "Select route *": "Chọn tuyến *", "Car type *": "Loại xe *", "4 Seats": "4 chỗ", "7 Seats": "7 chỗ", "9 Seats Limousine": "Limousine 9 chỗ", "16 Seats": "16 chỗ", "Estimated Price": "Giá dự kiến", "Select route and car": "Chọn tuyến và loại xe", "Final confirmation on WhatsApp": "Xác nhận cuối cùng trên WhatsApp", "🚀 Book via WhatsApp": "🚀 Đặt qua WhatsApp", "✔ Fast Reply": "✔ Phản hồi nhanh", "✔ Private Only": "✔ Chuyến riêng", "What Travelers Say": "Khách nói gì về chúng tôi", "Real customer feedback": "Đánh giá thực tế từ khách hàng", "“Very good service, driver on time and car was clean. Easy booking on WhatsApp.”": "“Dịch vụ rất tốt, tài xế đúng giờ và xe rất sạch. Đặt qua WhatsApp rất dễ.”", "“Best price in Mui Ne and very smooth trip. Highly recommend for foreign travelers.”": "“Giá tốt nhất ở Mũi Né và chuyến đi rất êm. Rất đáng giới thiệu cho du khách nước ngoài.”", "“Quick response, professional driver and safe transfer. Will book again next time.”": "“Phản hồi nhanh, tài xế chuyên nghiệp và đi an toàn. Lần sau tôi sẽ đặt lại.”", "Why Choose Us": "Vì sao chọn chúng tôi", "✔ Reliable private transfer service in Mui Ne": "✔ Dịch vụ xe riêng uy tín tại Mũi Né", "✔ English support via WhatsApp": "✔ Hỗ trợ tiếng Anh qua WhatsApp", "✔ Door-to-door pickup and drop-off": "✔ Đón và trả tận nơi", "✔ Flexible departure time": "✔ Giờ đi linh hoạt", "✔ Fixed price with no hidden fees": "✔ Giá cố định không phí ẩn", "✔ Pay after the trip": "✔ Thanh toán sau chuyến đi", "How It Works": "Cách đặt xe", "Select your route": "Chọn tuyến đường", "Choose passengers and car type": "Chọn số khách và loại xe", "Check estimated price": "Xem giá dự kiến", "Send booking via WhatsApp": "Gửi đặt xe qua WhatsApp", "Get fast confirmation from our team": "Nhận xác nhận nhanh từ chúng tôi", "Find Us on Map": "Tìm chúng tôi trên bản đồ", "Easy pickup point in Mui Ne": "Điểm đón thuận tiện tại Mũi Né", "Pickup & Contact": "Đón khách & Liên hệ", "You can easily find our location on Google Maps for pickup support, quick contact, and easier booking confirmation before your trip.": "Bạn có thể dễ dàng tìm vị trí của chúng tôi trên Google Maps để hỗ trợ đón khách, liên hệ nhanh và xác nhận đặt xe thuận tiện trước chuyến đi.", "📍 Mui Ne, Phan Thiet, Binh Thuan": "📍 Mũi Né, Phan Thiết, Bình Thuận", "✔ Easy to locate": "✔ Dễ tìm", "✔ Fast WhatsApp support": "✔ Hỗ trợ WhatsApp nhanh", "✔ Convenient pickup coordination": "✔ Phối hợp điểm đón thuận tiện", "Open Google Maps": "Mở Google Maps", "Ask Pickup on WhatsApp": "Hỏi điểm đón qua WhatsApp", "✈️ Telegram": "✈️ Telegram"},
+      ru: {"🚕 Mui Ne Private Car Service": "🚕 Частный трансфер Муйне", "Safe • Private • English Support • Fixed Price": "Безопасно • Индивидуально • Поддержка на английском • Фиксированная цена", "📞 Call": "📞 Позвонить", "💬 WhatsApp": "💬 WhatsApp", "⭐ Trusted by foreign travelers in Mui Ne": "⭐ Нам доверяют иностранные путешественники в Муйне", "Premium Private Car Service in Mui Ne": "Премиальный сервис частного трансфера в Муйне", "Book comfortable private transfers to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh, Can Tho and more.\n            Fast WhatsApp reply, clean cars, professional drivers, and no deposit required.": "Закажите комфортный частный трансфер в Хошимин, Далат, Нячанг, Камрань, Кантхо и другие направления.\n            Быстрый ответ в WhatsApp, чистые машины, профессиональные водители и без предоплаты.", "Happy Travelers": "Довольных клиентов", "WhatsApp Support": "Поддержка в WhatsApp", "Private Transfer": "Индивидуальный трансфер", "No Deposit": "Без предоплаты", "🚀 Check Price & Book Now": "🚀 Узнать цену и забронировать", "💬 Chat on WhatsApp": "💬 Написать в WhatsApp", "Special discount available today • Flexible departure time • Door-to-door service": "Специальная скидка сегодня • Гибкое время выезда • От двери до двери", "✅ Easy Booking": "✅ Легкое бронирование", "Choose route, check price, and confirm in WhatsApp within minutes.": "Выберите маршрут, узнайте цену и подтвердите в WhatsApp за пару минут.", "🚘 Comfortable Cars": "🚘 Комфортные автомобили", "4-seat, 7-seat, limousine and van options for every travel group.": "Авто на 4 и 7 мест, лимузин и микроавтобус для любой группы.", "💵 Clear Pricing": "💵 Прозрачные цены", "Fixed rates, no hidden fees, and payment after the trip.": "Фиксированная цена, без скрытых платежей, оплата после поездки.", "Top Experiences in Mui Ne": "Лучшие впечатления в Муйне", "Private booking • Fast confirmation • English support": "Индивидуальное бронирование • Быстрое подтверждение • Поддержка на английском", "🏝 Jeep Tour": "🏝 Джип-тур", "Private experience in Mui Ne": "Индивидуальная экскурсия в Муйне", "Most Booked": "Самое популярное", "✔ White Sand Dunes": "✔ Белые дюны", "✔ Red Sand Dunes": "✔ Красные дюны", "✔ Fairy Stream": "✔ Ручей Фей", "✔ Fishing Village": "✔ Рыбацкая деревня", "Check Availability": "Проверить доступность", "🏔 Ta Cu Mountain": "🏔 Гора Та Ку", "Private trip": "Индивидуальная поездка", "Recommended": "Рекомендуем", "✔ Reclining Buddha": "✔ Лежащий Будда", "✔ Cable Car": "✔ Канатная дорога", "✔ Mountain View": "✔ Горный вид", "✔ Private Transfer": "✔ Индивидуальный трансфер", "🎣 Fishing Experience": "🎣 Рыбалка", "Relax & catch your own fish": "Отдых и рыбалка своими руками", "Unique": "Уникально", "✔ Freshwater fishing": "✔ Пресноводная рыбалка", "✔ Equipment included": "✔ Снаряжение включено", "✔ Relaxing nature": "✔ Спокойная природа", "✔ Catch & cook": "✔ Поймал и приготовил", "Popular Routes": "Популярные маршруты", "Tap a route to fill booking form": "Нажмите маршрут, чтобы заполнить форму бронирования", "Fast WhatsApp booking": "Быстрое бронирование через WhatsApp", "📍 Ho Chi Minh City → Mui Ne": "📍 Хошимин → Муйне", "📍 Ho Chi Minh City → Nha Trang": "📍 Хошимин → Нячанг", "📍 Ho Chi Minh City → Da Lat": "📍 Хошимин → Далат", "📍 Ho Chi Minh City → Cam Ranh": "📍 Хошимин → Камрань", "📍 Ho Chi Minh City → Vung Tau": "📍 Хошимин → Вунгтау", "📍 Ho Chi Minh City → Can Tho": "📍 Хошимин → Кантхо", "📍 Can Tho → Ho Chi Minh City": "📍 Кантхо → Хошимин", "📍 Mui Ne → Da Lat": "📍 Муйне → Далат", "📍 Mui Ne → Nha Trang": "📍 Муйне → Нячанг", "📍 Mui Ne → Cam Ranh": "📍 Муйне → Камрань", "📍 Mui Ne → Ho Chi Minh City": "📍 Муйне → Хошимин", "📍 Mui Ne → Vung Tau": "📍 Муйне → Вунгтау", "📍 Da Lat → Mui Ne": "📍 Далат → Муйне", "📍 Da Lat → Nha Trang": "📍 Далат → Нячанг", "📍 Da Lat → Ho Chi Minh City": "📍 Далат → Хошимин", "📍 Da Lat → Vung Tau": "📍 Далат → Вунгтау", "📍 Nha Trang → Mui Ne": "📍 Нячанг → Муйне", "📍 Nha Trang → Da Lat": "📍 Нячанг → Далат", "📍 Nha Trang → Ho Chi Minh City": "📍 Нячанг → Хошимин", "📍 Nha Trang → Vung Tau": "📍 Нячанг → Вунгтау", "📍 Cam Ranh → Mui Ne": "📍 Камрань → Муйне", "📍 Cam Ranh → Da Lat": "📍 Камрань → Далат", "📍 Cam Ranh → Ho Chi Minh City": "📍 Камрань → Хошимин", "📍 Cam Ranh → Vung Tau": "📍 Камрань → Вунгтау", "📍 Vung Tau → Da Lat": "📍 Вунгтау → Далат", "📍 Vung Tau → Ho Chi Minh City": "📍 Вунгтау → Хошимин", "📍 Vung Tau → Mui Ne": "📍 Вунгтау → Муйне", "📍 Vung Tau → Nha Trang": "📍 Вунгтау → Нячанг", "📍 Vung Tau → Cam Ranh": "📍 Вунгтау → Камрань", "Instant Booking": "Мгновенное бронирование", "Check Price & Reserve": "Узнать цену и забронировать", "Fast reply on WhatsApp • No hidden fees": "Быстрый ответ в WhatsApp • Без скрытых платежей", "Passengers": "Пассажиры", "1 - 3 people": "1 - 3 человека", "4 - 6 people": "4 - 6 человек", "7 - 10 people": "7 - 10 человек", "10+ people": "10+ человек", "Select route *": "Выберите маршрут *", "Car type *": "Тип автомобиля *", "4 Seats": "4 места", "7 Seats": "7 мест", "9 Seats Limousine": "Лимузин 9 мест", "16 Seats": "16 мест", "Estimated Price": "Ориентировочная цена", "Select route and car": "Выберите маршрут и тип автомобиля", "Final confirmation on WhatsApp": "Окончательное подтверждение в WhatsApp", "🚀 Book via WhatsApp": "🚀 Забронировать через WhatsApp", "✔ Fast Reply": "✔ Быстрый ответ", "✔ No Deposit": "✔ Без предоплаты", "✔ Private Only": "✔ Только индивидуально", "What Travelers Say": "Отзывы путешественников", "Real customer feedback": "Реальные отзывы клиентов", "“Very good service, driver on time and car was clean. Easy booking on WhatsApp.”": "“Очень хороший сервис, водитель приехал вовремя, а машина была чистой. Бронировать через WhatsApp очень легко.”", "“Best price in Mui Ne and very smooth trip. Highly recommend for foreign travelers.”": "“Лучшая цена в Муйне и очень комфортная поездка. Очень рекомендую иностранным путешественникам.”", "“Quick response, professional driver and safe transfer. Will book again next time.”": "“Быстрый ответ, профессиональный водитель и безопасный трансфер. В следующий раз снова закажу.”", "Why Choose Us": "Почему выбирают нас", "✔ Reliable private transfer service in Mui Ne": "✔ Надежный частный трансфер в Муйне", "✔ English support via WhatsApp": "✔ Поддержка на английском через WhatsApp", "✔ Door-to-door pickup and drop-off": "✔ Подача и высадка от двери до двери", "✔ Flexible departure time": "✔ Гибкое время выезда", "✔ Fixed price with no hidden fees": "✔ Фиксированная цена без скрытых платежей", "✔ Pay after the trip": "✔ Оплата после поездки", "How It Works": "Как это работает", "Select your route": "Выберите маршрут", "Choose passengers and car type": "Выберите пассажиров и тип автомобиля", "Check estimated price": "Узнайте ориентировочную цену", "Send booking via WhatsApp": "Отправьте бронирование через WhatsApp", "Get fast confirmation from our team": "Получите быстрое подтверждение от нашей команды", "Find Us on Map": "Мы на карте", "Easy pickup point in Mui Ne": "Удобная точка подачи в Муйне", "Pickup & Contact": "Подача и контакт", "You can easily find our location on Google Maps for pickup support, quick contact, and easier booking confirmation before your trip.": "Вы легко найдете нас на Google Maps для удобной подачи, быстрого контакта и легкого подтверждения бронирования перед поездкой.", "📍 Mui Ne, Phan Thiet, Binh Thuan": "📍 Муйне, Фантьет, Биньтхуан", "✔ Easy to locate": "✔ Легко найти", "✔ Fast WhatsApp support": "✔ Быстрая поддержка в WhatsApp", "✔ Convenient pickup coordination": "✔ Удобная координация подачи", "Open Google Maps": "Открыть Google Maps", "Ask Pickup on WhatsApp": "Спросить о подаче в WhatsApp", "✈️ Telegram": "✈️ Telegram"}
+    };
+
+    const routeKeys = Array.from(document.querySelectorAll('.route-card .font-bold.text-lg')).map(el => el.textContent.replace('📍 ','').trim());
+    const routeMaps = {
+      vi: {
+        'Ho Chi Minh City':'TP.HCM','Mui Ne':'Mũi Né','Da Lat':'Đà Lạt','Nha Trang':'Nha Trang','Cam Ranh':'Cam Ranh','Vung Tau':'Vũng Tàu','Can Tho':'Cần Thơ'
+      },
+      ru: {
+        'Ho Chi Minh City':'Хошимин','Mui Ne':'Муйне','Da Lat':'Далат','Nha Trang':'Нячанг','Cam Ranh':'Камрань','Vung Tau':'Вунгтау','Can Tho':'Кантхо'
+      }
+    };
+
+    const textNodes = [];
+    const placeholderNodes = [];
+    const valueNodes = [];
+    const titleNode = document.querySelector('title');
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+
+    function captureOriginals() {
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          const tag = parent.tagName;
+          if (['SCRIPT','STYLE','IFRAME'].includes(tag)) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        textNodes.push({ node, original: node.nodeValue });
+      }
+      document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
+        placeholderNodes.push({ el, original: el.getAttribute('placeholder') });
+      });
+      document.querySelectorAll('option').forEach(el => {
+        valueNodes.push({ el, original: el.textContent });
+      });
+    }
+
+    function localizeRoute(route) {
+      if (currentLang === 'en') return route;
+      const parts = route.split(' → ');
+      const map = routeMaps[currentLang] || {};
+      return (map[parts[0]] || parts[0]) + ' → ' + (map[parts[1]] || parts[1]);
+    }
+
+    function preserveSpacingReplace(original, replacement) {
+      const leading = original.match(/^\s*/)?.[0] || '';
+      const trailing = original.match(/\s*$/)?.[0] || '';
+      return leading + replacement + trailing;
+    }
+
+    function translateString(original) {
+      const trimmed = original.trim();
+      if (!trimmed) return original;
+      if (currentLang === 'en') return original;
+      const map = textMaps[currentLang] || {};
+      const replacement = map[trimmed];
+      if (!replacement) return original;
+      return preserveSpacingReplace(original, replacement);
+    }
+
+    function rebuildSelects() {
+      const t = textMaps[currentLang] || {};
+      const pv = passengersSelect.value;
+      const rv = routeSelect.value;
+      const cv = carSelect.value;
+
+      passengersSelect.innerHTML = '';
+      [
+        ['', currentLang === 'vi' ? 'Số khách' : currentLang === 'ru' ? 'Пассажиры' : 'Passengers'],
+        ['1-3', currentLang === 'vi' ? '1 - 3 người' : currentLang === 'ru' ? '1 - 3 человека' : '1 - 3 people'],
+        ['4-6', currentLang === 'vi' ? '4 - 6 người' : currentLang === 'ru' ? '4 - 6 человек' : '4 - 6 people'],
+        ['7-10', currentLang === 'vi' ? '7 - 10 người' : currentLang === 'ru' ? '7 - 10 человек' : '7 - 10 people'],
+        ['10+', currentLang === 'vi' ? 'Trên 10 người' : currentLang === 'ru' ? '10+ человек' : '10+ people']
+      ].forEach(([value, text]) => {
+        const opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = text;
+        passengersSelect.appendChild(opt);
+      });
+      passengersSelect.value = pv;
+
+      routeSelect.innerHTML = '';
+      const routeFirst = document.createElement('option');
+      routeFirst.value = '';
+      routeFirst.textContent = currentLang === 'vi' ? 'Chọn tuyến *' : currentLang === 'ru' ? 'Выберите маршрут *' : 'Select route *';
+      routeSelect.appendChild(routeFirst);
+      routeKeys.forEach(route => {
+        const opt = document.createElement('option');
+        opt.value = route;
+        opt.textContent = localizeRoute(route);
+        routeSelect.appendChild(opt);
+      });
+      routeSelect.value = rv;
+
+      carSelect.innerHTML = '';
+      [
+        ['', currentLang === 'vi' ? 'Loại xe *' : currentLang === 'ru' ? 'Тип автомобиля *' : 'Car type *'],
+        ['4 Seats', currentLang === 'vi' ? '4 chỗ' : currentLang === 'ru' ? '4 места' : '4 Seats'],
+        ['7 Seats', currentLang === 'vi' ? '7 chỗ' : currentLang === 'ru' ? '7 мест' : '7 Seats'],
+        ['9 Seats Limousine', currentLang === 'vi' ? 'Limousine 9 chỗ' : currentLang === 'ru' ? 'Лимузин 9 мест' : '9 Seats Limousine'],
+        ['16 Seats', currentLang === 'vi' ? '16 chỗ' : currentLang === 'ru' ? '16 мест' : '16 Seats']
+      ].forEach(([value, text]) => {
+        const opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = text;
+        carSelect.appendChild(opt);
+      });
+      carSelect.value = cv;
+
+      document.getElementById('name').setAttribute('placeholder', currentLang === 'vi' ? 'Tên của bạn *' : currentLang === 'ru' ? 'Ваше имя *' : 'Your name *');
+      document.getElementById('pickup').setAttribute('placeholder', currentLang === 'vi' ? 'Điểm đón *' : currentLang === 'ru' ? 'Место подачи *' : 'Pickup location *');
+    }
+
+    function applyLanguage() {
+      const ui = uiText[currentLang];
+      document.documentElement.lang = currentLang;
+      document.getElementById('currentFlag').textContent = ui.currentFlag;
+      document.getElementById('currentLang').textContent = ui.currentLang;
+      const opts = document.querySelectorAll('.lang-option');
+      if (opts[0]) opts[0].textContent = ui.menuEn;
+      if (opts[1]) opts[1].textContent = ui.menuVi;
+      if (opts[2]) opts[2].textContent = ui.menuRu;
+
+      if (titleNode) titleNode.textContent = ui.title;
+      if (metaDesc) metaDesc.setAttribute('content', ui.meta);
+      if (ogTitle) ogTitle.setAttribute('content', currentLang === 'vi' ? 'Dịch vụ xe riêng Mũi Né' : currentLang === 'ru' ? 'Частный трансфер Муйне' : 'Mui Ne Private Car Service');
+      if (ogDesc) ogDesc.setAttribute('content', ui.meta);
+
+      textNodes.forEach(item => {
+        item.node.nodeValue = translateString(item.original);
+      });
+
+      placeholderNodes.forEach(item => {
+        item.el.setAttribute('placeholder', translateString(item.original).trim());
+      });
+
+      rebuildSelects();
+
+      const priceLabel = document.querySelector('#priceBox .text-sm');
+      if (priceLabel) priceLabel.textContent = currentLang === 'vi' ? 'Giá dự kiến' : currentLang === 'ru' ? 'Ориентировочная цена' : 'Estimated Price';
+
+      if (!routeSelect.value || !carSelect.value) {
+        priceBox.textContent = currentLang === 'vi' ? 'Chọn tuyến và loại xe' : currentLang === 'ru' ? 'Выберите маршрут и тип автомобиля' : 'Select route and car';
+      }
+      const priceSub = document.querySelector('#priceBox .text-xs');
+      if (priceSub) priceSub.textContent = currentLang === 'vi' ? 'Xác nhận cuối cùng trên WhatsApp' : currentLang === 'ru' ? 'Окончательное подтверждение в WhatsApp' : 'Final confirmation on WhatsApp';
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      applyLanguage();
+      document.getElementById('langMenu').classList.add('hidden');
+    }
+
+    function toggleLangMenu(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      document.getElementById('langMenu').classList.toggle('hidden');
+    }
+
+    document.addEventListener('click', function(e) {
+      const wrap = document.getElementById('langWrap');
+      const menu = document.getElementById('langMenu');
+      if (wrap && menu && !wrap.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    captureOriginals();
+
+    document.getElementById('langToggle')?.addEventListener('click', toggleLangMenu);
+    document.querySelectorAll('.lang-option').forEach(btn => {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        setLanguage(this.dataset.lang);
+      });
+    });
+
+
+    routeSelect.innerHTML = '';
+    routeKeys.forEach(route => {
+      const option = document.createElement('option');
+      option.value = route;
+      option.textContent = route;
+      routeSelect.appendChild(option);
+    });
+
+    applyLanguage();
+
+    function updatePrice() {
+      const route = routeSelect.value;
+      const car = carSelect.value;
+
+      if (!route || !car) {
+        selectedPrice = 0;
+        priceBox.innerText = currentLang === 'vi' ? 'Chọn tuyến và loại xe' : currentLang === 'ru' ? 'Выберите маршрут и тип автомобиля' : 'Select route and car';
+        return;
+      }
+
+      if (prices[route] == null) {
+        selectedPrice = 0;
+        priceBox.innerText = currentLang === 'vi' ? 'Hỏi trên WhatsApp' : currentLang === 'ru' ? 'Спросить в WhatsApp' : 'Ask on WhatsApp';
+        return;
+      }
+
+      let basePrice = prices[route] - 200000;
+      let finalPrice = basePrice;
+
+      if (car === "4 Seats") {
+        finalPrice -= 100000;
+      } else if (car === "7 Seats") {
+        finalPrice = basePrice;
+      } else if (car === "9 Seats Limousine") {
+        finalPrice = Math.round(basePrice * 2.5);
+      } else if (car === "16 Seats") {
+        finalPrice = Math.round(basePrice * 2);
+      }
+
+      selectedPrice = finalPrice;
+      const usd = Math.round(finalPrice / 25000);
+
+      priceBox.innerText = "$" + usd + " (~" + finalPrice.toLocaleString() + " VND)";
+    }
+
+    function selectRoute(route) {
+      routeSelect.value = route;
+      updatePrice();
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'route_select', {
+          route_name: route
+        });
+      }
+
+      document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+    }
+
+    routeSelect.onchange = updatePrice;
+    carSelect.onchange = updatePrice;
+
+    passengersSelect.onchange = function () {
+      const p = this.value;
+
+      if (p === "1-3") {
+        carSelect.value = "4 Seats";
+      } else if (p === "4-6") {
+        carSelect.value = "7 Seats";
+      } else if (p === "7-10") {
+        carSelect.value = "9 Seats Limousine";
+      } else if (p === "10+") {
+        carSelect.value = "16 Seats";
+      }
+
+      updatePrice();
+    };
+
+    function sendWhatsApp() {
+      const nameInput = document.getElementById("name").value.trim();
+      const passengersInput = passengersSelect.options[passengersSelect.selectedIndex]?.text || '';
+      const routeInput = routeSelect.options[routeSelect.selectedIndex]?.text || routeSelect.value;
+      const carInput = carSelect.options[carSelect.selectedIndex]?.text || document.getElementById("car").value;
+      const pickupInput = document.getElementById("pickup").value.trim();
+      const dateInput = document.getElementById("date").value;
+      const timeInput = document.getElementById("time").value;
+      const ui = uiText[currentLang];
+
+      if (!nameInput) {
+        alert(ui.alerts.name);
+        return;
+      }
+      if (!routeSelect.value) {
+        alert(ui.alerts.route);
+        return;
+      }
+      if (!document.getElementById("car").value) {
+        alert(ui.alerts.car);
+        return;
+      }
+      if (!pickupInput) {
+        alert(ui.alerts.pickup);
+        return;
+      }
+      if (!dateInput) {
+        alert(ui.alerts.date);
+        return;
+      }
+      if (!timeInput) {
+        alert(ui.alerts.time);
+        return;
+      }
+
+      const displayPrice = selectedPrice > 0 ? selectedPrice.toLocaleString() + " VND" : ui.msg.confirm;
+      let msg =
+        ui.msg.title + "\n" +
+        ui.msg.name + ": " + nameInput +
+        "\n" + ui.msg.route + ": " + routeInput +
+        "\n" + ui.msg.passengers + ": " + passengersInput +
+        "\n" + ui.msg.car + ": " + carInput +
+        "\n" + ui.msg.pickup + ": " + pickupInput +
+        "\n" + ui.msg.date + ": " + dateInput +
+        "\n" + ui.msg.time + ": " + timeInput +
+        "\n" + ui.msg.price + ": " + displayPrice;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18066486095/pqIFCmZssZ0CEM_m4qZD'
+        });
+        gtag('event', 'whatsapp_click', {
+          route_name: routeSelect.value,
+          car_type: document.getElementById("car").value,
+          passengers: passengersSelect.value
+        });
+      }
+
+      window.open("https://wa.me/84362772956?text=" + encodeURIComponent(msg), "_blank");
     }
   </script>
 
