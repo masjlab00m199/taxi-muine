@@ -129,7 +129,7 @@
   color:#fff;
   background:linear-gradient(90deg,#f59e0b,#ef4444,#8b5cf6);
   box-shadow:0 4px 14px rgba(239,68,68,0.25);
-  animation: vipGlow 1.8s ease-in-out infinite;
+  animation: vipGlow 2.8s ease-in-out infinite;
 }
 
 @keyframes vipGlow {
@@ -142,6 +142,135 @@
   text-align:center;
   font-size:12px;
   color:#6b7280;
+}
+
+
+/* ===============================
+/* ===============================
+   PREMIUM BUTTON EFFECTS - SLOW & PREMIUM
+   =============================== */
+.btn-cta,
+button,
+a[href^="https://wa.me"],
+a[href^="tel:"],
+a[href^="https://t.me"] {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.45s ease,
+              background 0.45s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-cta::before,
+button::before,
+a[href^="https://wa.me"]::before,
+a[href^="tel:"]::before,
+a[href^="https://t.me"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-18deg);
+  transition: left 1.25s ease;
+  pointer-events: none;
+}
+
+.btn-cta:hover,
+button:hover,
+a[href^="https://wa.me"]:hover,
+a[href^="tel:"]:hover,
+a[href^="https://t.me"]:hover {
+  transform: translateY(-3px) scale(1.018);
+  filter: brightness(1.03);
+  box-shadow: 0 16px 38px rgba(0,0,0,0.20) !important;
+}
+
+.btn-cta:hover::before,
+button:hover::before,
+a[href^="https://wa.me"]:hover::before,
+a[href^="tel:"]:hover::before,
+a[href^="https://t.me"]:hover::before {
+  left: 160%;
+}
+
+.btn-cta:active,
+button:active,
+a[href^="https://wa.me"]:active,
+a[href^="tel:"]:active,
+a[href^="https://t.me"]:active {
+  transform: scale(0.965);
+  transition: transform 0.16s ease;
+}
+
+/* Chỉ các nút WhatsApp chính mới pulse, tốc độ chậm hơn để nhìn sang */
+.btn-pulse,
+button[onclick="sendWhatsApp()"],
+a[href^="https://wa.me"] {
+  animation: pulseGreenBtn 3.6s infinite;
+}
+
+@keyframes pulseGreenBtn {
+  0% { box-shadow: 0 0 0 0 rgba(22,163,74,0.32); }
+  70% { box-shadow: 0 0 0 18px rgba(22,163,74,0); }
+  100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
+}
+
+/* Rung nhẹ hơn, không bị giật */
+.btn-shake:hover,
+button[onclick="sendWhatsApp()"]:hover,
+a[href^="https://wa.me"]:hover {
+  animation: shakeBtn 0.48s ease, pulseGreenBtn 3.6s infinite;
+}
+
+@keyframes shakeBtn {
+  0%,100% { transform: translateY(-3px) scale(1.018) translateX(0); }
+  25% { transform: translateY(-3px) scale(1.018) translateX(-1.2px); }
+  50% { transform: translateY(-3px) scale(1.018) translateX(1.2px); }
+  75% { transform: translateY(-3px) scale(1.018) translateX(-0.8px); }
+}
+
+.route-card {
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.42s ease,
+              border-color 0.42s ease;
+}
+
+.route-card:hover {
+  border-color: rgba(22,163,74,0.38);
+  box-shadow: 0 18px 42px rgba(22,163,74,0.12) !important;
+}
+
+.route-card:active {
+  transform: scale(0.985);
+}
+#booking {
+  animation: bookingSoftGlow 4.8s ease-in-out infinite;
+}
+
+@keyframes bookingSoftGlow {
+  0%,100% { box-shadow: 0 22px 50px rgba(0,0,0,0.12); }
+  50% { box-shadow: 0 24px 56px rgba(22,163,74,0.18); }
+}
+
+.floating-action-btn {
+  min-width: 112px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-pulse,
+  button[onclick="sendWhatsApp()"],
+  a[href^="https://wa.me"],
+  #booking {
+    animation: none !important;
+  }
 }
 
   </style>
@@ -161,14 +290,14 @@
 
     <div class="flex gap-2 mt-3 md:mt-0 items-center"><a href="tel:0362772956"
      onclick="trackCallClick()" id="topCallBtn"
-     class="px-3 py-1.5 rounded-full bg-red-500 text-white font-semibold text-sm shadow hover:bg-red-600">
+     class="btn-cta px-3 py-1.5 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold text-sm shadow hover:from-red-600 hover:to-red-700">
     📞 Call
   </a>
 
   <a href="https://wa.me/84362772956"
      target="_blank"
      onclick="trackWhatsAppTop()" id="topWhatsAppBtn"
-     class="px-3 py-1.5 rounded-full bg-green-600 text-white font-semibold text-sm shadow hover:bg-green-700">
+     class="btn-cta btn-pulse px-3 py-1.5 rounded-full bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold text-sm shadow hover:from-green-600 hover:to-green-800">
     💬 WhatsApp
   </a>
 
@@ -235,13 +364,13 @@
 
           <div class="flex flex-col sm:flex-row gap-3 mt-7">
             <a href="#booking"
-               class="bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-2xl font-bold text-center shadow-lg">
+               class="btn-cta btn-pulse bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white px-6 py-4 rounded-2xl font-bold text-center shadow-xl">
               🚀 Check Price & Book Now
             </a>
             <a href="https://wa.me/84362772956"
                target="_blank"
                onclick="trackWhatsAppTop()"
-               class="bg-white text-gray-900 px-6 py-4 rounded-2xl font-bold text-center shadow-lg hover:bg-gray-100">
+               class="btn-cta bg-white text-gray-900 px-6 py-4 rounded-2xl font-bold text-center shadow-xl hover:bg-gray-100">
               💬 Chat on WhatsApp
             </a>
           </div>
@@ -310,7 +439,7 @@
       <a href="https://wa.me/84362772956?text=Hello, I want to check Jeep Tour"
          target="_blank"
          onclick="trackWhatsAppTour('jeep_tour')"
-         class="inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
+         class="btn-cta inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
          Check Availability
       </a>
     </div>
@@ -346,7 +475,7 @@
       <a href="https://wa.me/84362772956?text=Hello, I want to check Ta Cu Mountain"
          target="_blank"
          onclick="trackWhatsAppTour('ta_cu_mountain')"
-         class="inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
+         class="btn-cta inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
          Check Availability
       </a>
     </div>
@@ -382,7 +511,7 @@
       <a href="https://wa.me/84362772956?text=Hello, I want to check Fishing Experience"
          target="_blank"
          onclick="trackWhatsAppTour('fishing_experience')"
-         class="inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
+         class="btn-cta inline-block mt-3 bg-white border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
          Check Availability
       </a>
     </div>
@@ -649,7 +778,7 @@
           </div>
 
 
-          <button onclick="sendWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white p-4 rounded-2xl font-extrabold text-lg shadow-lg">
+          <button onclick="sendWhatsApp()" class="btn-cta btn-pulse btn-shake w-full bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white p-4 rounded-2xl font-extrabold text-lg shadow-xl">
             🚀 Book via WhatsApp
           </button>
 
@@ -758,13 +887,13 @@
           <div class="flex flex-col sm:flex-row gap-3 mt-5">
             <a href="https://maps.app.goo.gl/gKyWJKHjGztEYLqR6"
                target="_blank"
-               class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-2xl font-bold text-center shadow-lg">
+               class="btn-cta bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-5 py-3 rounded-2xl font-bold text-center shadow-xl">
               Open Google Maps
             </a>
             <a href="https://wa.me/84362772956"
                target="_blank"
                onclick="trackWhatsAppTop()"
-               class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-bold text-center shadow-lg">
+               class="btn-cta btn-pulse bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white px-5 py-3 rounded-2xl font-bold text-center shadow-xl">
               Ask Pickup on WhatsApp
             </a>
           </div>
@@ -784,6 +913,7 @@
 
   <a href="tel:0362772956"
      onclick="trackCallClick()"
+     class="floating-action-btn"
      style="background:#ef4444;color:white;padding:8px 12px;border-radius:999px;font-weight:bold;font-size:12px;box-shadow:0 6px 18px rgba(0,0,0,0.18);">
     📞 Call
   </a>
@@ -791,6 +921,7 @@
   <a href="https://wa.me/84362772956"
      target="_blank"
      onclick="trackWhatsAppFloat()"
+     class="floating-action-btn"
      style="background:#16a34a;color:white;padding:8px 12px;border-radius:999px;font-weight:bold;font-size:12px;box-shadow:0 6px 18px rgba(0,0,0,0.18);">
     💬 WhatsApp
   </a>
@@ -799,6 +930,7 @@
   <a href="https://t.me/vietnamtravel96"
      target="_blank"
      onclick="trackTelegramClick()"
+     class="floating-action-btn"
      style="background:#0284c7;color:white;padding:8px 12px;border-radius:999px;font-weight:bold;font-size:12px;box-shadow:0 6px 18px rgba(0,0,0,0.18);">
     ✈️ Telegram
   </a>
