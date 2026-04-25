@@ -273,6 +273,125 @@ a[href^="https://wa.me"]:hover {
   }
 }
 
+/* ===============================
+   SEO PRIVATE CAR CARD EFFECTS
+   =============================== */
+.seo-service-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 168px;
+  border: 1px solid rgba(229,231,235,1);
+  background: linear-gradient(135deg, #ffffff, #f9fafb);
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.42s ease,
+              border-color 0.42s ease,
+              background 0.42s ease;
+}
+
+.seo-service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(34,197,94,0.16), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.42s ease;
+  pointer-events: none;
+}
+
+.seo-service-card::after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -60%;
+  width: 45%;
+  height: 220%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.75), transparent);
+  transform: rotate(18deg);
+  transition: left 0.9s ease;
+  pointer-events: none;
+}
+
+.seo-service-card:hover {
+  transform: translateY(-8px) scale(1.018);
+  border-color: rgba(22,163,74,0.45);
+  box-shadow: 0 22px 48px rgba(22,163,74,0.15), 0 12px 24px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+}
+
+.seo-service-card:hover::before {
+  opacity: 1;
+}
+
+.seo-service-card:hover::after {
+  left: 130%;
+}
+
+.seo-service-card .seo-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #15803d;
+  font-size: 20px;
+  box-shadow: 0 8px 22px rgba(22,163,74,0.18);
+  transition: transform 0.42s ease;
+}
+
+.seo-service-card:hover .seo-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.seo-service-card .seo-arrow {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  color: #16a34a;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.32s ease;
+}
+
+.seo-service-card:hover .seo-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.seo-service-card .seo-title {
+  transition: color 0.3s ease;
+}
+
+.seo-service-card:hover .seo-title {
+  color: #16a34a;
+}
+
+.seo-services-wrap {
+  position: relative;
+}
+
+.seo-services-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(59,130,246,0.05));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seo-service-card,
+  .seo-service-card::before,
+  .seo-service-card::after,
+  .seo-service-card .seo-icon,
+  .seo-service-card .seo-arrow {
+    transition: none !important;
+  }
+}
+
+
   </style>
 </head>
 
@@ -796,45 +915,75 @@ a[href^="https://wa.me"]:hover {
 
   <!-- SEO MINI LINKS - SMALL, VISIBLE, NATURAL -->
   <section class="max-w-6xl mx-auto mb-6">
-    <div class="bg-white rounded-2xl border border-gray-100 p-4 text-sm text-gray-600 shadow-sm">
-      <h2 class="text-base font-bold text-gray-800 mb-3">
-        Private Car Services in Vietnam
-      </h2>
+    <div class="seo-services-wrap bg-white rounded-3xl border border-gray-100 p-5 md:p-6 text-sm text-gray-600 shadow-xl overflow-hidden">
+      <div class="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
+        <div>
+          <div class="inline-block bg-green-100 text-green-700 font-bold px-4 py-1 rounded-full text-xs mb-3">
+            Private Car Network
+          </div>
+          <h2 class="text-2xl font-extrabold text-gray-900">
+            Private Car Services in Vietnam
+          </h2>
+          <p class="text-sm text-gray-600 mt-2 leading-relaxed max-w-2xl">
+            Choose a city page for faster booking, route details and private car prices. These pages help travelers find the right transfer service quickly.
+          </p>
+        </div>
 
-      <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-        Explore our main private car services by city. Each page has its own route information, fixed-price booking support and WhatsApp contact.
-      </p>
+        <div class="text-xs text-gray-500">
+          5 main city pages • SEO friendly • Easy booking
+        </div>
+      </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+      <div class="relative z-10 grid md:grid-cols-2 lg:grid-cols-5 gap-4">
 
         <a href="/mui-ne-private-car.html"
-           class="block rounded-xl border border-gray-100 bg-gray-50 p-4 hover:bg-green-50 hover:border-green-200 transition">
-          <div class="font-bold text-gray-900 mb-1">Mui Ne Private Car</div>
-          <p class="leading-relaxed">Private transfers from Mui Ne to Ho Chi Minh City, Da Lat, Nha Trang and nearby destinations.</p>
+           class="seo-service-card block rounded-2xl p-5">
+          <div class="seo-icon mb-4">🏖️</div>
+          <div class="seo-title font-extrabold text-gray-900 mb-2">Mui Ne Private Car</div>
+          <p class="leading-relaxed text-gray-600">
+            Private transfers from Mui Ne to Ho Chi Minh City, Da Lat, Nha Trang and nearby destinations.
+          </p>
+          <span class="seo-arrow">→</span>
         </a>
 
         <a href="/nha-trang-private-car.html"
-           class="block rounded-xl border border-gray-100 bg-gray-50 p-4 hover:bg-green-50 hover:border-green-200 transition">
-          <div class="font-bold text-gray-900 mb-1">Nha Trang Private Car</div>
-          <p class="leading-relaxed">Private car from Nha Trang to Mui Ne, Da Lat, Cam Ranh and Ho Chi Minh City.</p>
+           class="seo-service-card block rounded-2xl p-5">
+          <div class="seo-icon mb-4">🌊</div>
+          <div class="seo-title font-extrabold text-gray-900 mb-2">Nha Trang Private Car</div>
+          <p class="leading-relaxed text-gray-600">
+            Private car from Nha Trang to Mui Ne, Da Lat, Cam Ranh and Ho Chi Minh City.
+          </p>
+          <span class="seo-arrow">→</span>
         </a>
 
         <a href="/da-lat-private-car.html"
-           class="block rounded-xl border border-gray-100 bg-gray-50 p-4 hover:bg-green-50 hover:border-green-200 transition">
-          <div class="font-bold text-gray-900 mb-1">Da Lat Private Car</div>
-          <p class="leading-relaxed">Comfortable private car service for mountain routes to Nha Trang, Mui Ne and Ho Chi Minh City.</p>
+           class="seo-service-card block rounded-2xl p-5">
+          <div class="seo-icon mb-4">⛰️</div>
+          <div class="seo-title font-extrabold text-gray-900 mb-2">Da Lat Private Car</div>
+          <p class="leading-relaxed text-gray-600">
+            Comfortable private car service for mountain routes to Nha Trang, Mui Ne and Ho Chi Minh City.
+          </p>
+          <span class="seo-arrow">→</span>
         </a>
 
         <a href="/ho-chi-minh-private-car.html"
-           class="block rounded-xl border border-gray-100 bg-gray-50 p-4 hover:bg-green-50 hover:border-green-200 transition">
-          <div class="font-bold text-gray-900 mb-1">Ho Chi Minh Private Car</div>
-          <p class="leading-relaxed">Airport pickup and private transfers from Ho Chi Minh City to Mui Ne, Da Lat, Nha Trang and Vung Tau.</p>
+           class="seo-service-card block rounded-2xl p-5">
+          <div class="seo-icon mb-4">🏙️</div>
+          <div class="seo-title font-extrabold text-gray-900 mb-2">Ho Chi Minh Private Car</div>
+          <p class="leading-relaxed text-gray-600">
+            Airport pickup and private transfers from Ho Chi Minh City to Mui Ne, Da Lat, Nha Trang and Vung Tau.
+          </p>
+          <span class="seo-arrow">→</span>
         </a>
 
         <a href="/vung-tau-private-car.html"
-           class="block rounded-xl border border-gray-100 bg-gray-50 p-4 hover:bg-green-50 hover:border-green-200 transition">
-          <div class="font-bold text-gray-900 mb-1">Vung Tau Private Car</div>
-          <p class="leading-relaxed">Private car for Vung Tau beach trips and transfers to Ho Chi Minh City, Mui Ne and Da Lat.</p>
+           class="seo-service-card block rounded-2xl p-5">
+          <div class="seo-icon mb-4">🚗</div>
+          <div class="seo-title font-extrabold text-gray-900 mb-2">Vung Tau Private Car</div>
+          <p class="leading-relaxed text-gray-600">
+            Private car for Vung Tau beach trips and transfers to Ho Chi Minh City, Mui Ne and Da Lat.
+          </p>
+          <span class="seo-arrow">→</span>
         </a>
 
       </div>
