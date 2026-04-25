@@ -1416,6 +1416,8 @@ const textMaps = {
       }
       const priceSub = document.querySelector('#priceBox .text-xs');
       if (priceSub) priceSub.textContent = currentLang === 'vi' ? 'Xác nhận cuối cùng trên WhatsApp' : currentLang === 'ru' ? 'Окончательное подтверждение в WhatsApp' : currentLang === 'ko' ? '최종 확인은 WhatsApp에서' : currentLang === 'zh' ? '最终确认通过 WhatsApp' : currentLang === 'km' ? 'បញ្ជាក់ចុងក្រោយតាម WhatsApp' : currentLang === 'hi' ? 'अंतिम पुष्टि WhatsApp पर' : 'Final confirmation on WhatsApp';
+
+      renderRoutePrices();
     }
 
     function setLanguage(lang) {
@@ -1502,6 +1504,34 @@ const textMaps = {
       priceBox.innerText = "$" + usd + " (~" + finalPrice.toLocaleString() + " VND)";
     }
 
+
+    function getRouteFromPrice(route) {
+      if (prices[route] == null) return null;
+      // Hiển thị giá thấp nhất trên card: giá xe 4 chỗ sau khi đã giảm 200k + ưu đãi 100k.
+      return prices[route] - 300000;
+    }
+
+    function renderRoutePrices() {
+      const label = currentLang === 'vi' ? 'Từ' : currentLang === 'ru' ? 'От' : currentLang === 'ko' ? 'From' : currentLang === 'zh' ? 'From' : currentLang === 'km' ? 'From' : currentLang === 'hi' ? 'From' : 'From';
+      const seatLabel = currentLang === 'vi' ? 'xe 4 chỗ' : '4-seat car';
+
+      routeCards.forEach((card, index) => {
+        const route = routeKeys[index];
+        const fromPrice = getRouteFromPrice(route);
+        if (!fromPrice) return;
+
+        let priceLine = card.querySelector('.route-price-line');
+        if (!priceLine) {
+          priceLine = document.createElement('div');
+          priceLine.className = 'route-price-line text-sm font-extrabold text-green-600 mt-2';
+          card.appendChild(priceLine);
+        }
+
+        const usd = Math.round(fromPrice / 25000);
+        priceLine.textContent = `${label} $${usd} (~${fromPrice.toLocaleString()} VND) • ${seatLabel}`;
+      });
+    }
+
     function selectRoute(route) {
       routeSelect.value = route;
       updatePrice();
@@ -1533,6 +1563,8 @@ const textMaps = {
 
       updatePrice();
     };
+
+    renderRoutePrices();
 
     function sendWhatsApp() {
       const nameInput = document.getElementById("name").value.trim();
