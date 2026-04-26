@@ -44,16 +44,57 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18066486095"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 <style>
-  html{scroll-behavior:smooth} body{padding-bottom:100px;background:linear-gradient(to bottom,#f8fafc,#ecfdf5 35%,#f3f4f6 100%)}
-  .glass{background:rgba(255,255,255,.86);backdrop-filter:blur(10px)}
-  .hero-bg{background:linear-gradient(135deg,rgba(2,6,23,.88),rgba(15,23,42,.76)),url('https://i.postimg.cc/47t9dpSm/jeep.jpg') center/cover no-repeat}
-  .card-hover{transition:all .28s ease}.card-hover:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
-  .btn-cta{position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,filter .35s ease}.btn-cta:hover{transform:translateY(-3px);filter:brightness(1.03);box-shadow:0 16px 38px rgba(0,0,0,.18)!important}.btn-cta:active{transform:scale(.965)}
-  .btn-pulse{animation:pulseGreenBtn 3.6s infinite}@keyframes pulseGreenBtn{0%{box-shadow:0 0 0 0 rgba(22,163,74,.32)}70%{box-shadow:0 0 0 18px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
-  .floating-action-btn{min-width:112px;text-align:center;backdrop-filter:blur(8px)}
+  html{scroll-behavior:smooth}
+  body{
+    padding-bottom:100px;
+    background:linear-gradient(to bottom,#f8fafc,#ecfdf5 35%,#f3f4f6 100%)
+  }
+  .glass{
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(10px)
+  }
+  .hero-bg{
+    background:linear-gradient(135deg,rgba(2,6,23,.88),rgba(15,23,42,.76)),
+    url('https://i.postimg.cc/47t9dpSm/jeep.jpg') center/cover no-repeat
+  }
+  .card-hover{
+    transition:all .28s ease
+  }
+  .card-hover:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12)
+  }
+  .btn-cta{
+    position:relative;
+    overflow:hidden;
+    transition:transform .35s ease,box-shadow .35s ease,filter .35s ease
+  }
+  .btn-cta:hover{
+    transform:translateY(-3px);
+    filter:brightness(1.03);
+    box-shadow:0 16px 38px rgba(0,0,0,.18)!important
+  }
+  .btn-cta:active{
+    transform:scale(.965)
+  }
+  .btn-pulse{
+    animation:pulseGreenBtn 3.6s infinite
+  }
+  @keyframes pulseGreenBtn{
+    0%{box-shadow:0 0 0 0 rgba(22,163,74,.32)}
+    70%{box-shadow:0 0 0 18px rgba(22,163,74,0)}
+    100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}
+  }
+  .floating-action-btn{
+    min-width:112px;
+    text-align:center;
+    backdrop-filter:blur(8px)
+  }
 </style>
 </head>
+
 <body class="text-gray-800 p-4">
 
 <!-- TOP BAR -->
@@ -87,61 +128,178 @@
 </section>
 
 <!-- TRUST -->
-<section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 mb-6">
-  <div class="glass rounded-2xl p-5 shadow border border-white/60"><div class="text-lg font-bold mb-2">✅ Easy Booking</div><div class="text-sm text-gray-600">Choose tour and confirm on WhatsApp quickly.</div></div>
-  <div class="glass rounded-2xl p-5 shadow border border-white/60"><div class="text-lg font-bold mb-2">🌍 English Support</div><div class="text-sm text-gray-600">Clear communication for foreign travelers.</div></div>
-  <div class="glass rounded-2xl p-5 shadow border border-white/60"><div class="text-lg font-bold mb-2">🚗 Private Service</div><div class="text-sm text-gray-600">Private pickup and flexible timing available.</div></div>
+<section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 mb-8">
+  <div class="glass rounded-2xl p-5 shadow border border-white/60">
+    <div class="text-lg font-bold mb-2">✅ Easy Booking</div>
+    <div class="text-sm text-gray-600">Choose tour and confirm on WhatsApp quickly.</div>
+  </div>
+  <div class="glass rounded-2xl p-5 shadow border border-white/60">
+    <div class="text-lg font-bold mb-2">🌍 English Support</div>
+    <div class="text-sm text-gray-600">Clear communication for foreign travelers.</div>
+  </div>
+  <div class="glass rounded-2xl p-5 shadow border border-white/60">
+    <div class="text-lg font-bold mb-2">🚗 Private Service</div>
+    <div class="text-sm text-gray-600">Private pickup and flexible timing available.</div>
+  </div>
 </section>
 
 <!-- TOURS -->
-<section id="tours" class="max-w-6xl mx-auto mb-6">
-  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
-    <h2 class="text-2xl font-extrabold text-gray-900">Top Experiences in Mui Ne</h2>
-    <div class="text-sm text-gray-500">Private booking • Fast confirmation • English support</div>
+<section id="tours" class="max-w-6xl mx-auto mb-8">
+
+  <div class="mb-6">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Top Experiences in Mui Ne</h2>
+    <p class="text-sm text-gray-500 mt-1">Private booking • Fast WhatsApp confirmation • English support</p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-5">
-    <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100 card-hover">
-      <div class="flex items-center justify-between mb-3"><div><h2 class="text-2xl font-bold">🏝 Jeep Tour</h2><div class="text-sm text-gray-500 mt-1">Private experience in Mui Ne</div></div><div class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">Most Booked</div></div>
-      <div class="grid grid-cols-3 gap-2 mb-3">
-        <img src="https://i.postimg.cc/47t9dpSm/jeep.jpg" class="w-full h-24 object-cover rounded-xl" alt="Mui Ne Jeep Tour">
-        <img src="https://i.postimg.cc/1n6qtDjV/jeep2.jpg" class="w-full h-24 object-cover rounded-xl" alt="White Sand Dunes Jeep Tour">
-        <img src="https://i.postimg.cc/FdcLR0BY/jeep3.jpg" class="w-full h-24 object-cover rounded-xl" alt="Red Sand Dunes Mui Ne">
-        <img src="https://i.postimg.cc/FdcLR0Bd/jeep4.jpg" class="w-full h-24 object-cover rounded-xl" alt="Fairy Stream Mui Ne">
-        <img src="https://i.postimg.cc/k68b4WpS/jeep5.jpg" class="w-full h-24 object-cover rounded-xl" alt="Fishing Village Mui Ne">
-        <img src="https://i.postimg.cc/mzMHD75h/jeep6.jpg" class="w-full h-24 object-cover rounded-xl" alt="Private Jeep Mui Ne">
+  <div class="space-y-8">
+
+    <!-- JEEP TOUR -->
+    <div class="bg-white rounded-3xl shadow-xl p-5 md:p-6 border border-gray-100 card-hover">
+      <div class="flex flex-col md:flex-row gap-6">
+
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <img src="https://i.postimg.cc/47t9dpSm/jeep.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Mui Ne Jeep Tour">
+            <img src="https://i.postimg.cc/1n6qtDjV/jeep2.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="White Sand Dunes Jeep Tour">
+            <img src="https://i.postimg.cc/FdcLR0BY/jeep3.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Red Sand Dunes Mui Ne">
+            <img src="https://i.postimg.cc/FdcLR0Bd/jeep4.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Fairy Stream Mui Ne">
+            <img src="https://i.postimg.cc/k68b4WpS/jeep5.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Fishing Village Mui Ne">
+            <img src="https://i.postimg.cc/mzMHD75h/jeep6.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Private Jeep Mui Ne">
+          </div>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col justify-center">
+          <div class="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-3 w-max">Most Booked</div>
+          <h2 class="text-3xl font-extrabold text-gray-900 mb-2">🏝 Mui Ne Jeep Tour</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">Explore Mui Ne’s famous sand dunes and local sightseeing spots by private Jeep. Suitable for couples, families and small groups.</p>
+
+          <div class="grid grid-cols-2 gap-2 text-sm text-gray-700 mb-5">
+            <div>✔ White Sand Dunes</div>
+            <div>✔ Red Sand Dunes</div>
+            <div>✔ Fairy Stream</div>
+            <div>✔ Fishing Village</div>
+            <div>✔ Sunrise / Sunset option</div>
+            <div>✔ Hotel pickup available</div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/84362772956?text=Hello, I want to check Jeep Tour"
+               target="_blank"
+               onclick="trackWhatsAppTour('jeep_tour')"
+               class="btn-cta bg-green-500 text-white px-6 py-3 rounded-2xl font-bold shadow text-center">
+               💬 Check Price & Availability
+            </a>
+            <a href="tel:0362772956"
+               onclick="trackCallClick()"
+               class="btn-cta bg-gray-100 text-gray-800 px-6 py-3 rounded-2xl font-bold shadow text-center">
+               📞 Call Now
+            </a>
+          </div>
+
+          <div class="text-xs text-gray-400 mt-3">No prepayment • Confirm by WhatsApp</div>
+        </div>
+
       </div>
-      <div class="grid grid-cols-2 gap-2 text-sm text-gray-600"><div>✔ White Sand Dunes</div><div>✔ Red Sand Dunes</div><div>✔ Fairy Stream</div><div>✔ Fishing Village</div></div>
-      <a href="https://wa.me/84362772956?text=Hello, I want to check Jeep Tour" target="_blank" onclick="trackWhatsAppTour('jeep_tour')" class="btn-cta inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow">Check Availability</a>
     </div>
 
-    <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100 card-hover">
-      <div class="flex items-center justify-between mb-3"><div><h2 class="text-2xl font-bold">🏔 Ta Cu Mountain</h2><div class="text-sm text-gray-500 mt-1">Private trip</div></div><div class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Recommended</div></div>
-      <div class="grid grid-cols-3 gap-2 mb-3">
-        <img src="https://i.postimg.cc/Wdnqq285/tacu1.jpg" class="w-full h-24 object-cover rounded-xl" alt="Ta Cu Mountain Tour">
-        <img src="https://i.postimg.cc/cKLgQVkp/tacu2.jpg" class="w-full h-24 object-cover rounded-xl" alt="Ta Cu Cable Car">
-        <img src="https://i.postimg.cc/Y4CG1JD6/tacu3.jpg" class="w-full h-24 object-cover rounded-xl" alt="Ta Cu Buddha Statue">
-        <img src="https://i.postimg.cc/QBd9pRYP/tacu4.jpg" class="w-full h-24 object-cover rounded-xl" alt="Ta Cu Mountain View">
-        <img src="https://i.postimg.cc/Nyj91WCW/tacu5.jpg" class="w-full h-24 object-cover rounded-xl" alt="Private Ta Cu Tour">
-        <img src="https://i.postimg.cc/B878NMRR/tacu6.jpg" class="w-full h-24 object-cover rounded-xl" alt="Mui Ne to Ta Cu Mountain">
+    <!-- TA CU MOUNTAIN -->
+    <div class="bg-white rounded-3xl shadow-xl p-5 md:p-6 border border-gray-100 card-hover">
+      <div class="flex flex-col md:flex-row gap-6">
+
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <img src="https://i.postimg.cc/Wdnqq285/tacu1.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Ta Cu Mountain Tour">
+            <img src="https://i.postimg.cc/cKLgQVkp/tacu2.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Ta Cu Cable Car">
+            <img src="https://i.postimg.cc/Y4CG1JD6/tacu3.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Ta Cu Buddha Statue">
+            <img src="https://i.postimg.cc/QBd9pRYP/tacu4.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Ta Cu Mountain View">
+            <img src="https://i.postimg.cc/Nyj91WCW/tacu5.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Private Ta Cu Tour">
+            <img src="https://i.postimg.cc/B878NMRR/tacu6.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Mui Ne to Ta Cu Mountain">
+          </div>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col justify-center">
+          <div class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-3 w-max">Recommended</div>
+          <h2 class="text-3xl font-extrabold text-gray-900 mb-2">🏔 Ta Cu Mountain</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">Private trip from Mui Ne to Ta Cu Mountain. Visit the reclining Buddha, enjoy the mountain view and relax with flexible timing.</p>
+
+          <div class="grid grid-cols-2 gap-2 text-sm text-gray-700 mb-5">
+            <div>✔ Reclining Buddha</div>
+            <div>✔ Cable Car</div>
+            <div>✔ Mountain View</div>
+            <div>✔ Private Transfer</div>
+            <div>✔ Hotel pickup</div>
+            <div>✔ Flexible time</div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/84362772956?text=Hello, I want to check Ta Cu Mountain"
+               target="_blank"
+               onclick="trackWhatsAppTour('ta_cu_mountain')"
+               class="btn-cta bg-green-500 text-white px-6 py-3 rounded-2xl font-bold shadow text-center">
+               💬 Check Price & Availability
+            </a>
+            <a href="tel:0362772956"
+               onclick="trackCallClick()"
+               class="btn-cta bg-gray-100 text-gray-800 px-6 py-3 rounded-2xl font-bold shadow text-center">
+               📞 Call Now
+            </a>
+          </div>
+
+          <div class="text-xs text-gray-400 mt-3">Cable car ticket not included • Confirm by WhatsApp</div>
+        </div>
+
       </div>
-      <div class="grid grid-cols-2 gap-2 text-sm text-gray-600"><div>✔ Reclining Buddha</div><div>✔ Cable Car</div><div>✔ Mountain View</div><div>✔ Private Transfer</div></div>
-      <a href="https://wa.me/84362772956?text=Hello, I want to check Ta Cu Mountain" target="_blank" onclick="trackWhatsAppTour('ta_cu_mountain')" class="btn-cta inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow">Check Availability</a>
     </div>
 
-    <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100 card-hover">
-      <div class="flex items-center justify-between mb-3"><div><h2 class="text-2xl font-bold">🎣 Fishing Experience</h2><div class="text-sm text-gray-500 mt-1">Relax & catch your own fish</div></div><div class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold">Unique</div></div>
-      <div class="grid grid-cols-3 gap-2 mb-3">
-        <img src="https://i.postimg.cc/GBnBsY9R/ca1.jpg" class="w-full h-24 object-cover rounded-xl" alt="Mui Ne Fishing Tour">
-        <img src="https://i.postimg.cc/1fTVsbQH/ca2.jpg" class="w-full h-24 object-cover rounded-xl" alt="Fishing Experience Mui Ne">
-        <img src="https://i.postimg.cc/18qntMm2/ca3.jpg" class="w-full h-24 object-cover rounded-xl" alt="Fishing Trip Mui Ne">
-        <img src="https://i.postimg.cc/k2b64wMd/ca4.jpg" class="w-full h-24 object-cover rounded-xl" alt="Catch Fish Mui Ne">
-        <img src="https://i.postimg.cc/YvWG982B/ca5.jpg" class="w-full h-24 object-cover rounded-xl" alt="Nature Fishing Mui Ne">
-        <img src="https://i.postimg.cc/ZWdBRjYm/ca6.jpg" class="w-full h-24 object-cover rounded-xl" alt="Private Fishing Experience">
+    <!-- FISHING EXPERIENCE -->
+    <div class="bg-white rounded-3xl shadow-xl p-5 md:p-6 border border-gray-100 card-hover">
+      <div class="flex flex-col md:flex-row gap-6">
+
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <img src="https://i.postimg.cc/GBnBsY9R/ca1.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Mui Ne Fishing Tour">
+            <img src="https://i.postimg.cc/1fTVsbQH/ca2.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Fishing Experience Mui Ne">
+            <img src="https://i.postimg.cc/18qntMm2/ca3.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Fishing Trip Mui Ne">
+            <img src="https://i.postimg.cc/k2b64wMd/ca4.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Catch Fish Mui Ne">
+            <img src="https://i.postimg.cc/YvWG982B/ca5.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Nature Fishing Mui Ne">
+            <img src="https://i.postimg.cc/ZWdBRjYm/ca6.jpg" class="w-full h-36 md:h-40 object-cover rounded-2xl shadow-sm" alt="Private Fishing Experience">
+          </div>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col justify-center">
+          <div class="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-3 w-max">Unique Experience</div>
+          <h2 class="text-3xl font-extrabold text-gray-900 mb-2">🎣 Fishing Experience</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">Relax in nature and enjoy a local fishing experience near Mui Ne. A simple and peaceful activity for travelers who want something different.</p>
+
+          <div class="grid grid-cols-2 gap-2 text-sm text-gray-700 mb-5">
+            <div>✔ Freshwater fishing</div>
+            <div>✔ Equipment included</div>
+            <div>✔ Relaxing nature</div>
+            <div>✔ Catch & cook</div>
+            <div>✔ Private booking</div>
+            <div>✔ Local experience</div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/84362772956?text=Hello, I want to check Fishing Experience"
+               target="_blank"
+               onclick="trackWhatsAppTour('fishing_experience')"
+               class="btn-cta bg-green-500 text-white px-6 py-3 rounded-2xl font-bold shadow text-center">
+               💬 Check Price & Availability
+            </a>
+            <a href="tel:0362772956"
+               onclick="trackCallClick()"
+               class="btn-cta bg-gray-100 text-gray-800 px-6 py-3 rounded-2xl font-bold shadow text-center">
+               📞 Call Now
+            </a>
+          </div>
+
+          <div class="text-xs text-gray-400 mt-3">Private booking • Confirm by WhatsApp</div>
+        </div>
+
       </div>
-      <div class="grid grid-cols-2 gap-2 text-sm text-gray-600"><div>✔ Freshwater fishing</div><div>✔ Equipment included</div><div>✔ Relaxing nature</div><div>✔ Catch & cook</div></div>
-      <a href="https://wa.me/84362772956?text=Hello, I want to check Fishing Experience" target="_blank" onclick="trackWhatsAppTour('fishing_experience')" class="btn-cta inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow">Check Availability</a>
     </div>
+
   </div>
 </section>
 
@@ -150,8 +308,16 @@
   <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
     <h2 class="text-2xl font-extrabold text-gray-900 mb-3">Why Book Mui Ne Tour With Us?</h2>
     <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
-      <div class="space-y-2"><div>✔ Private tour options for couples, families and groups</div><div>✔ Fast WhatsApp confirmation</div><div>✔ Flexible pickup time from hotel or resort</div></div>
-      <div class="space-y-2"><div>✔ English support for foreign travelers</div><div>✔ Easy combination with private car transfers</div><div>✔ Local experience in Mui Ne and Phan Thiet</div></div>
+      <div class="space-y-2">
+        <div>✔ Private tour options for couples, families and groups</div>
+        <div>✔ Fast WhatsApp confirmation</div>
+        <div>✔ Flexible pickup time from hotel or resort</div>
+      </div>
+      <div class="space-y-2">
+        <div>✔ English support for foreign travelers</div>
+        <div>✔ Easy combination with private car transfers</div>
+        <div>✔ Local experience in Mui Ne and Phan Thiet</div>
+      </div>
     </div>
   </div>
 </section>
@@ -159,7 +325,10 @@
 <!-- BACK TO CAR -->
 <section class="max-w-6xl mx-auto mb-6">
   <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-    <div><h2 class="text-xl font-extrabold text-gray-900">Need private car transfer too?</h2><p class="text-sm text-gray-600 mt-1">Book Ho Chi Minh, Da Lat, Nha Trang, Cam Ranh and Vung Tau private transfers.</p></div>
+    <div>
+      <h2 class="text-xl font-extrabold text-gray-900">Need private car transfer too?</h2>
+      <p class="text-sm text-gray-600 mt-1">Book Ho Chi Minh, Da Lat, Nha Trang, Cam Ranh and Vung Tau private transfers.</p>
+    </div>
     <a href="/" class="btn-cta bg-gradient-to-r from-blue-500 to-blue-700 text-white px-5 py-3 rounded-2xl font-bold text-center shadow-xl">View Private Car Routes</a>
   </div>
 </section>
@@ -172,11 +341,35 @@
 </div>
 
 <script>
-function trackWhatsAppTop(){if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});gtag('event','whatsapp_top_click',{location:'tour_top_cta'});}}
-function trackWhatsAppFloat(){if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});gtag('event','whatsapp_float_click',{location:'tour_floating_button'});}}
-function trackWhatsAppTour(source){if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});gtag('event','whatsapp_tour_click',{source:source});}}
-function trackCallClick(){if(typeof gtag==='function'){gtag('event','call_click',{location:'tour_call_button'});}}
-function trackTelegramClick(){if(typeof gtag==='function'){gtag('event','telegram_click',{location:'tour_telegram_button'});}}
+function trackWhatsAppTop(){
+  if(typeof gtag==='function'){
+    gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});
+    gtag('event','whatsapp_top_click',{location:'tour_top_cta'});
+  }
+}
+function trackWhatsAppFloat(){
+  if(typeof gtag==='function'){
+    gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});
+    gtag('event','whatsapp_float_click',{location:'tour_floating_button'});
+  }
+}
+function trackWhatsAppTour(source){
+  if(typeof gtag==='function'){
+    gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});
+    gtag('event','whatsapp_tour_click',{source:source});
+  }
+}
+function trackCallClick(){
+  if(typeof gtag==='function'){
+    gtag('event','call_click',{location:'tour_call_button'});
+  }
+}
+function trackTelegramClick(){
+  if(typeof gtag==='function'){
+    gtag('event','telegram_click',{location:'tour_telegram_button'});
+  }
+}
 </script>
+
 </body>
 </html>
