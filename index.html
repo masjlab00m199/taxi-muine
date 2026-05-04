@@ -89,28 +89,6 @@
     .badge-pulse {
       animation: pulseSoft 2s infinite;
     }
-.lang-btn {
-  border: none;
-  background: transparent;
-  color: #111827;
-  padding: 7px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-
-.lang-btn:hover {
-  background: rgba(22,163,74,0.12);
-  color: #16a34a;
-}
-
-.lang-btn.active {
-  background: #16a34a;
-  color: white;
-  box-shadow: 0 4px 12px rgba(22,163,74,0.25);
-}
     @keyframes pulseSoft {
       0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.28); }
       70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
@@ -453,27 +431,6 @@ a[href^="https://wa.me"]:hover {
      class="btn-cta btn-pulse px-3 py-1.5 rounded-full bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold text-sm shadow hover:from-green-600 hover:to-green-800">
     💬 WhatsApp
   </a>
-
-<div class="relative" id="langWrap">
-    <button type="button" id="langToggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-gray-800 font-semibold text-sm shadow hover:bg-gray-50 border border-gray-200">
-      <span id="currentFlag">🇬🇧</span>
-      <span id="currentLang">English</span>
-      <span class="text-xs">▾</span>
-    </button>
-    <div id="langMenu" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden z-50">
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="en">🇬🇧 English</button>
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="vi">🇻🇳 Tiếng Việt</button>
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="ru">🇷🇺 Русский</button>
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="ko">🇰🇷 한국어</button>
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="zh">🇨🇳 中文</button>
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="km">🇰🇭 Khmer</button>
-      <button type="button" class="lang-option w-full text-left px-4 py-3 hover:bg-gray-50 text-sm font-semibold" data-lang="hi">🇮🇳 Hindi</button>
-    </div>
-  </div>
-
-  
-
-
 </div>
     </div>
   </div>
@@ -1344,7 +1301,7 @@ a[href^="https://wa.me"]:hover {
       }
     }
 
-    let currentLang = localStorage.getItem('lang') || 'en';
+    const currentLang = 'en';
 
     
     
@@ -1557,8 +1514,8 @@ const textMaps = {
     function applyLanguage() {
       const ui = uiText[currentLang];
       document.documentElement.lang = currentLang;
-      document.getElementById('currentFlag').textContent = ui.currentFlag;
-      document.getElementById('currentLang').textContent = ui.currentLang;
+      document.getElementById('currentFlag') && (document.getElementById('currentFlag').textContent = ui.currentFlag);
+      document.getElementById('currentLang') && (document.getElementById('currentLang').textContent = ui.currentLang);
       const opts = document.querySelectorAll('.lang-option');
       if (opts[0]) opts[0].textContent = ui.menuEn;
       if (opts[1]) opts[1].textContent = ui.menuVi;
@@ -1596,10 +1553,7 @@ const textMaps = {
     }
 
     function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('lang', lang);
       applyLanguage();
-      document.getElementById('langMenu').classList.add('hidden');
     }
 
     function toggleLangMenu(e) {
@@ -1607,7 +1561,7 @@ const textMaps = {
         e.preventDefault();
         e.stopPropagation();
       }
-      document.getElementById('langMenu').classList.toggle('hidden');
+      document.getElementById('langMenu') && document.getElementById('langMenu').classList.toggle('hidden');
     }
 
     document.addEventListener('click', function(e) {
