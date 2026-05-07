@@ -404,7 +404,346 @@ a[href^="https://wa.me"]:hover {
   height: auto;
   display: block;
 }
-  </style>
+  
+
+/* =========================================================
+   PREMIUM UI UPGRADE ADD-ON
+   Giữ nguyên toàn bộ HTML/JS cũ - chỉ nâng giao diện bằng CSS
+   ========================================================= */
+
+:root {
+  --brand-green: #16a34a;
+  --brand-green-dark: #047857;
+  --brand-lime: #84cc16;
+  --brand-blue: #0ea5e9;
+  --brand-gold: #f59e0b;
+  --ink-dark: #0f172a;
+  --soft-border: rgba(255,255,255,0.72);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(34,197,94,0.14), transparent 30%),
+    radial-gradient(circle at 85% 8%, rgba(14,165,233,0.13), transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #eefdf3 32%, #f8fafc 70%, #eef2ff 100%) !important;
+  color: #172033;
+}
+
+/* Premium page container feel */
+section.max-w-6xl,
+.max-w-6xl.mx-auto {
+  position: relative;
+}
+
+/* Top bar: more premium and sticky feeling */
+.max-w-6xl.mx-auto.mb-4 > .glass {
+  background: rgba(255,255,255,0.78) !important;
+  border: 1px solid rgba(255,255,255,0.88) !important;
+  box-shadow: 0 18px 45px rgba(15,23,42,0.10) !important;
+  backdrop-filter: blur(18px);
+}
+
+/* Hero: stronger luxury look */
+.hero-bg {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 30px 80px rgba(15,23,42,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.20) !important;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(34,197,94,0.30), transparent 28%),
+    radial-gradient(circle at 82% 22%, rgba(59,130,246,0.22), transparent 28%),
+    linear-gradient(120deg, rgba(2,6,23,0.10), rgba(2,6,23,0.30));
+  pointer-events: none;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  left: -15%;
+  bottom: -40%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(34,197,94,0.22), transparent 66%);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+.hero-bg h1 {
+  letter-spacing: -0.045em;
+  text-shadow: 0 12px 34px rgba(0,0,0,0.35);
+}
+
+.hero-bg p {
+  max-width: 760px;
+}
+
+.hero-bg .grid > div {
+  background: rgba(255,255,255,0.13) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(10px);
+  transition: all .35s ease;
+}
+.hero-bg .grid > div:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.18) !important;
+}
+
+/* All main white cards: smoother premium surface */
+.bg-white.rounded-3xl,
+.glass.rounded-2xl,
+#booking {
+  border: 1px solid rgba(255,255,255,0.82) !important;
+  box-shadow:
+    0 22px 55px rgba(15,23,42,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.72) !important;
+}
+
+.bg-white.rounded-3xl {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.89)) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Booking box: make it the conversion center */
+#booking {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(34,197,94,0.18) !important;
+  background:
+    radial-gradient(circle at top right, rgba(34,197,94,0.13), transparent 35%),
+    linear-gradient(180deg, #ffffff, #f8fffb) !important;
+  transform: translateZ(0);
+}
+
+#booking::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(34,197,94,0.20), transparent 70%);
+  pointer-events: none;
+}
+
+#booking::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #16a34a, #84cc16, #0ea5e9);
+}
+
+#booking input,
+#booking select {
+  background: rgba(248,250,252,0.9) !important;
+  border: 1px solid rgba(203,213,225,0.8) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+  transition: all .25s ease;
+}
+
+#booking input:focus,
+#booking select:focus {
+  background: #ffffff !important;
+  border-color: rgba(34,197,94,0.55) !important;
+  box-shadow: 0 0 0 4px rgba(34,197,94,0.13) !important;
+}
+
+#priceBox {
+  background:
+    linear-gradient(135deg, rgba(220,252,231,0.95), rgba(236,253,245,0.95)) !important;
+  border: 1px solid rgba(34,197,94,0.22) !important;
+  box-shadow: 0 12px 28px rgba(22,163,74,0.09);
+}
+
+/* Buttons: more luxury without changing links */
+.btn-cta,
+button,
+a[href^="https://wa.me"],
+a[href^="tel:"],
+a[href^="https://t.me"] {
+  border: 1px solid rgba(255,255,255,0.22);
+  letter-spacing: -0.01em;
+}
+
+a[href^="https://wa.me"],
+button[onclick="sendWhatsApp()"] {
+  background-image: linear-gradient(135deg, #22c55e, #16a34a 48%, #047857) !important;
+}
+
+button[onclick="sendWhatsApp()"] {
+  box-shadow:
+    0 20px 44px rgba(22,163,74,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.28) !important;
+}
+
+/* Vehicle cards: stronger visual card */
+.vehicle-intro-card {
+  border-radius: 28px !important;
+  box-shadow: 0 18px 44px rgba(15,23,42,0.08) !important;
+}
+
+.vehicle-intro-card img {
+  transition: transform .55s ease, filter .55s ease;
+}
+.vehicle-intro-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.vehicle-intro-card h3 {
+  letter-spacing: -0.02em;
+}
+
+/* SEO service cards + route cards */
+.seo-service-card,
+.route-card,
+.group.relative.overflow-hidden.p-5.rounded-2xl,
+.bg-gray-50.rounded-2xl {
+  border-color: rgba(226,232,240,0.95) !important;
+  box-shadow: 0 12px 30px rgba(15,23,42,0.06);
+}
+
+.route-card {
+  background:
+    linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  border-radius: 22px !important;
+}
+
+.route-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #22c55e, #0ea5e9);
+  opacity: .85;
+}
+
+.route-card .font-bold {
+  letter-spacing: -0.018em;
+}
+
+.route-card:hover {
+  transform: translateY(-7px) scale(1.01);
+  background:
+    linear-gradient(135deg, #ffffff, #f0fdf4) !important;
+}
+
+/* Review cards: make them feel less plain */
+.text-yellow-500 {
+  text-shadow: 0 6px 16px rgba(245,158,11,0.22);
+}
+
+.bg-gray-50.rounded-2xl.p-5.border {
+  background:
+    radial-gradient(circle at top right, rgba(245,158,11,0.11), transparent 36%),
+    linear-gradient(180deg, #ffffff, #f8fafc) !important;
+}
+
+/* Map section refinement */
+iframe {
+  filter: saturate(1.05) contrast(1.02);
+}
+
+/* Floating buttons: cleaner mobile app style */
+.floating-action-btn {
+  border: 1px solid rgba(255,255,255,0.30) !important;
+  box-shadow:
+    0 14px 34px rgba(15,23,42,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.25) !important;
+}
+
+/* Section headings */
+h2 {
+  letter-spacing: -0.035em;
+}
+
+.inline-block.bg-green-100,
+.hero-bg .inline-flex {
+  box-shadow: 0 10px 24px rgba(22,163,74,0.10);
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+  body {
+    padding: 10px 10px 118px !important;
+  }
+
+  .hero-bg {
+    border-radius: 26px !important;
+  }
+
+  .hero-bg .px-6 {
+    padding: 28px 20px !important;
+  }
+
+  .hero-bg h1 {
+    font-size: 31px !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-bg p {
+    font-size: 15px !important;
+  }
+
+  #booking {
+    border-radius: 26px !important;
+    padding: 18px !important;
+  }
+
+  .route-card,
+  .seo-service-card,
+  .vehicle-intro-card {
+    border-radius: 22px !important;
+  }
+
+  .floating-action-btn {
+    min-width: 104px !important;
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Slight premium animated background glow */
+@keyframes premiumFloatGlow {
+  0%,100% { transform: translate3d(0,0,0); opacity: .82; }
+  50% { transform: translate3d(0,-8px,0); opacity: 1; }
+}
+
+.hero-bg::after,
+#booking::before {
+  animation: premiumFloatGlow 6.5s ease-in-out infinite;
+}
+
+/* Keep reduced motion safe */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg::after,
+  #booking::before,
+  .vehicle-intro-card img,
+  .route-card,
+  .hero-bg .grid > div {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style>
 </head>
 
 <body class="text-gray-800 p-4">
