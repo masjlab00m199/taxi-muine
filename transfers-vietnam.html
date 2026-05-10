@@ -5,6 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transfers Vietnam Article</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<style>
+  .hero-wrap {
+    position: relative;
+    min-height: 430px;
+    overflow: hidden;
+    border-radius: 1.5rem 1.5rem 0 0;
+    background: #020617;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.62;
+    transform: scale(1.03);
+  }
+
+  .hero-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(2, 6, 23, 0.96) 0%, rgba(3, 20, 24, 0.88) 42%, rgba(2, 6, 23, 0.70) 100%),
+      linear-gradient(0deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.42) 48%, rgba(2, 6, 23, 0.82) 100%);
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -140px;
+    top: -130px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.48), rgba(16, 185, 129, 0.08) 45%, transparent 70%);
+    filter: blur(8px);
+  }
+
+  .hero-gold-glow {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    left: -130px;
+    bottom: -160px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.32), rgba(245, 158, 11, 0.06) 48%, transparent 72%);
+    filter: blur(10px);
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 36px;
+    color: white;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981, #047857);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    box-shadow: 0 12px 28px rgba(16, 185, 129, 0.32);
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 900;
+    max-width: 820px;
+    text-shadow: 0 4px 22px rgba(0,0,0,.65);
+  }
+
+  .hero-text {
+    margin-top: 18px;
+    color: #d1fae5;
+    max-width: 760px;
+    font-size: 18px;
+    line-height: 1.7;
+    text-shadow: 0 3px 14px rgba(0,0,0,.75);
+  }
+
+  .hero-actions {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .hero-btn-main {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: #111827;
+    font-weight: 900;
+    padding: 16px 24px;
+    border-radius: 18px;
+    box-shadow: 0 18px 38px rgba(245, 158, 11, .34);
+    transition: all .25s ease;
+    text-decoration: none;
+  }
+
+  .hero-btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 46px rgba(245, 158, 11, .46);
+  }
+
+  .hero-btn-secondary {
+    display: inline-block;
+    border: 1px solid rgba(209, 250, 229, .38);
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+    font-weight: 800;
+    padding: 15px 22px;
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    text-decoration: none;
+  }
+
+  .hero-points {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-point {
+    background: rgba(15, 23, 42, .72);
+    border: 1px solid rgba(16, 185, 129, .28);
+    color: #ecfdf5;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 12px; }
+    .hero-wrap { min-height: 520px; }
+    .hero-img { height: 520px; }
+    .hero-content { padding: 24px; }
+    .hero-title { font-size: 34px; }
+    .hero-text { font-size: 16px; }
+    .hero-btn-main, .hero-btn-secondary { width: 100%; text-align: center; }
+  }
+</style>
 </head>
 
 <body class="bg-gray-100 p-6">
@@ -12,31 +162,44 @@
 <section class="max-w-6xl mx-auto mb-8">
   <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
 
-    <div class="relative">
+    <div class="hero-wrap">
       <img src="/images/ho-chi-minh.webp"
            alt="Vietnam private transfers and Ho Chi Minh City skyline"
-           class="w-full h-[320px] object-cover">
+           class="hero-img">
 
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+      <div class="hero-dark-overlay"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-gold-glow"></div>
 
-      <div class="absolute bottom-0 left-0 p-6 md:p-10 text-white">
-        <div class="inline-block bg-green-500/90 px-4 py-1 rounded-full text-sm font-bold mb-4">
+      <div class="hero-content">
+        <div class="hero-badge">
           Transfers Vietnam
         </div>
 
-        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">
+        <h2 class="hero-title">
           Private Transfers Across Vietnam
         </h2>
 
-        <p class="mt-4 text-gray-200 max-w-3xl text-base md:text-lg leading-relaxed">
+        <p class="hero-text">
           Discover comfortable private transfers across Vietnam with professional drivers,
           fixed price service and fast WhatsApp booking.
         </p>
 
-        <a href="https://muinetaxi.vn/"
-           class="inline-block mt-6 bg-green-500 hover:bg-green-600 transition text-white font-bold px-6 py-4 rounded-2xl shadow-2xl">
-          🚗 Book Private Transfer
-        </a>
+        <div class="hero-actions">
+          <a href="https://muinetaxi.vn/" class="hero-btn-main">
+            🚗 Book Private Transfer
+          </a>
+          <a href="https://wa.me/84962024437" class="hero-btn-secondary">
+            WhatsApp Fast Support
+          </a>
+        </div>
+
+        <div class="hero-points">
+          <span class="hero-point">Fixed Price</span>
+          <span class="hero-point">Door-to-Door</span>
+          <span class="hero-point">Private Car</span>
+          <span class="hero-point">Clean Vehicles</span>
+        </div>
       </div>
     </div>
 
