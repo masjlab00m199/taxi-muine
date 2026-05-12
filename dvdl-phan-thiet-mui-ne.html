@@ -4,400 +4,365 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DVDL Phan Thiết Mũi Né | Xe Du Lịch & Tour Mũi Né</title>
+<title>DVDL Phan Thiết Mũi Né | Xe Du Lịch, Tour Jeep & Đưa Đón Tận Nơi</title>
+<meta name="description" content="DVDL Phan Thiết Mũi Né chuyên xe du lịch riêng, tour Jeep Bàu Trắng, tham quan Mũi Né, đưa đón sân bay, TP.HCM, Đà Lạt, Nha Trang. Xe sạch đẹp, giá rõ ràng, hỗ trợ Zalo 24/7.">
+<link rel="canonical" href="https://muinetaxi.vn/dvdl-phan-thiet-mui-ne.html">
 
-<meta name="description"
-content="DVDL Phan Thiết Mũi Né chuyên xe du lịch riêng, tour Jeep Bàu Trắng, tham quan Mũi Né, đưa đón sân bay, TP.HCM, Đà Lạt, Nha Trang. Hỗ trợ Zalo 24/7.">
+<meta property="og:title" content="DVDL Phan Thiết Mũi Né | Xe Du Lịch & Tour Jeep Mũi Né">
+<meta property="og:description" content="Xe du lịch riêng, Tour Jeep Bàu Trắng, đưa đón tận nơi tại Phan Thiết Mũi Né. Liên hệ Zalo 0362 772 956.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muinetaxi.vn/dvdl-phan-thiet-mui-ne.html">
+<meta property="og:image" content="https://muinetaxi.vn/images/viet%201.png">
 
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TravelAgency",
+  "name":"DVDL Phan Thiết Mũi Né - Nguyễn Thương",
+  "url":"https://muinetaxi.vn/dvdl-phan-thiet-mui-ne.html",
+  "telephone":"+84362772956",
+  "areaServed":["Phan Thiết","Mũi Né","Bàu Trắng","TP. Hồ Chí Minh","Đà Lạt","Nha Trang","Sân bay Tân Sơn Nhất","Sân bay Cam Ranh"],
+  "description":"Dịch vụ xe du lịch riêng, Tour Jeep Bàu Trắng, tham quan Mũi Né, đưa đón sân bay và xe hợp đồng du lịch tại Phan Thiết Mũi Né.",
+  "priceRange":"$$"
+}
+</script>
+
 <style>
+html{scroll-behavior:smooth}
 body{
     background:#f8fafc;
     color:#0f172a;
-    font-family:sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    padding-bottom:100px;
 }
-
+.btn{transition:.25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.2)}
 .hero{
     background:
-    linear-gradient(to right,rgba(2,6,23,.88),rgba(2,6,23,.55)),
-    url('images/viet 3.png') center/cover no-repeat;
-    min-height:620px;
+    linear-gradient(90deg,rgba(2,6,23,.88),rgba(2,6,23,.62),rgba(2,6,23,.18)),
+    url('images/viet 1.png') center/cover no-repeat;
+    min-height:650px;
 }
-
 .glass{
-    background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.13);
     backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.18);
 }
-
-.spot-card{
-    background:white;
-    border-radius:24px;
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:28px;
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
 }
-
+.card-img{
+    width:100%;
+    height:100%;
+    min-height:360px;
+    object-fit:cover;
+    display:block;
+}
+.spot-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 16px 38px rgba(15,23,42,.08);
+}
 .spot-card img{
     width:100%;
-    height:260px;
+    height:250px;
     object-fit:cover;
 }
-
-.btn{
-    transition:.25s;
+.feature{
+    background:#ecfdf5;
+    border:1px solid #bbf7d0;
+    color:#166534;
+    border-radius:18px;
+    padding:16px;
+    text-align:center;
+    font-weight:900;
 }
-
-.btn:hover{
-    transform:translateY(-2px);
+.route-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:22px;
+    padding:20px;
+    box-shadow:0 12px 30px rgba(15,23,42,.06);
 }
-
-.float-btn{
+.float-wrap{
     position:fixed;
-    right:16px;
-    bottom:16px;
+    right:14px;
+    bottom:14px;
     z-index:9999;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:9px;
 }
-
-.float-btn a{
-    padding:14px 18px;
+.float-wrap a{
+    min-width:128px;
+    text-align:center;
+    padding:12px 15px;
     border-radius:999px;
-    color:white;
-    font-weight:800;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    color:#fff;
+    font-weight:900;
+    font-size:14px;
+    box-shadow:0 10px 26px rgba(0,0,0,.22);
 }
-
 @media(max-width:768px){
-    .hero{
-        min-height:540px;
-        background-position:center;
-    }
+    body{padding:10px;padding-bottom:108px}
+    .hero{min-height:600px;border-radius:28px;background-position:center}
+    .card-img{min-height:auto;height:auto;object-fit:contain;background:#f3f4f6}
+    .spot-card img{height:auto;object-fit:contain;background:#f3f4f6}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="max-w-6xl mx-auto p-4">
-    <div class="bg-white rounded-2xl shadow-lg px-5 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
-
+<header class="max-w-6xl mx-auto p-4 md:px-0">
+    <div class="bg-white rounded-2xl shadow-lg px-5 py-4 flex flex-col md:flex-row md:items-center md:justify-between border border-gray-100">
         <div>
-            <div class="font-black text-2xl">
-                🌴 DVDL Phan Thiết Mũi Né
-            </div>
-
-            <div class="text-gray-500 text-sm mt-1">
-                Xe du lịch • Tour Jeep • Đưa đón tận nơi
-            </div>
+            <div class="font-black text-2xl">🌴 DVDL Phan Thiết Mũi Né</div>
+            <div class="text-gray-500 text-sm mt-1">Xe du lịch • Tour Jeep • Đưa đón tận nơi • Zalo 24/7</div>
         </div>
-
         <div class="flex gap-3 mt-4 md:mt-0">
-
-            <a href="tel:0362772956"
-            class="btn bg-red-500 text-white px-5 py-3 rounded-full font-bold">
-                📞 0362 772 956
-            </a>
-
-            <a href="https://zalo.me/0362772956"
-            target="_blank"
-            class="btn bg-blue-600 text-white px-5 py-3 rounded-full font-bold">
-                💬 Zalo
-            </a>
-
+            <a href="tel:0362772956" class="btn bg-red-500 text-white px-5 py-3 rounded-full font-bold">📞 0362 772 956</a>
+            <a href="https://zalo.me/0362772956" target="_blank" class="btn bg-blue-600 text-white px-5 py-3 rounded-full font-bold">💬 Zalo</a>
         </div>
     </div>
 </header>
 
-<!-- HERO -->
-<section class="hero rounded-3xl overflow-hidden max-w-6xl mx-auto shadow-2xl flex items-center">
+<main class="max-w-6xl mx-auto px-4 md:px-0">
 
-    <div class="max-w-2xl text-white p-6 md:p-12">
-
+<section class="hero rounded-3xl overflow-hidden shadow-2xl flex items-center mb-6">
+    <div class="max-w-3xl text-white p-6 md:p-12">
         <div class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-black text-xs tracking-widest mb-5">
             DVDL PHAN THIẾT MŨI NÉ
         </div>
 
         <h1 class="text-5xl md:text-7xl font-black leading-none">
-            Khám Phá<br>
-            Mũi Né<br>
-            Thoải Mái
+            Xe Du Lịch<br>Phan Thiết<br><span class="text-yellow-300">Mũi Né</span>
         </h1>
 
-        <p class="text-yellow-300 text-2xl font-extrabold mt-5">
-            Xe riêng • Tour Jeep • Đưa đón tận nơi
+        <p class="text-yellow-300 text-2xl md:text-3xl font-extrabold mt-5">
+            Tour Jeep • Xe Riêng • Đưa Đón Tận Nơi
         </p>
 
         <p class="mt-5 text-gray-100 leading-relaxed text-lg">
-            Dịch vụ xe du lịch riêng tại Phan Thiết Mũi Né,
-            hỗ trợ tham quan các điểm nổi tiếng,
-            Tour Jeep Bàu Trắng,
-            đưa đón sân bay,
-            TP.HCM,
-            Đà Lạt,
-            Nha Trang
-            và các tuyến du lịch khác.
+            DVDL Phan Thiết Mũi Né chuyên phục vụ xe du lịch riêng, tour tham quan Mũi Né,
+            Tour Jeep Bàu Trắng, đưa đón sân bay, khách sạn, resort và các tuyến đường dài
+            đi TP.HCM, Đà Lạt, Nha Trang, Vũng Tàu, Hồ Tràm. Phù hợp cho gia đình, nhóm bạn,
+            khách công ty và du khách muốn chuyến đi riêng tư, thoải mái, rõ giá.
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-7">
-
-            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">
-                Xe sạch đẹp
-            </div>
-
-            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">
-                Giá rõ ràng
-            </div>
-
-            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">
-                Hỗ trợ 24/7
-            </div>
-
-            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">
-                Xe riêng thoải mái
-            </div>
-
+            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">Xe sạch đẹp</div>
+            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">Giá rõ ràng</div>
+            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">Không ghép khách</div>
+            <div class="glass rounded-2xl p-3 text-center font-bold text-sm">Zalo 24/7</div>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3 mt-8">
-
-            <a href="https://zalo.me/0362772956"
-            target="_blank"
-            class="btn bg-blue-600 hover:bg-blue-700 text-white px-7 py-4 rounded-2xl font-black text-center">
+            <a href="https://zalo.me/0362772956" target="_blank" class="btn bg-blue-600 hover:bg-blue-700 text-white px-7 py-4 rounded-2xl font-black text-center">
                 💬 Đặt xe qua Zalo
             </a>
-
-            <a href="tel:0362772956"
-            class="btn bg-white text-black px-7 py-4 rounded-2xl font-black text-center">
+            <a href="tel:0362772956" class="btn bg-white text-black px-7 py-4 rounded-2xl font-black text-center">
                 📞 Gọi ngay
             </a>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- FEATURES -->
-<section class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 px-4">
-
-    <div class="bg-green-100 text-green-700 rounded-2xl p-4 text-center font-black">
-        ✔ Đưa đón tận nơi
-    </div>
-
-    <div class="bg-green-100 text-green-700 rounded-2xl p-4 text-center font-black">
-        ✔ Không phát sinh
-    </div>
-
-    <div class="bg-green-100 text-green-700 rounded-2xl p-4 text-center font-black">
-        ✔ Lịch trình linh hoạt
-    </div>
-
-    <div class="bg-green-100 text-green-700 rounded-2xl p-4 text-center font-black">
-        ✔ Tài xế kinh nghiệm
-    </div>
-
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="feature">✔ Đưa đón tận nơi</div>
+    <div class="feature">✔ Lịch trình linh hoạt</div>
+    <div class="feature">✔ Xe riêng thoải mái</div>
+    <div class="feature">✔ Báo giá qua Zalo</div>
 </section>
 
-<!-- SPOTS -->
-<section class="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-10 mt-6">
+<section class="card mb-6">
+    <div class="grid lg:grid-cols-2">
+        <div>
+            <img src="images/viet 1.png" alt="DVDL Phan Thiết Mũi Né xe du lịch tham quan" class="card-img">
+        </div>
+        <div class="p-6 md:p-10 flex flex-col justify-center">
+            <div class="text-green-600 font-extrabold text-sm tracking-widest">DVDL PHAN THIẾT MŨI NÉ</div>
+            <h2 class="text-3xl md:text-4xl font-black mt-2 leading-tight">
+                Dịch vụ xe du lịch riêng tại Phan Thiết Mũi Né
+            </h2>
+            <p class="text-gray-600 mt-5 leading-relaxed">
+                Phan Thiết Mũi Né là điểm đến nổi tiếng của Bình Thuận với biển xanh, đồi cát, làng chài,
+                Suối Tiên, Bàu Trắng và nhiều cung đường ven biển đẹp. Với xe du lịch riêng, du khách có thể
+                chủ động thời gian, tự chọn điểm dừng, dừng chụp ảnh, nghỉ ngơi và tham quan theo lịch trình riêng.
+            </p>
+            <p class="text-gray-600 mt-4 leading-relaxed">
+                Dịch vụ phù hợp cho khách gia đình, nhóm bạn, khách công ty, khách đi nghỉ dưỡng tại resort hoặc
+                khách cần xe đưa đón sân bay. Chỉ cần gửi điểm đón, điểm đến, ngày giờ, số khách và hành lý qua Zalo,
+                chúng tôi sẽ tư vấn xe phù hợp và báo giá rõ ràng trước chuyến đi.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <div class="text-center max-w-3xl mx-auto mb-10">
-
+<section class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-10 mb-6">
+    <div class="text-center max-w-3xl mx-auto mb-9">
         <div class="inline-block bg-blue-100 text-blue-700 font-black px-4 py-2 rounded-full text-xs mb-4">
             KHÁM PHÁ MŨI NÉ
         </div>
-
-        <h2 class="text-4xl font-black">
+        <h2 class="text-3xl md:text-4xl font-black">
             Những trải nghiệm nổi bật tại Phan Thiết Mũi Né
         </h2>
-
         <p class="text-gray-600 mt-4">
-            Xe du lịch riêng giúp bạn chủ động thời gian,
-            thoải mái tham quan
-            và dễ dàng khám phá các địa điểm đẹp tại Mũi Né.
+            Chỉ dùng đúng 3 ảnh bạn đã upload, trang vẫn đủ đẹp, nhẹ và rõ nội dung SEO cho khách Việt.
         </p>
-
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- CARD 1 -->
         <div class="spot-card">
-
-            <img src="images/viet 1.png"
-            alt="DVDL Phan Thiết Mũi Né">
-
+            <img src="images/viet 1.png" alt="DVDL Phan Thiết Mũi Né">
             <div class="p-6">
-
-                <h3 class="text-2xl font-black">
-                    DVDL Phan Thiết Mũi Né
-                </h3>
-
+                <h3 class="text-2xl font-black">DVDL Phan Thiết Mũi Né</h3>
                 <p class="text-gray-600 mt-3 leading-relaxed">
-                    Xe du lịch riêng,
-                    đưa đón tận nơi,
-                    tham quan các điểm nổi tiếng tại Mũi Né,
-                    hỗ trợ lịch trình linh hoạt
-                    và giá rõ ràng.
+                    Xe du lịch riêng, đưa đón tận nơi, tham quan Mũi Né, phục vụ khách cá nhân,
+                    gia đình, nhóm bạn và đoàn nhỏ. Lịch trình linh hoạt, báo giá rõ ràng, hỗ trợ nhanh qua Zalo.
                 </p>
-
             </div>
-
         </div>
 
-        <!-- CARD 2 -->
         <div class="spot-card">
-
-            <img src="images/viet 2.png"
-            alt="Tour Jeep Bàu Trắng">
-
+            <img src="images/viet 2.png" alt="Tour Jeep Bàu Trắng Mũi Né">
             <div class="p-6">
-
-                <h3 class="text-2xl font-black">
-                    Tour Jeep Bàu Trắng
-                </h3>
-
+                <h3 class="text-2xl font-black">Tour Jeep Bàu Trắng</h3>
                 <p class="text-gray-600 mt-3 leading-relaxed">
-                    Trải nghiệm đồi cát trắng,
-                    ngắm bình minh hoặc hoàng hôn,
-                    check-in đẹp
-                    và khám phá cung đường cát nổi tiếng của Mũi Né.
+                    Trải nghiệm Bàu Trắng, đồi cát, cung đường biển, chụp ảnh Jeep, ngắm bình minh hoặc hoàng hôn.
+                    Đây là lịch trình nổi bật được nhiều du khách chọn khi đến Mũi Né.
                 </p>
-
             </div>
-
         </div>
 
-        <!-- CARD 3 -->
         <div class="spot-card">
-
-            <img src="images/viet 3.png"
-            alt="Xe du lịch Việt Nam">
-
+            <img src="images/viet 3.png" alt="Xe du lịch riêng Phan Thiết Mũi Né">
             <div class="p-6">
-
-                <h3 class="text-2xl font-black">
-                    Xe riêng đưa đón tận nơi
-                </h3>
-
+                <h3 class="text-2xl font-black">Xe riêng đưa đón tận nơi</h3>
                 <p class="text-gray-600 mt-3 leading-relaxed">
-                    Chuyên tuyến TP.HCM,
-                    Đà Lạt,
-                    Nha Trang,
-                    sân bay
-                    và tham quan Mũi Né bằng xe riêng sạch đẹp, thoải mái.
+                    Nhận xe đi TP.HCM, Đà Lạt, Nha Trang, sân bay Tân Sơn Nhất, sân bay Cam Ranh,
+                    Vũng Tàu, Hồ Tràm và tham quan Mũi Né trong ngày.
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- CONTENT -->
-<section class="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-10 mt-6">
-
-    <div class="grid lg:grid-cols-2 gap-10 items-center">
-
-        <div>
-
-            <h2 class="text-4xl font-black leading-tight">
-                Dịch vụ xe du lịch riêng tại Phan Thiết Mũi Né
+<section class="card mb-6">
+    <div class="grid lg:grid-cols-2">
+        <div class="p-6 md:p-10 flex flex-col justify-center lg:order-1 order-2">
+            <div class="text-blue-600 font-extrabold text-sm tracking-widest">TOUR JEEP & THAM QUAN</div>
+            <h2 class="text-3xl md:text-4xl font-black mt-2 leading-tight">
+                Tour Jeep Mũi Né - Bàu Trắng, Làng Chài, Suối Tiên, Đồi Cát
             </h2>
-
             <p class="text-gray-600 mt-5 leading-relaxed">
-                Mũi Né là điểm đến nổi tiếng với biển xanh,
-                đồi cát,
-                làng chài,
-                Suối Tiên,
-                Bàu Trắng
-                và nhiều cung đường ven biển đẹp.
+                Tour Jeep Mũi Né là trải nghiệm rất được yêu thích vì du khách có thể đi qua nhiều điểm đẹp trong một buổi.
+                Lịch trình thường gồm Bàu Trắng, Đồi Cát Đỏ, Làng Chài Mũi Né và Suối Tiên. Khách có thể chọn đi buổi sáng
+                để ngắm bình minh hoặc buổi chiều để ngắm hoàng hôn.
             </p>
-
             <p class="text-gray-600 mt-4 leading-relaxed">
-                Với dịch vụ xe du lịch riêng,
-                du khách có thể chủ động thời gian,
-                dừng chụp ảnh,
-                tham quan theo lịch trình riêng
-                mà không phải ghép đoàn hay chờ đợi.
+                Ngoài Tour Jeep, DVDL Phan Thiết Mũi Né còn nhận xe du lịch riêng để khách tự thiết kế lịch trình.
+                Nếu muốn đi thêm Hải Đăng Kê Gà, tháp Chăm Poshanu, trung tâm Phan Thiết, quán ăn địa phương hoặc các resort,
+                bạn có thể gửi lịch trình qua Zalo để được tư vấn.
             </p>
-
-            <ul class="mt-6 space-y-3 text-gray-700 font-semibold">
-
-                <li>✅ Xe sạch sẽ, máy lạnh thoải mái</li>
-
-                <li>✅ Hỗ trợ khách gia đình, nhóm bạn, công ty</li>
-
-                <li>✅ Đưa đón sân bay, resort, khách sạn tận nơi</li>
-
-                <li>✅ Báo giá nhanh qua Zalo</li>
-
-            </ul>
-
+            <a href="https://zalo.me/0362772956" target="_blank" class="btn mt-6 bg-blue-600 text-white px-6 py-4 rounded-2xl font-black text-center">
+                💬 Tư vấn Tour Jeep qua Zalo
+            </a>
         </div>
+        <div class="lg:order-2 order-1">
+            <img src="images/viet 2.png" alt="Tour Jeep Bàu Trắng Mũi Né" class="card-img">
+        </div>
+    </div>
+</section>
 
+<section class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-10 mb-6">
+    <div class="text-center max-w-3xl mx-auto mb-9">
+        <div class="inline-block bg-green-100 text-green-700 font-black px-4 py-2 rounded-full text-xs mb-4">
+            TUYẾN XE PHỔ BIẾN
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">
+            Xe du lịch Phan Thiết Mũi Né đi các tỉnh
+        </h2>
+        <p class="text-gray-600 mt-4">
+            Phù hợp cho khách cần xe riêng đúng giờ, không ghép khách, không chờ đợi và có thể đón tận nơi.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="route-card"><h3 class="font-black text-lg">TP.HCM ⇄ Mũi Né</h3><p class="text-sm text-gray-600 mt-2">Đón sân bay, khách sạn, căn hộ, resort, nhà riêng.</p></div>
+        <div class="route-card"><h3 class="font-black text-lg">Mũi Né ⇄ Đà Lạt</h3><p class="text-sm text-gray-600 mt-2">Xe riêng thoải mái, phù hợp gia đình và nhóm khách.</p></div>
+        <div class="route-card"><h3 class="font-black text-lg">Mũi Né ⇄ Nha Trang</h3><p class="text-sm text-gray-600 mt-2">Di chuyển linh hoạt, không ghép khách, không chờ đợi.</p></div>
+        <div class="route-card"><h3 class="font-black text-lg">Sân bay ⇄ Mũi Né</h3><p class="text-sm text-gray-600 mt-2">Tân Sơn Nhất, Cam Ranh và các điểm đón theo yêu cầu.</p></div>
+        <div class="route-card"><h3 class="font-black text-lg">Mũi Né ⇄ Vũng Tàu / Hồ Tràm</h3><p class="text-sm text-gray-600 mt-2">Tuyến biển nghỉ dưỡng cho gia đình, nhóm bạn.</p></div>
+        <div class="route-card"><h3 class="font-black text-lg">Tham quan Mũi Né trong ngày</h3><p class="text-sm text-gray-600 mt-2">Bàu Trắng, Suối Tiên, Làng Chài, Đồi Cát.</p></div>
+    </div>
+</section>
+
+<section class="card mb-6">
+    <div class="grid lg:grid-cols-2">
         <div>
-
-            <img src="images/viet 3.png"
-            alt="Xe du lịch riêng"
-            class="rounded-3xl shadow-xl w-full">
-
+            <img src="images/viet 3.png" alt="Xe riêng đưa đón Phan Thiết Mũi Né" class="card-img">
         </div>
-
+        <div class="p-6 md:p-10 flex flex-col justify-center">
+            <div class="text-green-600 font-extrabold text-sm tracking-widest">VÌ SAO NÊN CHỌN DVDL PHAN THIẾT</div>
+            <h2 class="text-3xl md:text-4xl font-black mt-2 leading-tight">
+                Chủ động lịch trình, rõ giá, phục vụ tận tâm
+            </h2>
+            <p class="text-gray-600 mt-5 leading-relaxed">
+                Khi đi du lịch cùng gia đình hoặc nhóm bạn, xe riêng giúp chuyến đi thoải mái hơn rất nhiều.
+                Bạn có thể chọn giờ khởi hành, điểm dừng, thời gian tham quan và hành trình phù hợp mà không
+                bị phụ thuộc vào xe ghép hoặc lịch cố định.
+            </p>
+            <ul class="mt-5 space-y-3 text-gray-700 font-semibold">
+                <li>✅ Xe sạch, máy lạnh, phù hợp đi xa và tham quan trong ngày.</li>
+                <li>✅ Tài xế địa phương, rành đường Phan Thiết Mũi Né.</li>
+                <li>✅ Giá báo trước qua Zalo, hạn chế phát sinh không rõ ràng.</li>
+                <li>✅ Hỗ trợ khách cá nhân, gia đình, nhóm khách, đoàn công ty.</li>
+            </ul>
+        </div>
     </div>
-
 </section>
 
-<!-- CTA -->
-<section class="max-w-6xl mx-auto bg-gradient-to-r from-blue-700 to-green-700 rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl mt-6 mb-10">
+<section class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-10 mb-6">
+    <div class="text-center max-w-3xl mx-auto mb-8">
+        <div class="inline-block bg-yellow-100 text-yellow-700 font-black px-4 py-2 rounded-full text-xs mb-4">
+            CÂU HỎI THƯỜNG GẶP
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">Đặt xe du lịch Phan Thiết Mũi Né</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-2xl p-5 border"><h3 class="font-black">Có đặt xe qua Zalo được không?</h3><p class="text-sm text-gray-600 mt-2">Có. Quý khách gửi điểm đón, điểm đến, ngày giờ, số khách và hành lý để được tư vấn xe và báo giá.</p></div>
+        <div class="bg-gray-50 rounded-2xl p-5 border"><h3 class="font-black">Có nhận Tour Jeep Bàu Trắng không?</h3><p class="text-sm text-gray-600 mt-2">Có. Có tour bình minh, hoàng hôn hoặc lịch trình linh hoạt theo nhu cầu.</p></div>
+        <div class="bg-gray-50 rounded-2xl p-5 border"><h3 class="font-black">Có xe đi TP.HCM, Đà Lạt, Nha Trang không?</h3><p class="text-sm text-gray-600 mt-2">Có. Nhận xe riêng từ Mũi Né, Phan Thiết đi TP.HCM, Đà Lạt, Nha Trang, sân bay và nhiều tuyến khác.</p></div>
+        <div class="bg-gray-50 rounded-2xl p-5 border"><h3 class="font-black">Giá có phát sinh không?</h3><p class="text-sm text-gray-600 mt-2">Giá được báo rõ trước khi đi. Nếu khách đổi lịch trình hoặc thêm điểm xa, chúng tôi sẽ trao đổi trước.</p></div>
+    </div>
+</section>
 
-    <h2 class="text-4xl font-black">
-        Cần đặt xe du lịch tại Mũi Né?
-    </h2>
-
-    <p class="mt-4 text-blue-100 max-w-2xl mx-auto">
-        Gửi lịch trình qua Zalo để được tư vấn xe phù hợp,
-        báo giá nhanh
-        và hỗ trợ tận nơi.
+<section class="bg-gradient-to-r from-blue-700 to-green-700 rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl mb-10">
+    <h2 class="text-3xl md:text-5xl font-black">Cần đặt xe du lịch tại Phan Thiết Mũi Né?</h2>
+    <p class="mt-4 text-blue-100 max-w-3xl mx-auto text-lg">
+        Gửi lịch trình qua Zalo để được tư vấn xe phù hợp, báo giá nhanh và hỗ trợ tận nơi.
     </p>
-
     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-
-        <a href="https://zalo.me/0362772956"
-        target="_blank"
-        class="btn bg-yellow-400 text-black px-8 py-4 rounded-2xl font-black">
-            💬 Đặt xe qua Zalo
-        </a>
-
-        <a href="tel:0362772956"
-        class="btn bg-white text-black px-8 py-4 rounded-2xl font-black">
-            📞 0362 772 956
-        </a>
-
+        <a href="https://zalo.me/0362772956" target="_blank" class="btn bg-yellow-400 text-black px-8 py-4 rounded-2xl font-black">💬 Zalo 0362 772 956</a>
+        <a href="tel:0362772956" class="btn bg-white text-black px-8 py-4 rounded-2xl font-black">📞 Gọi ngay</a>
     </div>
-
 </section>
 
-<!-- FLOAT -->
-<div class="float-btn">
+</main>
 
-    <a href="tel:0362772956"
-    style="background:#ef4444">
-        📞 Gọi ngay
-    </a>
-
-    <a href="https://zalo.me/0362772956"
-    target="_blank"
-    style="background:#2563eb">
-        💬 Zalo
-    </a>
-
+<div class="float-wrap">
+    <a href="tel:0362772956" style="background:#ef4444">📞 Gọi ngay</a>
+    <a href="https://zalo.me/0362772956" target="_blank" style="background:#2563eb">💬 Zalo</a>
 </div>
 
 </body>
