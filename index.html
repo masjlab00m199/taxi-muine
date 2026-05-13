@@ -448,6 +448,15 @@ a[href^="https://wa.me"]:hover {
   height: auto;
   display: block;
 }
+
+/* LANGUAGE SELECT FIX - no overlay, no blocked dropdown */
+#langWrap { z-index: 999999 !important; }
+#langSelect { min-width: 132px; position: relative; z-index: 999999 !important; }
+.glass { overflow: visible !important; }
+@media (max-width: 640px) {
+  #langSelect { min-width: 118px; max-width: 145px; font-size: 12px; padding-left: 10px; padding-right: 8px; }
+}
+
   </style>
 </head>
 
@@ -463,7 +472,8 @@ a[href^="https://wa.me"]:hover {
         </div>
       </div>
 
-    <div class="flex gap-2 mt-3 md:mt-0 items-center"><a href="tel:0362772956"
+    <div class="flex flex-wrap gap-2 mt-3 md:mt-0 items-center justify-start md:justify-end">
+  <a href="tel:0362772956"
      onclick="trackCallClick()" id="topCallBtn"
      class="btn-cta px-3 py-1.5 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold text-sm shadow hover:from-red-600 hover:to-red-700">
     📞 Call
@@ -475,9 +485,20 @@ a[href^="https://wa.me"]:hover {
      class="btn-cta btn-pulse px-3 py-1.5 rounded-full bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold text-sm shadow hover:from-green-600 hover:to-green-800">
     💬 WhatsApp
   </a>
+
+  <div class="relative z-50" id="langWrap">
+    <select id="langSelect" aria-label="Select language"
+      class="bg-white px-3 py-1.5 rounded-full border border-gray-200 text-gray-800 font-semibold text-sm shadow focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer">
+      <option value="en">🇬🇧 English</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="zh">🇨🇳 中文</option>
+    </select>
+  </div>
 </div>
     </div>
   </div>
+
 
   <!-- HERO -->
   <section class="max-w-6xl mx-auto mb-6">
@@ -1292,7 +1313,7 @@ a[href^="https://wa.me"]:hover {
       }
     }
 
-    const currentLang = 'en';
+    let currentLang = localStorage.getItem('siteLang') || 'en';
 
     
     
@@ -1375,6 +1396,287 @@ const textMaps = {
 
 
     const routeKeys = Array.from(document.querySelectorAll('.route-card .font-bold.text-lg')).map(el => el.textContent.replace('📍 ','').trim());
+
+
+    /* COMPLETE HOMEPAGE LANGUAGE PATCH: Russian / Korean / Chinese */
+    Object.assign(textMaps.ru, {
+      "🚕 Mui Ne Private Car Service":"🚕 Частный трансфер Муйне",
+      "Safe • Private • English Support • Fixed Price":"Безопасно • Индивидуально • Поддержка на английском • Фиксированная цена",
+      "📞 Call":"📞 Позвонить",
+      "💬 WhatsApp":"💬 WhatsApp",
+      "⭐ Trusted by foreign travelers in Mui Ne":"⭐ Нам доверяют иностранные путешественники в Муйне",
+      "Mui Ne Private Car Service – Transfers for Foreign Travelers":"Частный трансфер в Муйне для иностранных туристов",
+      "Book comfortable private transfers to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh, Can Tho and more. Fast WhatsApp reply, clean cars, professional drivers, and no deposit required.":"Закажите комфортный частный трансфер в Хошимин, Далат, Нячанг, Камрань, Кантхо и другие города. Быстрый ответ в WhatsApp, чистые автомобили, профессиональные водители и без предоплаты.",
+      "Happy Travelers":"Довольных клиентов",
+      "WhatsApp Support":"Поддержка WhatsApp",
+      "Private Transfer":"Частный трансфер",
+      "No Deposit":"Без предоплаты",
+      "🚀 Check Price & Book Now":"🚀 Узнать цену и забронировать",
+      "💬 Chat on WhatsApp":"💬 Написать в WhatsApp",
+      "Special discount available today • Flexible departure time • Door-to-door service":"Специальная скидка сегодня • Гибкое время выезда • Сервис от двери до двери",
+      "✅ Easy Booking":"✅ Простое бронирование",
+      "Choose route, check price, and confirm in WhatsApp within minutes.":"Выберите маршрут, проверьте цену и подтвердите бронирование в WhatsApp за несколько минут.",
+      "🚘 Comfortable Cars":"🚘 Комфортные автомобили",
+      "4-seat, 7-seat, limousine and van options for every travel group.":"Автомобили 4 места, 7 мест, лимузин и минивэн для любой группы.",
+      "💵 Clear Pricing":"💵 Прозрачные цены",
+      "Fixed rates, no hidden fees, and payment after the trip.":"Фиксированные тарифы, без скрытых платежей, оплата после поездки.",
+      "Instant Booking":"Мгновенное бронирование",
+      "Check Price & Reserve":"Узнать цену и забронировать",
+      "Fast reply on WhatsApp • No hidden fees":"Быстрый ответ в WhatsApp • Без скрытых платежей",
+      "Your name *":"Ваше имя *",
+      "Passengers":"Пассажиры",
+      "Select route *":"Выберите маршрут *",
+      "Car type *":"Тип автомобиля *",
+      "Estimated Price":"Ориентировочная цена",
+      "Select route and car":"Выберите маршрут и автомобиль",
+      "Final confirmation on WhatsApp":"Окончательное подтверждение в WhatsApp",
+      "🚀 Book via WhatsApp":"🚀 Забронировать через WhatsApp",
+      "✔ Fast Reply":"✔ Быстрый ответ",
+      "✔ No Deposit":"✔ Без предоплаты",
+      "✔ Private Only":"✔ Только частная поездка",
+      "Our Vehicles":"Наши автомобили",
+      "Clean Cars for Private Transfers":"Чистые автомобили для частных трансферов",
+      "Choose from 4-seat cars, 7-seat family cars, VIP limousine and 16-seat van options for Mui Ne, Ho Chi Minh City, Da Lat, Nha Trang and airport transfers.":"Выберите автомобиль на 4 места, семейный автомобиль на 7 мест, VIP лимузин или минивэн на 16 мест для Муйне, Хошимина, Далата, Нячанга и трансферов из аэропорта.",
+      "Real vehicle photos • Private service":"Реальные фото автомобилей • Частный сервис",
+      "4-seat Private Car":"Частный автомобиль 4 места",
+      "Best for 1–3 passengers, airport pickup and city transfers.":"Лучший вариант для 1–3 пассажиров, встречи в аэропорту и городских трансферов.",
+      "7-seat Family Car":"Семейный автомобиль 7 мест",
+      "Comfortable option for families, luggage and small groups.":"Комфортный вариант для семей, багажа и небольших групп.",
+      "VIP Limousine":"VIP лимузин",
+      "Premium seats for long-distance trips to Da Lat, Nha Trang and Ho Chi Minh City.":"Премиальные сиденья для дальних поездок в Далат, Нячанг и Хошимин.",
+      "16-seat Van":"Минивэн 16 мест",
+      "Good for groups, tour transfers and comfortable long routes.":"Подходит для групп, туристических трансферов и длинных маршрутов.",
+      "✔ Clean cars":"✔ Чистые автомобили",
+      "✔ Private only":"✔ Только частный трансфер",
+      "✔ Fixed price":"✔ Фиксированная цена",
+      "✔ Door-to-door":"✔ От двери до двери",
+      "Private Car Network":"Сеть частных трансферов",
+      "Choose a city page for faster booking, route details and private car prices. These pages help travelers find the right transfer service quickly.":"Выберите страницу города для быстрого бронирования, деталей маршрута и цен. Эти страницы помогают путешественникам быстро найти подходящий трансфер.",
+      "5 main city pages • SEO friendly • Easy booking":"5 основных страниц городов • SEO friendly • Простое бронирование",
+      "Ho Chi Minh Private Car":"Частный автомобиль Хошимин",
+      "Vung Tau Private Car":"Частный автомобиль Вунгтау",
+      "Private car from Nha Trang to Mui Ne, Da Lat, Cam Ranh and Ho Chi Minh City.":"Частный автомобиль из Нячанга в Муйне, Далат, Камрань и Хошимин.",
+      "Comfortable private car service for mountain routes to Nha Trang, Mui Ne and Ho Chi Minh City.":"Комфортный частный трансфер по горным маршрутам в Нячанг, Муйне и Хошимин.",
+      "Airport pickup and private transfers from Ho Chi Minh City to Mui Ne, Da Lat, Nha Trang and Vung Tau.":"Встреча в аэропорту и частные трансферы из Хошимина в Муйне, Далат, Нячанг и Вунгтау.",
+      "Private car for Vung Tau beach trips and transfers to Ho Chi Minh City, Mui Ne and Da Lat.":"Частный автомобиль для поездок на пляж Вунгтау и трансферов в Хошимин, Муйне и Далат.",
+      "Mui Ne Experiences":"Впечатления в Муйне",
+      "Explore Mui Ne Tours":"Экскурсии в Муйне",
+      "Jeep Tour • Ta Cu Mountain • Fishing Experience — view details on the tour page.":"Джип-тур • Гора Та Ку • Рыбалка — подробности на странице туров.",
+      "View Mui Ne Tour →":"Смотреть туры Муйне →",
+      "🏝 Mui Ne Tour & Experiences":"🏝 Туры и впечатления в Муйне",
+      "Private booking, fast confirmation, English support via WhatsApp.":"Частное бронирование, быстрое подтверждение, поддержка на английском через WhatsApp.",
+      "Open tour page →":"Открыть страницу туров →",
+      "Transfers Vietnam":"Трансферы Вьетнам",
+      "Private Transfers Across Vietnam":"Частные трансферы по Вьетнаму",
+      "Ho Chi Minh • Mui Ne • Da Lat • Nha Trang":"Хошимин • Муйне • Далат • Нячанг",
+      "Open →":"Открыть →",
+      "Why Choose Us":"Почему выбирают нас",
+      "✔ Reliable private transfer service in Mui Ne":"✔ Надежный частный трансфер в Муйне",
+      "✔ English support via WhatsApp":"✔ Поддержка на английском через WhatsApp",
+      "✔ Door-to-door pickup and drop-off":"✔ Подача и высадка от двери до двери",
+      "✔ Flexible departure time":"✔ Гибкое время выезда",
+      "✔ Fixed price with no hidden fees":"✔ Фиксированная цена без скрытых платежей",
+      "✔ Pay after the trip":"✔ Оплата после поездки",
+      "How It Works":"Как это работает",
+      "1.":"1.", "Select your route":"Выберите маршрут", "2.":"2.", "Choose passengers and car type":"Выберите пассажиров и тип автомобиля", "3.":"3.", "Check estimated price":"Проверьте ориентировочную цену", "4.":"4.", "Send booking via WhatsApp":"Отправьте бронирование через WhatsApp", "5.":"5.", "Get fast confirmation from our team":"Получите быстрое подтверждение от нашей команды",
+      "Find Us on Map":"Найдите нас на карте",
+      "Easy pickup point in Mui Ne":"Удобная точка встречи в Муйне",
+      "Pickup & Contact":"Подача и контакт",
+      "You can easily find our location on Google Maps for pickup support, quick contact, and easier booking confirmation before your trip.":"Вы можете легко найти нас на Google Maps для помощи с подачей, быстрого контакта и удобного подтверждения бронирования перед поездкой.",
+      "📍 MUI NE PRIVATE CAR, Mui Ne, Phan Thiet, Binh Thuan":"📍 MUI NE PRIVATE CAR, Муйне, Фантьет, Биньтхуан",
+      "✔ Easy to locate":"✔ Легко найти",
+      "✔ Fast WhatsApp support":"✔ Быстрая поддержка в WhatsApp",
+      "✔ Convenient pickup coordination":"✔ Удобное согласование подачи",
+      "Open Google Maps":"Открыть Google Maps",
+      "Ask Pickup on WhatsApp":"Спросить о подаче в WhatsApp",
+      "✈️ Telegram":"✈️ Telegram"
+    });
+
+    Object.assign(textMaps.ko, {
+      "🚕 Mui Ne Private Car Service":"🚕 무이네 프라이빗 차량 서비스",
+      "Safe • Private • English Support • Fixed Price":"안전 • 프라이빗 • 영어 지원 • 고정 요금",
+      "📞 Call":"📞 전화",
+      "💬 WhatsApp":"💬 WhatsApp",
+      "⭐ Trusted by foreign travelers in Mui Ne":"⭐ 무이네 외국인 여행자들이 신뢰하는 서비스",
+      "Mui Ne Private Car Service – Transfers for Foreign Travelers":"외국인 여행자를 위한 무이네 프라이빗 차량 서비스",
+      "Book comfortable private transfers to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh, Can Tho and more. Fast WhatsApp reply, clean cars, professional drivers, and no deposit required.":"호치민, 달랏, 나트랑, 깜란, 껀터 등으로 편안한 프라이빗 이동을 예약하세요. WhatsApp 빠른 답변, 깨끗한 차량, 전문 기사, 선결제 없음.",
+      "Happy Travelers":"만족한 여행자",
+      "WhatsApp Support":"WhatsApp 지원",
+      "Private Transfer":"프라이빗 이동",
+      "No Deposit":"선결제 없음",
+      "🚀 Check Price & Book Now":"🚀 가격 확인 및 예약",
+      "💬 Chat on WhatsApp":"💬 WhatsApp 채팅",
+      "Special discount available today • Flexible departure time • Door-to-door service":"오늘 특별 할인 • 유연한 출발 시간 • 도어투도어 서비스",
+      "✅ Easy Booking":"✅ 쉬운 예약",
+      "Choose route, check price, and confirm in WhatsApp within minutes.":"노선을 선택하고 가격을 확인한 뒤 WhatsApp에서 몇 분 안에 예약을 확정하세요.",
+      "🚘 Comfortable Cars":"🚘 편안한 차량",
+      "4-seat, 7-seat, limousine and van options for every travel group.":"4인승, 7인승, 리무진, 밴까지 모든 여행 그룹에 맞는 차량 옵션.",
+      "💵 Clear Pricing":"💵 투명한 가격",
+      "Fixed rates, no hidden fees, and payment after the trip.":"고정 요금, 숨겨진 비용 없음, 여행 후 결제.",
+      "Instant Booking":"즉시 예약",
+      "Check Price & Reserve":"가격 확인 및 예약",
+      "Fast reply on WhatsApp • No hidden fees":"WhatsApp 빠른 답변 • 숨겨진 비용 없음",
+      "Your name *":"이름 *",
+      "Passengers":"인원",
+      "Select route *":"노선 선택 *",
+      "Car type *":"차종 *",
+      "Estimated Price":"예상 요금",
+      "Select route and car":"노선과 차량을 선택하세요",
+      "Final confirmation on WhatsApp":"최종 확인은 WhatsApp에서",
+      "🚀 Book via WhatsApp":"🚀 WhatsApp 예약",
+      "✔ Fast Reply":"✔ 빠른 답변",
+      "✔ No Deposit":"✔ 선결제 없음",
+      "✔ Private Only":"✔ 프라이빗 전용",
+      "Our Vehicles":"차량 안내",
+      "Clean Cars for Private Transfers":"프라이빗 이동을 위한 깨끗한 차량",
+      "Choose from 4-seat cars, 7-seat family cars, VIP limousine and 16-seat van options for Mui Ne, Ho Chi Minh City, Da Lat, Nha Trang and airport transfers.":"무이네, 호치민, 달랏, 나트랑 및 공항 이동을 위해 4인승, 7인승 가족 차량, VIP 리무진, 16인승 밴을 선택할 수 있습니다.",
+      "Real vehicle photos • Private service":"실제 차량 사진 • 프라이빗 서비스",
+      "4-seat Private Car":"4인승 프라이빗 차량",
+      "Best for 1–3 passengers, airport pickup and city transfers.":"1–3명, 공항 픽업 및 시내 이동에 적합합니다.",
+      "7-seat Family Car":"7인승 가족 차량",
+      "Comfortable option for families, luggage and small groups.":"가족, 짐, 소규모 그룹에 편안한 옵션입니다.",
+      "VIP Limousine":"VIP 리무진",
+      "Premium seats for long-distance trips to Da Lat, Nha Trang and Ho Chi Minh City.":"달랏, 나트랑, 호치민 장거리 이동에 좋은 프리미엄 좌석.",
+      "16-seat Van":"16인승 밴",
+      "Good for groups, tour transfers and comfortable long routes.":"단체, 투어 이동, 장거리 노선에 적합합니다.",
+      "✔ Clean cars":"✔ 깨끗한 차량",
+      "✔ Private only":"✔ 프라이빗 전용",
+      "✔ Fixed price":"✔ 고정 요금",
+      "✔ Door-to-door":"✔ 도어투도어",
+      "Private Car Network":"프라이빗 차량 네트워크",
+      "Choose a city page for faster booking, route details and private car prices. These pages help travelers find the right transfer service quickly.":"빠른 예약, 노선 정보, 차량 가격을 보려면 도시 페이지를 선택하세요. 여행자가 알맞은 이동 서비스를 빠르게 찾을 수 있습니다.",
+      "5 main city pages • SEO friendly • Easy booking":"주요 도시 페이지 5개 • SEO 친화적 • 쉬운 예약",
+      "Ho Chi Minh Private Car":"호치민 프라이빗 차량",
+      "Vung Tau Private Car":"붕따우 프라이빗 차량",
+      "Private car from Nha Trang to Mui Ne, Da Lat, Cam Ranh and Ho Chi Minh City.":"나트랑에서 무이네, 달랏, 깜란, 호치민까지 프라이빗 차량.",
+      "Comfortable private car service for mountain routes to Nha Trang, Mui Ne and Ho Chi Minh City.":"나트랑, 무이네, 호치민으로 가는 산악 노선의 편안한 프라이빗 차량 서비스.",
+      "Airport pickup and private transfers from Ho Chi Minh City to Mui Ne, Da Lat, Nha Trang and Vung Tau.":"호치민에서 무이네, 달랏, 나트랑, 붕따우까지 공항 픽업 및 프라이빗 이동.",
+      "Private car for Vung Tau beach trips and transfers to Ho Chi Minh City, Mui Ne and Da Lat.":"붕따우 해변 여행 및 호치민, 무이네, 달랏 이동을 위한 프라이빗 차량.",
+      "Mui Ne Experiences":"무이네 체험",
+      "Explore Mui Ne Tours":"무이네 투어 보기",
+      "Jeep Tour • Ta Cu Mountain • Fishing Experience — view details on the tour page.":"지프 투어 • 따꾸산 • 낚시 체험 — 투어 페이지에서 자세히 보기.",
+      "View Mui Ne Tour →":"무이네 투어 보기 →",
+      "🏝 Mui Ne Tour & Experiences":"🏝 무이네 투어 & 체험",
+      "Private booking, fast confirmation, English support via WhatsApp.":"프라이빗 예약, 빠른 확인, WhatsApp 영어 지원.",
+      "Open tour page →":"투어 페이지 열기 →",
+      "Transfers Vietnam":"베트남 이동 서비스",
+      "Private Transfers Across Vietnam":"베트남 전역 프라이빗 이동",
+      "Ho Chi Minh • Mui Ne • Da Lat • Nha Trang":"호치민 • 무이네 • 달랏 • 나트랑",
+      "Open →":"열기 →",
+      "Why Choose Us":"왜 저희를 선택하나요",
+      "✔ Reliable private transfer service in Mui Ne":"✔ 무이네의 신뢰할 수 있는 프라이빗 이동 서비스",
+      "✔ English support via WhatsApp":"✔ WhatsApp 영어 지원",
+      "✔ Door-to-door pickup and drop-off":"✔ 도어투도어 픽업 및 하차",
+      "✔ Flexible departure time":"✔ 유연한 출발 시간",
+      "✔ Fixed price with no hidden fees":"✔ 숨겨진 비용 없는 고정 요금",
+      "✔ Pay after the trip":"✔ 여행 후 결제",
+      "How It Works":"이용 방법",
+      "Select your route":"노선 선택", "Choose passengers and car type":"인원과 차종 선택", "Check estimated price":"예상 요금 확인", "Send booking via WhatsApp":"WhatsApp으로 예약 보내기", "Get fast confirmation from our team":"팀에서 빠르게 확인 받기",
+      "Find Us on Map":"지도에서 찾기",
+      "Easy pickup point in Mui Ne":"무이네의 쉬운 픽업 지점",
+      "Pickup & Contact":"픽업 및 연락",
+      "You can easily find our location on Google Maps for pickup support, quick contact, and easier booking confirmation before your trip.":"여행 전 픽업 지원, 빠른 연락, 쉬운 예약 확인을 위해 Google Maps에서 위치를 쉽게 찾을 수 있습니다.",
+      "📍 MUI NE PRIVATE CAR, Mui Ne, Phan Thiet, Binh Thuan":"📍 MUI NE PRIVATE CAR, 무이네, 판티엣, 빈투언",
+      "✔ Easy to locate":"✔ 찾기 쉬움",
+      "✔ Fast WhatsApp support":"✔ 빠른 WhatsApp 지원",
+      "✔ Convenient pickup coordination":"✔ 편리한 픽업 조율",
+      "Open Google Maps":"Google Maps 열기",
+      "Ask Pickup on WhatsApp":"WhatsApp으로 픽업 문의",
+      "✈️ Telegram":"✈️ Telegram"
+    });
+
+    Object.assign(textMaps.zh, {
+      "🚕 Mui Ne Private Car Service":"🚕 美奈私人包车服务",
+      "Safe • Private • English Support • Fixed Price":"安全 • 私人 • 英文支持 • 固定价格",
+      "📞 Call":"📞 电话",
+      "💬 WhatsApp":"💬 WhatsApp",
+      "⭐ Trusted by foreign travelers in Mui Ne":"⭐ 深受美奈外国游客信任",
+      "Mui Ne Private Car Service – Transfers for Foreign Travelers":"美奈外国游客私人包车服务",
+      "Book comfortable private transfers to Ho Chi Minh City, Da Lat, Nha Trang, Cam Ranh, Can Tho and more. Fast WhatsApp reply, clean cars, professional drivers, and no deposit required.":"预订舒适私人接送前往胡志明市、大叻、芽庄、金兰、芹苴等地。WhatsApp 快速回复，车辆干净，司机专业，无需押金。",
+      "Happy Travelers":"满意旅客",
+      "WhatsApp Support":"WhatsApp 支持",
+      "Private Transfer":"私人接送",
+      "No Deposit":"无需押金",
+      "🚀 Check Price & Book Now":"🚀 查询价格并预订",
+      "💬 Chat on WhatsApp":"💬 WhatsApp 咨询",
+      "Special discount available today • Flexible departure time • Door-to-door service":"今日特别优惠 • 灵活出发时间 • 门到门服务",
+      "✅ Easy Booking":"✅ 轻松预订",
+      "Choose route, check price, and confirm in WhatsApp within minutes.":"选择路线，查看价格，并在几分钟内通过 WhatsApp 确认。",
+      "🚘 Comfortable Cars":"🚘 舒适车辆",
+      "4-seat, 7-seat, limousine and van options for every travel group.":"提供 4 座、7 座、豪华车和面包车，适合各种旅行团体。",
+      "💵 Clear Pricing":"💵 价格清楚",
+      "Fixed rates, no hidden fees, and payment after the trip.":"固定价格，无隐藏费用，行程结束后付款。",
+      "Instant Booking":"即时预订",
+      "Check Price & Reserve":"查询价格并预订",
+      "Fast reply on WhatsApp • No hidden fees":"WhatsApp 快速回复 • 无隐藏费用",
+      "Your name *":"您的姓名 *",
+      "Passengers":"人数",
+      "Select route *":"选择路线 *",
+      "Car type *":"车型 *",
+      "Estimated Price":"预估价格",
+      "Select route and car":"请选择路线和车型",
+      "Final confirmation on WhatsApp":"最终通过 WhatsApp 确认",
+      "🚀 Book via WhatsApp":"🚀 WhatsApp 预订",
+      "✔ Fast Reply":"✔ 快速回复",
+      "✔ No Deposit":"✔ 无需押金",
+      "✔ Private Only":"✔ 仅私人服务",
+      "Our Vehicles":"我们的车辆",
+      "Clean Cars for Private Transfers":"干净车辆，适合私人接送",
+      "Choose from 4-seat cars, 7-seat family cars, VIP limousine and 16-seat van options for Mui Ne, Ho Chi Minh City, Da Lat, Nha Trang and airport transfers.":"可选择 4 座车、7 座家庭车、VIP 豪华车和 16 座面包车，适合美奈、胡志明市、大叻、芽庄和机场接送。",
+      "Real vehicle photos • Private service":"真实车辆照片 • 私人服务",
+      "4-seat Private Car":"4 座私人车",
+      "Best for 1–3 passengers, airport pickup and city transfers.":"适合 1–3 位乘客、机场接送和城市转乘。",
+      "7-seat Family Car":"7 座家庭车",
+      "Comfortable option for families, luggage and small groups.":"适合家庭、行李和小团体的舒适选择。",
+      "VIP Limousine":"VIP 豪华车",
+      "Premium seats for long-distance trips to Da Lat, Nha Trang and Ho Chi Minh City.":"适合前往大叻、芽庄和胡志明市的长途高级座椅。",
+      "16-seat Van":"16 座面包车",
+      "Good for groups, tour transfers and comfortable long routes.":"适合团体、旅游接送和舒适长途路线。",
+      "✔ Clean cars":"✔ 干净车辆",
+      "✔ Private only":"✔ 仅私人服务",
+      "✔ Fixed price":"✔ 固定价格",
+      "✔ Door-to-door":"✔ 门到门",
+      "Private Car Network":"私人包车网络",
+      "Choose a city page for faster booking, route details and private car prices. These pages help travelers find the right transfer service quickly.":"选择城市页面，可更快预订、查看路线详情和包车价格，帮助旅客快速找到合适的接送服务。",
+      "5 main city pages • SEO friendly • Easy booking":"5 个主要城市页面 • SEO 友好 • 轻松预订",
+      "Ho Chi Minh Private Car":"胡志明市包车",
+      "Vung Tau Private Car":"头顿包车",
+      "Private car from Nha Trang to Mui Ne, Da Lat, Cam Ranh and Ho Chi Minh City.":"从芽庄前往美奈、大叻、金兰和胡志明市的私人包车。",
+      "Comfortable private car service for mountain routes to Nha Trang, Mui Ne and Ho Chi Minh City.":"前往芽庄、美奈和胡志明市山区路线的舒适包车服务。",
+      "Airport pickup and private transfers from Ho Chi Minh City to Mui Ne, Da Lat, Nha Trang and Vung Tau.":"从胡志明市到美奈、大叻、芽庄和头顿的机场接送和私人包车。",
+      "Private car for Vung Tau beach trips and transfers to Ho Chi Minh City, Mui Ne and Da Lat.":"适合头顿海滩旅行及前往胡志明市、美奈和大叻的私人包车。",
+      "Mui Ne Experiences":"美奈体验",
+      "Explore Mui Ne Tours":"探索美奈旅游",
+      "Jeep Tour • Ta Cu Mountain • Fishing Experience — view details on the tour page.":"吉普车之旅 • 塔古山 • 钓鱼体验 — 在旅游页面查看详情。",
+      "View Mui Ne Tour →":"查看美奈旅游 →",
+      "🏝 Mui Ne Tour & Experiences":"🏝 美奈旅游与体验",
+      "Private booking, fast confirmation, English support via WhatsApp.":"私人预订，快速确认，通过 WhatsApp 提供英文支持。",
+      "Open tour page →":"打开旅游页面 →",
+      "Transfers Vietnam":"越南接送",
+      "Private Transfers Across Vietnam":"越南全境私人接送",
+      "Ho Chi Minh • Mui Ne • Da Lat • Nha Trang":"胡志明市 • 美奈 • 大叻 • 芽庄",
+      "Open →":"打开 →",
+      "Why Choose Us":"为什么选择我们",
+      "✔ Reliable private transfer service in Mui Ne":"✔ 美奈可靠的私人接送服务",
+      "✔ English support via WhatsApp":"✔ WhatsApp 英文支持",
+      "✔ Door-to-door pickup and drop-off":"✔ 门到门接送",
+      "✔ Flexible departure time":"✔ 灵活出发时间",
+      "✔ Fixed price with no hidden fees":"✔ 固定价格，无隐藏费用",
+      "✔ Pay after the trip":"✔ 行程后付款",
+      "How It Works":"如何预订",
+      "Select your route":"选择路线", "Choose passengers and car type":"选择人数和车型", "Check estimated price":"查看预估价格", "Send booking via WhatsApp":"通过 WhatsApp 发送预订", "Get fast confirmation from our team":"获得团队快速确认",
+      "Find Us on Map":"在地图上找到我们",
+      "Easy pickup point in Mui Ne":"美奈方便的上车点",
+      "Pickup & Contact":"上车与联系",
+      "You can easily find our location on Google Maps for pickup support, quick contact, and easier booking confirmation before your trip.":"您可以在 Google Maps 上轻松找到我们，方便上车沟通、快速联系，并在出行前确认预订。",
+      "📍 MUI NE PRIVATE CAR, Mui Ne, Phan Thiet, Binh Thuan":"📍 MUI NE PRIVATE CAR，美奈，潘切，平顺",
+      "✔ Easy to locate":"✔ 容易找到",
+      "✔ Fast WhatsApp support":"✔ WhatsApp 快速支持",
+      "✔ Convenient pickup coordination":"✔ 方便协调上车",
+      "Open Google Maps":"打开 Google Maps",
+      "Ask Pickup on WhatsApp":"WhatsApp 咨询上车点",
+      "✈️ Telegram":"✈️ Telegram"
+    });
     const routeMaps = {
       vi: {
         'Ho Chi Minh City':'TP.HCM','Mui Ne':'Mũi Né','Da Lat':'Đà Lạt','Nha Trang':'Nha Trang','Cam Ranh':'Cam Ranh','Vung Tau':'Vũng Tàu','Can Tho':'Cần Thơ'
@@ -1445,7 +1747,8 @@ const textMaps = {
       if (!trimmed) return original;
       if (currentLang === 'en') return original;
       const map = textMaps[currentLang] || {};
-      const replacement = map[trimmed];
+      const normalized = trimmed.replace(/\s+/g, ' ');
+      const replacement = map[trimmed] || map[normalized];
       if (!replacement) return original;
       return preserveSpacingReplace(original, replacement);
     }
@@ -1507,14 +1810,13 @@ const textMaps = {
       document.documentElement.lang = currentLang;
       document.getElementById('currentFlag') && (document.getElementById('currentFlag').textContent = ui.currentFlag);
       document.getElementById('currentLang') && (document.getElementById('currentLang').textContent = ui.currentLang);
+      const langSelectEl = document.getElementById('langSelect');
+      if (langSelectEl) langSelectEl.value = currentLang;
       const opts = document.querySelectorAll('.lang-option');
       if (opts[0]) opts[0].textContent = ui.menuEn;
-      if (opts[1]) opts[1].textContent = ui.menuVi;
-      if (opts[2]) opts[2].textContent = ui.menuRu;
-      if (opts[3]) opts[3].textContent = ui.menuKo;
-      if (opts[4]) opts[4].textContent = ui.menuZh;
-      if (opts[5]) opts[5].textContent = ui.menuKm;
-      if (opts[6]) opts[6].textContent = ui.menuHi;
+      if (opts[1]) opts[1].textContent = ui.menuRu;
+      if (opts[2]) opts[2].textContent = ui.menuKo;
+      if (opts[3]) opts[3].textContent = ui.menuZh;
 
       if (titleNode) titleNode.textContent = ui.title;
       if (metaDesc) metaDesc.setAttribute('content', ui.meta);
@@ -1544,7 +1846,11 @@ const textMaps = {
     }
 
     function setLanguage(lang) {
+      currentLang = ['en','ru','ko','zh'].includes(lang) ? lang : 'en';
+      localStorage.setItem('siteLang', currentLang);
       applyLanguage();
+      const menu = document.getElementById('langMenu');
+      if (menu) menu.classList.add('hidden');
     }
 
     function toggleLangMenu(e) {
@@ -1565,6 +1871,7 @@ const textMaps = {
 
     captureOriginals();
 
+    document.getElementById('langSelect')?.addEventListener('change', function(){ setLanguage(this.value); });
     document.getElementById('langToggle')?.addEventListener('click', toggleLangMenu);
     document.querySelectorAll('.lang-option').forEach(btn => {
       btn.addEventListener('click', function(e){
@@ -1574,6 +1881,8 @@ const textMaps = {
       });
     });
 
+    // Apply saved/default language after all original text is captured
+    setLanguage(currentLang);
 
     routeSelect.innerHTML = '';
     routeKeys.forEach(route => {
@@ -1685,6 +1994,7 @@ const textMaps = {
     };
 
     renderRoutePrices();
+    setLanguage(currentLang);
 
     function sendWhatsApp() {
       const nameInput = document.getElementById("name").value.trim();
