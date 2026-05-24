@@ -94,7 +94,7 @@
     .hero-bg {
       background:
         linear-gradient(135deg, rgba(2,6,23,0.86), rgba(15,23,42,0.72)),
-        url('/images/mui-ne-private-car-4-seat.jpg') center/cover no-repeat;
+        url('/images/mui-ne-private-car-4-seat.jpg') center 58%/cover no-repeat;
     }
     .glass { background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); }
     .card-hover { transition: all .25s ease; }
@@ -110,19 +110,25 @@
     .route-card:hover { transform: translateY(-4px); border-color: rgba(22,163,74,.45); box-shadow: 0 14px 34px rgba(22,163,74,.12); }
     .service-photo {
       width: 100%;
-      height: 190px;
+      height: 270px;
       object-fit: cover;
-      object-position: center center;
+      object-position: center 58%;
       display: block;
       transition: transform .35s ease;
     }
-    @media (min-width: 768px) {
-      .service-photo { height: 210px; }
+    .photo-7-seat { object-position: center 62%; }
+    .photo-4-seat { object-position: center 58%; }
+    @media (max-width: 768px) {
+      .hero-bg {
+        background-position: center 62%;
+      }
+      .service-photo {
+        height: 230px;
+      }
+      .photo-7-seat { object-position: center 60%; }
+      .photo-4-seat { object-position: center 55%; }
     }
-    @media (max-width: 767px) {
-      .service-photo { height: 170px; }
-    }
-    .photo-card:hover .service-photo { transform: scale(1.02); }
+    .photo-card:hover .service-photo { transform: scale(1.04); }
     .photo-badge {
       position: absolute;
       left: 14px;
@@ -240,8 +246,8 @@
     </section>
 
     <section class="max-w-6xl mx-auto mb-6">
-      <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-4">
+      <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
           <div>
             <h2 class="text-2xl font-extrabold text-gray-900">Mui Ne Private Car Fleet</h2>
             <p class="text-sm text-gray-600 mt-1">Real cars for private transfers from Mui Ne, Phan Thiet and nearby cities.</p>
@@ -257,7 +263,7 @@
           <figure class="photo-card overflow-hidden rounded-3xl shadow border bg-gray-50 relative">
             <img src="/images/mui-ne-private-car-7-seat.jpg"
                  alt="7-seat private car in Da Lat for Mui Ne private car transfer"
-                 class="service-photo"
+                 class="service-photo photo-7-seat"
                  loading="lazy"
                  width="1200"
                  height="900">
@@ -267,7 +273,7 @@
           <figure class="photo-card overflow-hidden rounded-3xl shadow border bg-gray-50 relative">
             <img src="/images/mui-ne-private-car-4-seat.jpg"
                  alt="4-seat private car on the coastal road near Mui Ne beach"
-                 class="service-photo"
+                 class="service-photo photo-4-seat"
                  loading="lazy"
                  width="1200"
                  height="675">
