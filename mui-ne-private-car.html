@@ -94,7 +94,7 @@
     .hero-bg {
       background:
         linear-gradient(135deg, rgba(2,6,23,0.86), rgba(15,23,42,0.72)),
-        url('/images/mui-ne-private-car-4-seat.jpg') center/cover no-repeat;
+        url('/images/mui-ne-private-car-4-seat.jpg') center 58%/cover no-repeat;
     }
     .glass { background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); }
     .card-hover { transition: all .25s ease; }
@@ -112,8 +112,21 @@
       width: 100%;
       height: 270px;
       object-fit: cover;
+      object-position: center 58%;
       display: block;
       transition: transform .35s ease;
+    }
+    .photo-7-seat { object-position: center 62%; }
+    .photo-4-seat { object-position: center 58%; }
+    @media (max-width: 768px) {
+      .hero-bg {
+        background-position: center 62%;
+      }
+      .service-photo {
+        height: 230px;
+      }
+      .photo-7-seat { object-position: center 60%; }
+      .photo-4-seat { object-position: center 55%; }
     }
     .photo-card:hover .service-photo { transform: scale(1.04); }
     .photo-badge {
@@ -250,7 +263,7 @@
           <figure class="photo-card overflow-hidden rounded-3xl shadow border bg-gray-50 relative">
             <img src="/images/mui-ne-private-car-7-seat.jpg"
                  alt="7-seat private car in Da Lat for Mui Ne private car transfer"
-                 class="service-photo"
+                 class="service-photo photo-7-seat"
                  loading="lazy"
                  width="1200"
                  height="900">
@@ -260,7 +273,7 @@
           <figure class="photo-card overflow-hidden rounded-3xl shadow border bg-gray-50 relative">
             <img src="/images/mui-ne-private-car-4-seat.jpg"
                  alt="4-seat private car on the coastal road near Mui Ne beach"
-                 class="service-photo"
+                 class="service-photo photo-4-seat"
                  loading="lazy"
                  width="1200"
                  height="675">
