@@ -602,6 +602,15 @@ a[href^="https://wa.me"]:hover {
             <option value="">Select route *</option>
           </select>
 
+          <div id="customRouteBox" class="hidden">
+            <input id="customRoute"
+                   placeholder="Please enter your route"
+                   class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
+            <p class="text-xs text-gray-500 mt-2">
+              Can't find your route? Enter it here and we will confirm the price on WhatsApp within minutes.
+            </p>
+          </div>
+
           <select id="car" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500">
             <option value="">Car type *</option>
             <option>4 Seats</option>
@@ -2064,6 +2073,180 @@ const textMaps = {
     }
   </script>
 
+
+
+  <!-- CUSTOM ROUTE FALLBACK: if customer's route is not listed, send it to WhatsApp -->
+  <script>
+    (function () {
+      function customRouteLabel() {
+        const lang = window.currentLang || localStorage.getItem('siteLang') || 'en';
+        const labels = {
+          en: '❓ My route is not listed',
+          vi: '❓ Tuyến của tôi không có trong danh sách',
+          ru: '❓ Моего маршрута нет в списке',
+          ko: '❓ 원하는 노선이 목록에 없습니다',
+          zh: '❓ 我的路线不在列表中',
+          km: '❓ ផ្លូវរបស់ខ្ញុំមិនមានក្នុងបញ្ជីទេ',
+          hi: '❓ मेरा रूट सूची में नहीं है'
+        };
+        return labels[lang] || labels.en;
+      }
+
+      function askPriceText() {
+        const lang = window.currentLang || localStorage.getItem('siteLang') || 'en';
+        const labels = {
+          en: 'Ask on WhatsApp',
+          vi: 'Hỏi giá trên WhatsApp',
+          ru: 'Спросить в WhatsApp',
+          ko: 'WhatsApp으로 문의',
+          zh: 'WhatsApp 咨询',
+          km: 'សួរតាម WhatsApp',
+          hi: 'WhatsApp पर पूछें'
+        };
+        return labels[lang] || labels.en;
+      }
+
+      function enterRouteAlert() {
+        const lang = window.currentLang || localStorage.getItem('siteLang') || 'en';
+        const labels = {
+          en: 'Please enter your route',
+          vi: 'Vui lòng nhập tuyến của bạn',
+          ru: 'Пожалуйста, введите ваш маршрут',
+          ko: '노선을 입력해 주세요',
+          zh: '请输入您的路线',
+          km: 'សូមបញ្ចូលផ្លូវរបស់អ្នក',
+          hi: 'कृपया अपना रूट दर्ज करें'
+        };
+        return labels[lang] || labels.en;
+      }
+
+      function ensureCustomRouteOption() {
+        const routeSelect = document.getElementById('route');
+        if (!routeSelect) return;
+
+        let customOption = routeSelect.querySelector('option[value="custom"]');
+        if (!customOption) {
+          customOption = document.createElement('option');
+          customOption.value = 'custom';
+          routeSelect.appendChild(customOption);
+        }
+        customOption.textContent = customRouteLabel();
+      }
+
+      function toggleCustomRouteBox() {
+        const routeSelect = document.getElementById('route');
+        const customBox = document.getElementById('customRouteBox');
+        const priceBox = document.getElementById('price');
+        if (!routeSelect || !customBox) return;
+
+        if (routeSelect.value === 'custom') {
+          customBox.classList.remove('hidden');
+          window.selectedPrice = 0;
+          if (priceBox) priceBox.innerText = askPriceText();
+        } else {
+          customBox.classList.add('hidden');
+        }
+      }
+
+      function initCustomRouteFallback() {
+        ensureCustomRouteOption();
+        toggleCustomRouteBox();
+
+        const routeSelect = document.getElementById('route');
+        if (routeSelect && !routeSelect.dataset.customRouteReady) {
+          routeSelect.dataset.customRouteReady = '1';
+          routeSelect.addEventListener('change', function () {
+            setTimeout(function () {
+              ensureCustomRouteOption();
+              toggleCustomRouteBox();
+            }, 0);
+          });
+        }
+      }
+
+      // Keep the custom option after language changes, because setLanguage() rebuilds the route list.
+      if (typeof window.setLanguage === 'function' && !window.setLanguage._customRouteWrapped) {
+        const originalSetLanguage = window.setLanguage;
+        window.setLanguage = function () {
+          const result = originalSetLanguage.apply(this, arguments);
+          setTimeout(initCustomRouteFallback, 0);
+          return result;
+        };
+        window.setLanguage._customRouteWrapped = true;
+      }
+
+      // Override WhatsApp message to support custom route.
+      window.sendWhatsApp = function () {
+        const nameInput = document.getElementById('name')?.value.trim() || '';
+        const passengersSelect = document.getElementById('passengers');
+        const routeSelect = document.getElementById('route');
+        const carSelect = document.getElementById('car');
+        const customRouteInput = document.getElementById('customRoute');
+        const lang = window.currentLang || localStorage.getItem('siteLang') || 'en';
+        const ui = window.uiText && window.uiText[lang] ? window.uiText[lang] : null;
+
+        if (!nameInput) {
+          alert(ui?.alerts?.name || 'Please enter your name');
+          return;
+        }
+        if (!routeSelect || !routeSelect.value) {
+          alert(ui?.alerts?.route || 'Please select route');
+          return;
+        }
+        if (!carSelect || !carSelect.value) {
+          alert(ui?.alerts?.car || 'Please select car type');
+          return;
+        }
+
+        let routeText = routeSelect.options[routeSelect.selectedIndex]?.text || routeSelect.value;
+        if (routeSelect.value === 'custom') {
+          routeText = customRouteInput?.value.trim() || '';
+          if (!routeText) {
+            alert(enterRouteAlert());
+            customRouteInput?.focus();
+            return;
+          }
+        }
+
+        const passengersText = passengersSelect?.options[passengersSelect.selectedIndex]?.text || passengersSelect?.value || '';
+        const carText = carSelect.options[carSelect.selectedIndex]?.text || carSelect.value;
+        const displayPrice = window.selectedPrice > 0
+          ? window.selectedPrice.toLocaleString() + ' VND'
+          : (ui?.msg?.confirm || 'Please confirm');
+
+        const msgTitle = ui?.msg?.title || '🚗 PRIVATE CAR BOOKING - VIETNAM';
+        const msgName = ui?.msg?.name || 'Name';
+        const msgRoute = ui?.msg?.route || 'Route';
+        const msgPassengers = ui?.msg?.passengers || 'Passengers';
+        const msgCar = ui?.msg?.car || 'Car';
+        const msgPrice = ui?.msg?.price || 'Price';
+
+        const msg =
+          msgTitle + '\n' +
+          msgName + ': ' + nameInput +
+          '\n' + msgRoute + ': ' + routeText +
+          '\n' + msgPassengers + ': ' + passengersText +
+          '\n' + msgCar + ': ' + carText +
+          '\n' + msgPrice + ': ' + displayPrice;
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'
+          });
+          gtag('event', 'whatsapp_click', {
+            route_name: routeSelect.value === 'custom' ? routeText : routeSelect.value,
+            car_type: carSelect.value,
+            passengers: passengersSelect?.value || ''
+          });
+        }
+
+        window.open('https://wa.me/84362772956?text=' + encodeURIComponent(msg), '_blank');
+      };
+
+      initCustomRouteFallback();
+      setTimeout(initCustomRouteFallback, 300);
+    })();
+  </script>
 
 </body>
 </html>
