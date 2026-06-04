@@ -2248,5 +2248,389 @@ const textMaps = {
     })();
   </script>
 
+
+
+<!-- CUSTOM ROUTE + PRICE FIX FINAL -->
+<script>
+(function(){
+  const pricesFix = {
+    "Mui Ne → Da Lat": 1700000,
+    "Mui Ne → Nha Trang": 2200000,
+    "Mui Ne → Cam Ranh": 1700000,
+    "Mui Ne → Ho Chi Minh City": 1700000,
+    "Mui Ne → Vung Tau": 1700000,
+    "Da Lat → Mui Ne": 1700000,
+    "Da Lat → Nha Trang": 1300000,
+    "Da Lat → Ho Chi Minh City": 3000000,
+    "Da Lat → Vung Tau": 3000000,
+    "Nha Trang → Mui Ne": 2200000,
+    "Nha Trang → Da Lat": 1300000,
+    "Nha Trang → Ho Chi Minh City": 3000000,
+    "Nha Trang → Vung Tau": 3300000,
+    "Cam Ranh → Mui Ne": 1700000,
+    "Cam Ranh → Da Lat": 1300000,
+    "Cam Ranh → Ho Chi Minh City": 3000000,
+    "Cam Ranh → Vung Tau": 3000000,
+    "Ho Chi Minh City → Mui Ne": 1700000,
+    "Ho Chi Minh City → Nha Trang": 3000000,
+    "Ho Chi Minh City → Da Lat": 3000000,
+    "Ho Chi Minh City → Cam Ranh": 3000000,
+    "Ho Chi Minh City → Vung Tau": 1200000,
+    "Ho Chi Minh City → Can Tho": 1700000,
+    "Can Tho → Ho Chi Minh City": 1700000,
+    "Vung Tau → Da Lat": 3000000,
+    "Vung Tau → Ho Chi Minh City": 1200000,
+    "Vung Tau → Mui Ne": 1700000,
+    "Vung Tau → Nha Trang": 3300000,
+    "Vung Tau → Cam Ranh": 3000000
+  };
+
+  let selectedPriceFix = 0;
+
+  function lang(){ return window.currentLang || localStorage.getItem('siteLang') || 'en'; }
+  function txtSelect(){
+    const l=lang();
+    return l==='vi'?'Chọn tuyến và loại xe':l==='ru'?'Выберите маршрут и тип автомобиля':l==='ko'?'노선과 차량 선택':l==='zh'?'请选择路线和车型':'Select route and car';
+  }
+  function txtAsk(){
+    const l=lang();
+    return l==='vi'?'Hỏi giá trên WhatsApp':l==='ru'?'Спросить в WhatsApp':l==='ko'?'WhatsApp으로 문의':l==='zh'?'WhatsApp 咨询':'Ask on WhatsApp';
+  }
+  function labelCustom(){
+    const l=lang();
+    return l==='vi'?'❓ Tuyến của tôi không có trong danh sách':l==='ru'?'❓ Моего маршрута нет в списке':l==='ko'?'❓ 원하는 노선이 목록에 없습니다':l==='zh'?'❓ 我的路线不在列表中':'❓ My route is not listed';
+  }
+
+  function ensureCustomOption(){
+    const routeSelect=document.getElementById('route');
+    if(!routeSelect) return;
+    let op=routeSelect.querySelector('option[value="custom"]');
+    if(!op){
+      op=document.createElement('option');
+      op.value='custom';
+      routeSelect.appendChild(op);
+    }
+    op.textContent=labelCustom();
+  }
+
+  function normalizeCar(car){
+    if(!car) return '';
+    const c=car.toLowerCase();
+    if(c.includes('4')) return '4 Seats';
+    if(c.includes('7')) return '7 Seats';
+    if(c.includes('9') || c.includes('limousine')) return '9 Seats Limousine VIP';
+    if(c.includes('16')) return '16 Seats';
+    return car;
+  }
+
+  function calculatePriceFix(route, car){
+    const base=pricesFix[route];
+    const carType=normalizeCar(car);
+    if(!route || !carType || base == null || route === 'custom') return 0;
+
+    const normalBase=base - 200000;
+    if(carType === '4 Seats') return normalBase - 100000;
+    if(carType === '7 Seats') return normalBase;
+    if(carType === '9 Seats Limousine VIP') return Math.round(normalBase * 2.5) - 200000;
+    if(carType === '16 Seats') return Math.round(normalBase * 2) - 200000;
+    return 0;
+  }
+
+  function updatePriceFix(){
+    ensureCustomOption();
+    const routeSelect=document.getElementById('route');
+    const carSelect=document.getElementById('car');
+    const priceBox=document.getElementById('price');
+    const customBox=document.getElementById('customRouteBox');
+    const vipBadge=document.getElementById('vipBadge');
+    if(!routeSelect || !carSelect || !priceBox) return;
+
+    const route=routeSelect.value;
+    const car=carSelect.value;
+    const carType=normalizeCar(car);
+
+    if(vipBadge) vipBadge.classList.toggle('hidden', carType !== '9 Seats Limousine VIP');
+
+    if(route==='custom'){
+      if(customBox) customBox.classList.remove('hidden');
+      selectedPriceFix=0;
+      priceBox.innerText=txtAsk();
+      return;
+    } else {
+      if(customBox) customBox.classList.add('hidden');
+    }
+
+    if(!route || !car){
+      selectedPriceFix=0;
+      priceBox.innerText=txtSelect();
+      return;
+    }
+
+    selectedPriceFix=calculatePriceFix(route, car);
+    if(selectedPriceFix <= 0){
+      priceBox.innerText=txtAsk();
+      return;
+    }
+
+    const usd=Math.round(selectedPriceFix/25000);
+    priceBox.innerText='$'+usd+' (~'+selectedPriceFix.toLocaleString()+' VND)';
+  }
+
+  function install(){
+    const routeSelect=document.getElementById('route');
+    const carSelect=document.getElementById('car');
+    const passengersSelect=document.getElementById('passengers');
+    if(!routeSelect || !carSelect) return;
+
+    ensureCustomOption();
+    routeSelect.onchange=updatePriceFix;
+    carSelect.onchange=updatePriceFix;
+
+    if(passengersSelect && !passengersSelect.dataset.priceFixReady){
+      passengersSelect.dataset.priceFixReady='1';
+      passengersSelect.addEventListener('change', function(){ setTimeout(updatePriceFix, 0); });
+    }
+
+    window.sendWhatsApp=function(){
+      const nameInput=document.getElementById('name')?.value.trim() || '';
+      const passengers=document.getElementById('passengers');
+      const routeSelect=document.getElementById('route');
+      const carSelect=document.getElementById('car');
+      const customRoute=document.getElementById('customRoute');
+
+      if(!nameInput){ alert('Please enter your name'); return; }
+      if(!routeSelect || !routeSelect.value){ alert('Please select route'); return; }
+      if(!carSelect || !carSelect.value){ alert('Please select car type'); return; }
+
+      let routeText=routeSelect.value;
+      if(routeSelect.value==='custom'){
+        routeText=(customRoute?.value || '').trim();
+        if(!routeText){ alert('Please enter your route'); customRoute?.focus(); return; }
+      }
+
+      const passengerText=passengers?.value || '';
+      const carText=carSelect.value;
+
+      // Tính lại giá ngay trước khi mở WhatsApp, để tin nhắn luôn có giá đúng.
+      selectedPriceFix = calculatePriceFix(routeSelect.value, carText);
+      const displayPrice=selectedPriceFix>0 ? selectedPriceFix.toLocaleString()+' VND' : 'Please confirm';
+
+      const msg='🚗 PRIVATE CAR BOOKING - VIETNAM\n' +
+        'Name: '+nameInput +
+        '\nRoute: '+routeText +
+        '\nPassengers: '+passengerText +
+        '\nCar: '+carText +
+        '\nPrice: '+displayPrice;
+
+      if(typeof gtag==='function'){
+        gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});
+        gtag('event','whatsapp_click',{route_name:routeText,car_type:carText,passengers:passengerText});
+      }
+      window.open('https://wa.me/84362772956?text='+encodeURIComponent(msg),'_blank');
+    };
+
+    updatePriceFix();
+  }
+
+  install();
+  setTimeout(install, 300);
+  setTimeout(install, 1000);
+})();
+</script>
+
+
+
+<!-- WHATSAPP PRICE ULTIMATE FIX -->
+<script>
+(function(){
+  const PRICE_MAP = {
+    "Mui Ne → Da Lat": 1700000,
+    "Mui Ne → Nha Trang": 2200000,
+    "Mui Ne → Cam Ranh": 1700000,
+    "Mui Ne → Ho Chi Minh City": 1700000,
+    "Mui Ne → Vung Tau": 1700000,
+    "Da Lat → Mui Ne": 1700000,
+    "Da Lat → Nha Trang": 1300000,
+    "Da Lat → Ho Chi Minh City": 3000000,
+    "Da Lat → Vung Tau": 3000000,
+    "Nha Trang → Mui Ne": 2200000,
+    "Nha Trang → Da Lat": 1300000,
+    "Nha Trang → Ho Chi Minh City": 3000000,
+    "Nha Trang → Vung Tau": 3300000,
+    "Cam Ranh → Mui Ne": 1700000,
+    "Cam Ranh → Da Lat": 1300000,
+    "Cam Ranh → Ho Chi Minh City": 3000000,
+    "Cam Ranh → Vung Tau": 3000000,
+    "Ho Chi Minh City → Mui Ne": 1700000,
+    "Ho Chi Minh City → Nha Trang": 3000000,
+    "Ho Chi Minh City → Da Lat": 3000000,
+    "Ho Chi Minh City → Cam Ranh": 3000000,
+    "Ho Chi Minh City → Vung Tau": 1200000,
+    "Ho Chi Minh City → Can Tho": 1700000,
+    "Can Tho → Ho Chi Minh City": 1700000,
+    "Vung Tau → Da Lat": 3000000,
+    "Vung Tau → Ho Chi Minh City": 1200000,
+    "Vung Tau → Mui Ne": 1700000,
+    "Vung Tau → Nha Trang": 3300000,
+    "Vung Tau → Cam Ranh": 3000000
+  };
+
+  function cleanRoute(text){
+    return (text || '')
+      .replace('📍','')
+      .replace('❓','')
+      .replace(/\s+/g,' ')
+      .replace(/\s*(→|->|–|—|-)\s*/g,' → ')
+      .trim();
+  }
+
+  function carType(car){
+    const c=(car || '').toLowerCase();
+    if(c.includes('4')) return '4 Seats';
+    if(c.includes('7')) return '7 Seats';
+    if(c.includes('9') || c.includes('limousine')) return '9 Seats Limousine VIP';
+    if(c.includes('16')) return '16 Seats';
+    return car || '';
+  }
+
+  function calcPrice(route, car){
+    route = cleanRoute(route);
+    car = carType(car);
+    const base = PRICE_MAP[route];
+    if(!base || !car) return 0;
+
+    const normalBase = base - 200000;
+    if(car === '4 Seats') return normalBase - 100000;
+    if(car === '7 Seats') return normalBase;
+    if(car === '9 Seats Limousine VIP') return Math.round(normalBase * 2.5) - 200000;
+    if(car === '16 Seats') return Math.round(normalBase * 2) - 200000;
+    return 0;
+  }
+
+  function getSelectedText(select){
+    if(!select) return '';
+    return select.options && select.selectedIndex >= 0
+      ? select.options[select.selectedIndex].text
+      : select.value;
+  }
+
+  function ensureCustomRouteOption(){
+    const routeSelect=document.getElementById('route');
+    if(!routeSelect) return;
+    if(!Array.from(routeSelect.options).some(o => o.value === 'custom')){
+      const opt=document.createElement('option');
+      opt.value='custom';
+      opt.textContent='❓ My route is not listed';
+      routeSelect.appendChild(opt);
+    }
+    let customBox=document.getElementById('customRouteBox');
+    if(!customBox){
+      customBox=document.createElement('div');
+      customBox.id='customRouteBox';
+      customBox.className='hidden';
+      customBox.innerHTML='<input id="customRoute" placeholder="Enter pickup and drop-off location" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"><p class="text-xs text-gray-500 mt-2">Can\'t find your route? Enter it here and we will confirm the price on WhatsApp within minutes.</p>';
+      routeSelect.insertAdjacentElement('afterend', customBox);
+    }
+  }
+
+  function updatePriceStrong(){
+    ensureCustomRouteOption();
+    const routeSelect=document.getElementById('route');
+    const carSelect=document.getElementById('car');
+    const priceBox=document.getElementById('price');
+    const customBox=document.getElementById('customRouteBox');
+    const vipBadge=document.getElementById('vipBadge');
+    if(!routeSelect || !carSelect || !priceBox) return;
+
+    if(routeSelect.value === 'custom'){
+      if(customBox) customBox.classList.remove('hidden');
+      priceBox.innerText='Ask on WhatsApp';
+      window.selectedPrice = 0;
+      return;
+    }
+
+    if(customBox) customBox.classList.add('hidden');
+
+    const route = cleanRoute(routeSelect.value || getSelectedText(routeSelect));
+    const car = carType(carSelect.value || getSelectedText(carSelect));
+    if(vipBadge) vipBadge.classList.toggle('hidden', car !== '9 Seats Limousine VIP');
+
+    const price = calcPrice(route, car);
+    window.selectedPrice = price;
+
+    if(!route || !car){
+      priceBox.innerText='Select route and car';
+    } else if(price > 0){
+      const usd=Math.round(price/25000);
+      priceBox.innerText='$' + usd + ' (~' + price.toLocaleString() + ' VND)';
+    } else {
+      priceBox.innerText='Ask on WhatsApp';
+    }
+  }
+
+  function installStrongFix(){
+    ensureCustomRouteOption();
+    const routeSelect=document.getElementById('route');
+    const carSelect=document.getElementById('car');
+    const passengersSelect=document.getElementById('passengers');
+    if(routeSelect) routeSelect.onchange=updatePriceStrong;
+    if(carSelect) carSelect.onchange=updatePriceStrong;
+    if(passengersSelect && !passengersSelect.dataset.strongPriceFix){
+      passengersSelect.dataset.strongPriceFix='1';
+      passengersSelect.addEventListener('change', function(){ setTimeout(updatePriceStrong, 50); });
+    }
+
+    window.sendWhatsApp = function(){
+      updatePriceStrong();
+
+      const nameInput=document.getElementById('name')?.value.trim() || '';
+      const passengersSelect=document.getElementById('passengers');
+      const routeSelect=document.getElementById('route');
+      const carSelect=document.getElementById('car');
+      const customRouteInput=document.getElementById('customRoute');
+
+      if(!nameInput){ alert('Please enter your name'); return; }
+      if(!routeSelect || !routeSelect.value){ alert('Please select route'); return; }
+      if(!carSelect || !carSelect.value){ alert('Please select car type'); return; }
+
+      let routeText = cleanRoute(routeSelect.value || getSelectedText(routeSelect));
+      if(routeSelect.value === 'custom'){
+        routeText=(customRouteInput?.value || '').trim();
+        if(!routeText){ alert('Please enter your route'); customRouteInput?.focus(); return; }
+      }
+
+      const passengersText=getSelectedText(passengersSelect) || passengersSelect?.value || '';
+      const carText=getSelectedText(carSelect) || carSelect?.value || '';
+
+      const calculatedPrice = routeSelect.value === 'custom' ? 0 : calcPrice(routeText, carText);
+      const displayPrice = calculatedPrice > 0
+        ? calculatedPrice.toLocaleString() + ' VND'
+        : 'Please confirm';
+
+      const msg =
+        '🚗 PRIVATE CAR BOOKING - VIETNAM\n' +
+        'Name: ' + nameInput +
+        '\nRoute: ' + routeText +
+        '\nPassengers: ' + passengersText +
+        '\nCar: ' + carText +
+        '\nPrice: ' + displayPrice;
+
+      if(typeof gtag === 'function'){
+        gtag('event','conversion',{'send_to':'AW-18066486095/NSUtCI3FxaEcEM_m4qZD'});
+        gtag('event','whatsapp_click',{route_name:routeText,car_type:carText,passengers:passengersSelect?.value || ''});
+      }
+
+      window.open('https://wa.me/84362772956?text=' + encodeURIComponent(msg), '_blank');
+    };
+
+    updatePriceStrong();
+  }
+
+  installStrongFix();
+  setTimeout(installStrongFix, 300);
+  setTimeout(installStrongFix, 1000);
+})();
+</script>
+
 </body>
 </html>
