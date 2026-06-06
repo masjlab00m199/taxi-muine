@@ -853,6 +853,11 @@ a[href^="https://wa.me"]:hover {
           <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
         </div>
 
+        <div onclick="selectRoute('Ho Chi Minh City → Moc Bai Border Visa Run')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
+          <div class="font-bold text-lg">📍 Ho Chi Minh City → Moc Bai Border Visa Run</div>
+          <div class="text-sm text-gray-500 mt-1">Visa extension / visa run • Price via WhatsApp</div>
+        </div>
+
         <div onclick="selectRoute('Can Tho → Ho Chi Minh City')" class="route-card card-hover bg-white p-5 rounded-2xl shadow cursor-pointer">
           <div class="font-bold text-lg">📍 Can Tho → Ho Chi Minh City</div>
           <div class="text-sm text-gray-500 mt-1">Fast WhatsApp booking</div>
@@ -2517,6 +2522,15 @@ const textMaps = {
   function ensureCustomRouteOption(){
     const routeSelect=document.getElementById('route');
     if(!routeSelect) return;
+
+    const mocBaiRoute = 'Ho Chi Minh City → Moc Bai Border Visa Run';
+    if(!Array.from(routeSelect.options).some(o => o.value === mocBaiRoute)){
+      const opt=document.createElement('option');
+      opt.value=mocBaiRoute;
+      opt.textContent='Ho Chi Minh City → Moc Bai Border Visa Run';
+      routeSelect.appendChild(opt);
+    }
+
     if(!Array.from(routeSelect.options).some(o => o.value === 'custom')){
       const opt=document.createElement('option');
       opt.value='custom';
